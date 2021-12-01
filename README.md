@@ -1,24 +1,40 @@
-# README
+# <ソウルメイト>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+当たり前のようにスーパーで野菜を買えるのは、
+全国の農家さんが１つの種から野菜を育てる匠の技があるからできること。
+農家さんと出会い、新鮮な野菜に出会う機会が増え、お気に入りの野菜を見つけて欲しい思いから、「ソウルメイト」と命名しました。
 
-Things you may want to cover:
+## サイト概要
+<日本全国の農家さんについて知ることができるサイトです。>
 
-* Ruby version
+### サイトテーマ
+<・日本にいる農家さんが何を栽培しているかを知ることができる。
+・農家の魅力や仕事内容が分かることで、農家に就職するきっかけを作る。
+・日本の農家で栽培された野菜を食べることで農家を応援する。地産地消の推進。>
 
-* System dependencies
+### テーマを選んだ理由
+<現在、農業人口の減少や高齢化、そして後継者不足と問題がたくさんあります。
+その問題を解決するには、農業就業人口を増やすことや日本の農家さんが栽培した野菜を食べることで農業を盛り上げることができると考えます。ですが、急に農家を目指すことや、探すことは難しいため、簡単に農家さんのことが探せて、知れるサイトがあればいいなと思い、ノウカを作りました。
 
-* Configuration
+### ターゲットユーザ
+<①新鮮な野菜を食べたい方
+②新鮮な野菜で作った料理を提供したい方
+③農業のノウハウを知りたい方>
 
-* Database creation
+### 主な利用シーン
+<①農家から直接新鮮な野菜を購入できる足掛かりを得たい時
+②契約農家を探す時>
 
-* Database initialization
+## 設計書
+<現在作成中>
 
-* How to run the test suite
+## チャレンジ要素一覧
+<https://docs.google.com/spreadsheets/d/1jAfugwf4qJJhx0DWvlW3QlcHrq4qZRZ73mTnktzYRXM/edit#gid=0>
 
-* Services (job queues, cache servers, search engines, etc.)
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Deployment instructions
-
-* ...
