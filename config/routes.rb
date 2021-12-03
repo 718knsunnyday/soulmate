@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   devise_for :publics, controllers: {
-    registrations: "publics/registrations",
-    sessions: "publics/sessions",
-    passwords: "publics/passwords"
+    registrations: "public/registrations",
+    sessions: "public/sessions",
+    passwords: "public/passwords"
   }
   devise_for :farmers, controllers: {
-    registrations: "farmers/registrations",
-    sessions: "farmers/sessions",
-    passwords: "farmers/passwords"
+    registrations: "farmer/registrations",
+    sessions: "farmer/sessions",
+    passwords: "farmer/passwords"
   }
   
+  scope module: :public do
+    root 'homes#top'
+    get 'about' => 'homes#about'
+  end
 end
