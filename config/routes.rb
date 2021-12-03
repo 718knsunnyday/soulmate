@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :publics, controllers: {
+    registrations: "publics/registrations",
+    sessions: "publics/sessions",
+    passwords: "publics/passwords"
+  }
+  devise_for :farmers, controllers: {
+    registrations: "farmers/registrations",
+    sessions: "farmers/sessions",
+    passwords: "farmers/passwords"
+  }
+  
 end
