@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     passwords: "farmer/passwords"
   }
   
+  namescape :farmer do
+    resources :customers, only: [:show, :edit, :update, :destroy]
+  
   scope module: :public do
     root 'homes#top'
     get 'about' => 'homes#about'
