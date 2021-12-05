@@ -1,0 +1,30 @@
+<h2>マイページ</h2>
+
+<table>
+    <tbody>
+      <tr>
+        <td>名前</td>
+    　　<td>姓</td>
+    　　<td><%= @customer.last_name %></td>
+    　　<td>名</td>
+    　　<td><%= @customer.first_name %></td>
+      </tr>
+      <tr>
+        <td>フリガナ</td>
+        <td>セイ</td>
+        <td><%= @customer.last_name_kana %></td>
+        <td>メイ</td>
+        <td><%= @customer.first_name_kana %></td>
+      </tr>
+      <tr>
+        <td>メールアドレス</td>
+        <td></td>
+        <td><%= @customer.email %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td> <%= link_to "編集", edit_farmer_customers_path %></td>
+      </tr>
+    </tbody>
+  </table>

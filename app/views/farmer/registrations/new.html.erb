@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>新規会員登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "farmer/shared/error_messages", resource: resource %>
@@ -41,12 +41,11 @@
       <tr>
         <td></td>
         <td></td>
-        <td> <%= f.submit "Sign up" %></td>
+        <td> <%= f.submit "新規登録する" %></td>
       </tr>
     </tbody>
   </table>
-  
-  <% end %>
+<% end %>
 
 <h4>既に登録済みの方</h4>
 <%= render "farmer/shared/links" %>
