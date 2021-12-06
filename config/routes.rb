@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root 'homes#top'
     get 'about' => 'homes#about'
-    resource :customers, only: [:show, :edit, :update, :destroy]
+    resource :customers, only: [:show, :edit, :update]
   end
 
   devise_for :farmers, controllers: {
@@ -19,8 +19,11 @@ Rails.application.routes.draw do
   }
 
   namespace :farmer do
-    resources :customers, only: [:show, :edit, :update, :destroy]
-    get 'customers/unsubscribe' => 'customers#unsubscribe'
-    patch 'customers/withdraw' => 'customers#withdraw'
+    get 'customers/thanks' => 'customers#thanks'
+    resources :customers, only: [:show, :edit, :update]
+    get 'customers/unsubscribe/:id' => 'customers#unsubscribe'
+    patch 'customers/withdraw/:id' => 'customers#withdraw', as: :withdraw
+
+    resources :farms
   end
 end

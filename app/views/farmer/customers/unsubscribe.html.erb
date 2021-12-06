@@ -6,7 +6,12 @@
 </div>
 
 <div class="text-center">
-  <%= link_to "退会しない", farmer_customer_path %>
-  <%= link_to "退会する", farmer_customer_path, method: :delete, "data-confirm" => "本当に退会しますか？" %>
+  <%= @customer.last_name %><%= @customer.first_name %><br>
+  <%= @customer.email %>
+</div>
+
+<div class="text-center">
+  <%= link_to "退会しない", farmer_customer_path(@customer) %>
+  <%= link_to "退会する", farmer_withdraw_path(@customer), method: :patch, "data-confirm" => "本当に退会しますか" %>
 </div>
 

@@ -1,6 +1,7 @@
+
 <h2>マイページ</h2>
 
-<table>
+<table class="mx-auto">
     <tbody>
       <tr>
         <td>名前</td>
@@ -24,8 +25,11 @@
       <tr>
         <td></td>
         <td></td>
-        <td><%= link_to "編集", edit_farmer_customer_path(current_farmer) %></td>
-        <td><%= link_to "退会", </td>
+        <td><%= link_to "編集", edit_farmer_customer_path(@customer) %></td>
       </tr>
     </tbody>
+    
+      <p class="text-center"><%= link_to "新規農場登録", new_farmer_farm_path %></p>
+    
   </table>
+  

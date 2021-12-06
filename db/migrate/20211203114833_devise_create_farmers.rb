@@ -10,6 +10,7 @@ class DeviseCreateFarmers < ActiveRecord::Migration[5.2]
       t.string :first_name, null: false
       t.string :last_name_kana, null: false
       t.string :first_name_kana, null: false
+      t.boolean :is_valid, null: false, default: false
 
       ## Recoverable
       t.string   :reset_password_token

@@ -13,15 +13,19 @@ class Farmer::CustomersController < ApplicationController
     @customer.update(farmer_params)
     redirect_to farmer_customer_path(@customer)
   end
-  
+
   def unsubscribe
     @customer = current_farmer
   end
 
-  def destroy
+  def withdraw
     @customer = current_farmer
-    @customer.destroy
-    redirect_to 
+    @customer.update(is_valid: true)
+    reset_session
+    redirect_to farmer_customers_thanks_path
+  end
+
+  def thanks
   end
 
   private
