@@ -1,0 +1,70 @@
+<h2>登録農場情報の編集</h2>
+
+<div class="mx-auto">
+  <%= form_with model: @farm, url: farmer_farms_path, local: true do |f| %>
+
+    <div class="form-group">
+      <%= f.label :画像 %>
+      <%= f.attachment_field :image %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :名前 %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :経営者 %>
+      <%= f.text_field :manager %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :郵便番号 %>
+      <%= f.text_field :post_code %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :都道府県 %>
+      <%= f.text_field :prefecture %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :市区町村 %>
+      <%= f.text_field :city %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :番地・建物名 %>
+      <%= f.text_field :house_number %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :栽培品目 %>
+      <%= f.text_field :variety %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :栽培品例 %>
+      <%= f.text_field :breed %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :購入方法 %>
+      <%= f.text_field :purchasing_method %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :コンタクト %>
+      <%= f.text_field :contact%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :農場説明 %>
+      <%= f.text_area :description %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "農場情報を更新する" %><%= link_to "農場情報を削除する", farmer_farm_path(@farm), method: :delete, "data-confirm" => "本当に削除しますか。" %>
+    </div>
+  <% end %>
+</div>

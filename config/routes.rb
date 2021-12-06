@@ -23,7 +23,6 @@ Rails.application.routes.draw do
     resources :customers, only: [:show, :edit, :update]
     get 'customers/unsubscribe/:id' => 'customers#unsubscribe'
     patch 'customers/withdraw/:id' => 'customers#withdraw', as: :withdraw
-
     resources :farms
   end
 end

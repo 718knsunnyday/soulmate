@@ -1,24 +1,41 @@
 class Farmer::FarmsController < ApplicationController
-  
+
   def new
     @farm = Farm.new
   end
-  
+
   def create
+    farm = Farm.new(farm_params)
+    farm.save
+    redirect_to farmer_farm_path(farm)
   end
-  
+
   def show
+    @farm = Farm.find(params[:id])
   end
-  
+
   def index
+    @farm = Farm
   end
-  
+
   def edit
+    @farm = Farm.find(params[:id])
   end
-  
+
   def update
+    farm = Farm.find(params[:id])
+    farm.update(farm_params)
+    redirect_to farmer_farm_path(farm)
   end
-  
+
   def destroy
+    farm = Farm.find(params[:id])
+    farm.destroy
+    redirect_to farmer_farms_path
   end
+
+  private
+    def farm_params
+      params.require(:farm).permit(:name, :manager, :post_code, :prefecture, :city, :house_number, :variety, :breed, :purchasing_method, :contact, :description, :image)
+    end
 end

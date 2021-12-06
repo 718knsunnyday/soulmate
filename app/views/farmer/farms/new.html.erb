@@ -1,1 +1,69 @@
 <h2>新規農場登録</h2>
+
+<%= form_with model: @farm, url: farmer_farms_path, local: true do |f| %>
+
+  <div class="form-group">
+    <%= f.label :画像 %>
+    <%= f.attachment_field :image %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :名前 %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :経営者 %>
+    <%= f.text_field :manager %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :郵便番号 %>
+    <%= f.text_field :post_code %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :都道府県 %>
+    <%= f.text_field :prefecture %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :市区町村 %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :番地・建物名 %>
+    <%= f.text_field :house_number %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :栽培品目 %>
+    <%= f.text_field :variety %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :栽培品例 %>
+    <%= f.text_field :breed %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :購入方法 %>
+    <%= f.text_field :purchasing_method %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :コンタクト %>
+    <%= f.text_field :contact%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :農場説明 %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "新規農場を登録する" %>
+  </div>
+
+<% end %>
