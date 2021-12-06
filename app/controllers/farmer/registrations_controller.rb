@@ -64,7 +64,11 @@ class Farmer::RegistrationsController < Devise::RegistrationsController
   # end
 
   def after_sign_up_path_for(resource)
-    farmer_customers_path
+    farmer_customer_path(current_farmer)
+  end
+
+  def after_update_path_for(resource)
+    farmer_customers_path(current_farmer)
   end
 
 end

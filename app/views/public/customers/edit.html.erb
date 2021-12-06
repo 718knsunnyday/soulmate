@@ -1,14 +1,14 @@
-<h2>マイページ編集</h2>
+<h4>マイページの編集</h4>
 
-<%= form_with model: @customer, url: farmer_customer_path, local: true do |f| %>
+<%= form_with model: @public, local: true do |f| %>
   <table>
     <tbody>
       <tr>
         <td><%= f.label :名前 %></td>
-    　　<td>姓</td>
-    　　<td><%= f.text_field :last_name %></td>
-    　　<td>名</td>
-    　　<td><%= f.text_field :first_name %></td>
+        <td>姓</td>
+        <td><%= f.text_field :last_name %></td>
+        <td>名</td>
+        <td><%= f.text_field :first_name %></td>
       </tr>
       <tr>
         <td><%= f.label :フリガナ %></td>
@@ -25,7 +25,7 @@
       <tr>
         <td></td>
         <td></td>
-        <td> <%= f.submit "更新" %></td>
+        <td><%= f.submit "更新する" %></td>
       </tr>
     </tbody>
   </table>
