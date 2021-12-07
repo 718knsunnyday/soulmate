@@ -22,4 +22,6 @@
   <%= @farm.description %>
 </div>
 
-<%= link_to "登録農場情報の編集", edit_farmer_farm_path(@farm) %>
+<%# if @farm.id == current_farmer.id %>
+  <%= link_to "登録農場情報の編集", edit_farmer_farm_path(@farm) %>
+<%# end %>

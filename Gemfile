@@ -68,3 +68,5 @@ gem 'devise'
 gem 'pry-rails'
 gem "enum_help"
 gem 'rails-i18n'
+gem 'kaminari'
+gem 'font-awesome-sass'

@@ -1,19 +1,25 @@
 <div class="container">
   <h2>農場一覧</h2>
 
-<% @farms.each do |farm| %>
-  <div class="row">
-      <div class="col-4 pt-5">
-        <%= attachment_image_tag farm, :image, size: '100x100', format: 'jpeg' %>
-      </div>
-      <div class="col-8 border mt-5">
-        <span>農場名：<%= farm.name %></span><br>
-        <span>農場住所：<%= farm.full_address %></span><br>
-        <span>栽培品目：<%= farm.variety %></span><br>
-        <span>栽培品目例：<%= farm.breed %></span>
-      </div>
-    
-  </div>
-<% end %>
+  <% @farms.each do |farm| %>
+    <div class="row">
+        <div class="col-4 pt-5">
+          <%= attachment_image_tag farm, :image, size: '100x100', format: 'jpeg' %>
+        </div>
+        <div class="col-8 border mb-5">
+          <span>農場名：
+            <%= link_to farmer_farm_path(farm.id) do %>
+              <%= farm.name %>
+            <% end %>
+          </span><br>
+          <span>農場住所：<%= farm.full_address %></span><br>
+          <span>栽培品目：<%= farm.variety %></span><br>
+          <span>栽培品目例：<%= farm.breed %></span>
+        </div>
+
+    </div>
+  <% end %>
 
 </div>
+
+<%= paginate @farms %>
