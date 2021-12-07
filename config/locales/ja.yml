@@ -1,0 +1,21 @@
+ja:
+  enums:
+    farm:
+      variety:
+        tuberous_and_corm_vegetables: "イモ類"
+        root_vegetables: "根菜類"
+        bulb_vegetables: "鱗茎類"
+        pulses: "豆類種実"
+        legume_vegetables: "豆類未成熟"
+        cucurbits: "うり類"
+        solanaceous_plants: "なす科果菜類"
+        brassica_vegetables: "あぶらな科野菜"
+        leafy_vegetables: "葉菜類"
+        stalk_and_stem_vegetables: "茎野菜類"
+        edible_flowers: "食用花類"
+        edible_fungi: "きのこ類"
+        cereal_grains: "穀類"
+        citrus_fruits: "かんきつ類"
+        pome_fruits: "仁果類"
+        stone_fruits: "核果類"
+        berries: "ベリー類等の小粒果実類"
