@@ -25,7 +25,7 @@
                  <li class="nav-item"><%= link_to "ログアウト", destroy_public_session_path, method: :delete, class: "nav-link" %></li>
               <% elsif farmer_signed_in? %>
                 <li class="nav-item"><%= link_to "マイページ", farmer_customer_path(current_farmer), class: "nav-link" %></li>
-                <li class="nav-item"><%= link_to "農家一覧", about_path, class: "nav-link" %></li>
+                <li class="nav-item"><%= link_to "農家一覧", farmer_farms_path, class: "nav-link" %></li>
                  <li class="nav-item"><%= link_to "ログアウト", destroy_farmer_session_path, method: :delete, class: "nav-link" %></li>
               <% else %>
                 <li class="nav-item"><%= link_to "サイトについて", about_path, class: "nav-link" %></li>

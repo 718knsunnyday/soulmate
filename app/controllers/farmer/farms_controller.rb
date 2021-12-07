@@ -16,7 +16,7 @@ class Farmer::FarmsController < ApplicationController
   end
 
   def index
-    @farm = Farm
+    @farms = Farm.all
   end
 
   def edit
