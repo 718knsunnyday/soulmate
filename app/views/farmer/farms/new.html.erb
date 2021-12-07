@@ -39,7 +39,10 @@
 
   <div class="form-group">
     <%= f.label :栽培品目 %>
-    <%= f.text_field :variety %>
+    <% ["いも類", "穀類", "鱗茎類", "豆類種実", "豆類未成熟", "うり類", "なす科果菜類", "葉菜類", "茎野菜類", "食用花類", "きのこ類", "穀類", "かんきつ類", "仁果類", "核果類", "ベリー類等の小粒果実類"].each do |variety| %>
+    <%= f.check_box :variety, {multiple: true}, variety, nil %>
+    <%= variety %>
+    <% end %>
   </div>
 
   <div class="form-group">
@@ -64,6 +67,5 @@
 
   <div class="form-group">
     <%= f.submit "新規農場を登録する" %>
-  </div>
 
 <% end %>

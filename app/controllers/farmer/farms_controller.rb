@@ -1,5 +1,6 @@
 class Farmer::FarmsController < ApplicationController
 
+
   def new
     @farm = Farm.new
   end
@@ -23,19 +24,20 @@ class Farmer::FarmsController < ApplicationController
   end
 
   def update
-    farm = Farm.find(params[:id])
-    farm.update(farm_params)
-    redirect_to farmer_farm_path(farm)
+    @farm = Farm.find(params[:id])
+    @farm.update(farm_params)
+    redirect_to farmer_farm_path(@farm.id)
   end
 
   def destroy
     farm = Farm.find(params[:id])
     farm.destroy
-    redirect_to farmer_farms_path
+    redirect_to new_farmer_farm_path
   end
 
   private
     def farm_params
-      params.require(:farm).permit(:name, :manager, :post_code, :prefecture, :city, :house_number, :variety, :breed, :purchasing_method, :contact, :description, :image)
+      params.require(:farm).permit(:name, :manager, :post_code, :prefecture, :city, :house_number, :breed, :purchasing_method, :contact, :description, :image, variety: [])
     end
+
 end

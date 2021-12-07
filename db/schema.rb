@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_12_06_092019) do
     t.string "prefecture", null: false
     t.string "city", null: false
     t.string "house_number", null: false
-    t.integer "variety", null: false
+    t.string "variety", null: false
     t.string "breed", null: false
     t.string "purchasing_method", null: false
     t.string "contact", null: false
