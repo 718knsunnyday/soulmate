@@ -28,7 +28,7 @@ $(document).on('turbolinks:load',function () {
     childrenElementType : 'div',
     arrows : true,
     autoPlay : true,
-    autoPlayDuration : 3000,
+    autoPlayDuration : 4000,
     keyboardOnAlways : true,
     hidePrevious : false
   });

@@ -17,7 +17,16 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// サイトの
+// サイトの背景色
 body{
   background-color: #ebefef;
+}
+
+header{
+  background-color: #7e9a9a;
+}
+
+// 新規登録・ログインアイコン
+.fa-green{
+  color: #7e9a9a;
 }
