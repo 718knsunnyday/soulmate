@@ -1,6 +1,6 @@
 <h4>マイページの編集</h4>
 
-<%= form_with model: @public, local: true do |f| %>
+<%= form_with model: @customer, url: public_update_path(@customer), local: true do |f| %>
   <table>
     <tbody>
       <tr>
@@ -25,7 +25,8 @@
       <tr>
         <td></td>
         <td></td>
-        <td><%= f.submit "更新する" %></td>
+        <td><%= f.submit "更新する" %>
+            <%= link_to "退会する", public_unsubscribe_path(@customer) %></td>
       </tr>
     </tbody>
   </table>

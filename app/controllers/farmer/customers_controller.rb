@@ -20,7 +20,7 @@ class Farmer::CustomersController < ApplicationController
 
   def withdraw
     @customer = current_farmer
-    @customer.update(is_valid: true)
+    @customer.update(is_valid: false)
     reset_session
     redirect_to farmer_customers_thanks_path
   end

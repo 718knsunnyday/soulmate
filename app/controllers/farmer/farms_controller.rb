@@ -1,5 +1,6 @@
 class Farmer::FarmsController < ApplicationController
 
+before_action :variety_string, only: [:create, :update]
 
   def new
     @farm = Farm.new
@@ -33,6 +34,10 @@ class Farmer::FarmsController < ApplicationController
     farm = Farm.find(params[:id])
     farm.destroy
     redirect_to new_farmer_farm_path
+  end
+
+  def variety_string
+    params[:farm][:variety] = params[:farm][:variety].array.join(",")
   end
 
   private

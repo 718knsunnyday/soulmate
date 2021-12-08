@@ -1,0 +1,16 @@
+<h2>退会手続き</h2>
+
+<div class="text-center">
+  <p>以下のご登録内容の退会手続きを致します。<br>
+  退会を取り消すことができませんので、間違いがないかご確認ください。</p>
+</div>
+
+<div class="text-center">
+  <%= @customer.last_name %><%= @customer.first_name %><br>
+  <%= @customer.email %>
+</div>
+
+<div class="text-center">
+  <%= link_to "退会しない", customer_path(@customer) %>
+  <%= link_to "退会する", public_withdraw_path(@customer), method: :patch, "data-confirm" => "本当に退会しますか" %>
+</div>
