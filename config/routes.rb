@@ -28,6 +28,8 @@ Rails.application.routes.draw do
     get 'customers/unsubscribe/:id' => 'customers#unsubscribe'
     patch 'customers/withdraw/:id' => 'customers#withdraw', as: :withdraw
     patch 'farms/update/:id' => 'farms#update', as: :farm_update
-    resources :farms, except: [:update]
+    resources :farms, except: [:update] do
+      resource :favorites, only: [:create, :destroy]
+    end
   end
 end

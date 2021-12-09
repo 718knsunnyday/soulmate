@@ -17,7 +17,7 @@ class Farmer::FarmsController < ApplicationController
   end
 
   def index
-    @farms = Farm.all.page(params[:page]).per(5)
+    @farms = Farm.all.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def edit

@@ -9,7 +9,6 @@
     <h4 class="text-center">農家さん</h4>
 
       <table class="border table-borderless mx-auto">
-
         <tr>
           <th>農場名</th>
           <td><%= @farm.name %></td>
@@ -54,7 +53,8 @@
     </table>
   </div>
 
-  <i class="far fa-thumbs-up"></i>
+
+
 
   <% if @farm == current_farmer %>
     <%= link_to "登録農場情報の編集", edit_farmer_farm_path(@farm) %>
