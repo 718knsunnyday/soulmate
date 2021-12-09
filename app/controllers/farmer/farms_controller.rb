@@ -1,6 +1,6 @@
 class Farmer::FarmsController < ApplicationController
 
-before_action :variety_string, only: [:create, :update]
+# before_action :variety_string, only: [:create, :update]
 
   def new
     @farm = Farm.new
@@ -36,9 +36,9 @@ before_action :variety_string, only: [:create, :update]
     redirect_to new_farmer_farm_path
   end
 
-  def variety_string
-    params[:farm][:variety] = params[:farm][:variety].array.join(",")
-  end
+  # def variety_string
+    # params[:farm][:variety] = params[:farm][:variety].join(",")
+  # end
 
   private
     def farm_params

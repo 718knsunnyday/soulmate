@@ -1,29 +1,62 @@
 <div class="container">
-  <h2>農場詳細</h2>
-  
-  <div class="farm-image">
-    <%= attachment_image_tag @farm, :image, size: "300x300" %>
+  <h3 class="mt-5">農場について</h3>
+
+  <div class="farm-image mt-5">
+    <%= attachment_image_tag @farm, :image, size: "640x427", class: "d-block mx-auto" %>
   </div>
-  
-  <div class="farm-info">
-    <h6>農場について</h6>
-    <div class="farm-about">
-      <p>農場名</p><%= @farm.name %>
-      <p>経営者</p><%= @farm.manager %>
-      <p>住所</p><%= @farm.post_code %>
-      <p>栽培品目</p><%= @farm.variety %>
-      <p>栽培品目例</p><%= @farm.breed %>
-      <p>購入方法</p><%= @farm.purchasing_method %>
-      <%= @farm.contact %>
-    </div>
+
+  <div class="farm-info mt-5">
+    <h4 class="text-center">農家さん</h4>
+
+      <table class="border table-borderless mx-auto">
+
+        <tr>
+          <th>農場名</th>
+          <td><%= @farm.name %></td>
+        </tr>
+        <tr>
+          <th>経営者</th>
+          <td><%= @farm.manager %></td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td><%= @farm.full_address %></td>
+        </tr>
+        <tr>
+          <th>栽培品目</th>
+          <td><%= @farm.variety %></td>
+        </tr>
+        <tr>
+          <th>栽培品目例</th>
+          <td><%= @farm.breed %></td>
+        </tr>
+        <tr>
+          <th>購入方法</th>
+          <td>><%= @farm.purchasing_method %></td>
+        </tr>
+        <tr>
+          <th>コンタクト</th>
+          <td><%= @farm.contact %></td>
+        </tr>
+      </table>
   </div>
-  
-  <div class="farm-description">
-    <h6>農園説明</h6>
-    <%= @farm.description %>
+
+  <div class="farm-description mt-5">
+    <h4 class="text-center">農場について</h4>
+    <table class="border table-borderless mx-auto">
+      <tr>
+        <th>農場説明:</th>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%= @farm.description %></td>
+      </tr>
+    </table>
   </div>
-  
-  <%# if @farm.id == current_farmer.id %>
+
+  <i class="far fa-thumbs-up"></i>
+
+  <% if @farm == current_farmer %>
     <%= link_to "登録農場情報の編集", edit_farmer_farm_path(@farm) %>
-  <%# end %>
+  <% end %>
 </div>
