@@ -1,0 +1,9 @@
+<% if farm.bookmarked_by?(farm) %>
+  <%= link_to farmer_farm_bookmarks_path(farm), method: :DELETE, class: "fas fa-bookmark" do %>
+  <span>保存中</span>
+  <% end %>
+<% else %>
+  <%= link_to farmer_farm_bookmarks_path(farm), method: :POST, class: "far fa-bookmark" do %>
+  <span>保存する</span>
+  <% end %>
+<% end %>

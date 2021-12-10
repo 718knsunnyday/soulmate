@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_09_052530) do
+ActiveRecord::Schema.define(version: 2021_12_10_083925) do
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.integer "public_id"
+    t.integer "farm_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "farmers", force: :cascade do |t|
     t.string "email", default: "", null: false

@@ -1,0 +1,2 @@
+module Farmer::BookmarksHelper
+end

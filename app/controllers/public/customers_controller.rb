@@ -27,6 +27,7 @@ class Public::CustomersController < ApplicationController
   def thanks
   end
 
+  
 
   private
     def public_params

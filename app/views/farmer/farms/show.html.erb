@@ -52,9 +52,15 @@
       </tr>
     </table>
   </div>
+
   <div id="farm_<%= @farm.id %>">
     <span>応援ボタン</span>
-      <div class="thumbs"><%= render 'farmer/favorites/favorite', farm: @farm %></div>
+    <div class="thumbs"><%= render 'farmer/favorites/favorite', farm: @farm %></div>
+  </div>
+
+  <div id="bookmark">
+    <span>Bookmarkする</span>
+    <div class="bookmark-save"><%= render 'farmer/bookmarks/bookmark', farm: @farm %></div>
   </div>
 
   <% if @farm == current_farmer %>

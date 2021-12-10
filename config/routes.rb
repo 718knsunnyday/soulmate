@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     patch 'customers/update/:id' => 'customers#update', as: :public_update
     get 'customers/unsubscribe/:id' => 'customers#unsubscribe', as: :public_unsubscribe
     patch 'customers/withdraw/:id' => 'customers#withdraw', as: :public_withdraw
+    get 'customers/bookmark/:id' => 'customers#bookmark', as: :public_bookmark
   end
 
   devise_for :farmers, controllers: {
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
     patch 'farms/update/:id' => 'farms#update', as: :farm_update
     resources :farms, except: [:update] do
       resource :favorites, only:[:create, :destroy]
+      resource :bookmarks, only:[:create, :destroy]
     end
   end
 end

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row mt-5">
+    <h2>Bookmark一覧</h2>
+  </div>
+  <% @bookmark.each do |bookmark| %>
+    <div class="row">
+
+        <div class="col-4 mb-5 mt-5">
+          <%= attachment_image_tag farm, :image, size: '300x250', format: 'jpeg' %>
+        </div>
+        <div class="col-8 border mb-5 mt-5 pt-5">
+          <span>農場名：
+            <%= link_to farmer_farm_path(farm.id) do %>
+              <%= farm.name %>
+            <% end %>
+          </span><br>
+          <span>農場住所：<%= farm.full_address %></span><br>
+          <span>栽培品目：<%= farm.variety %></span><br>
+          <span>栽培品目例：<%= farm.breed %></span>
+        </div>
+    </div>
+  <% end %>
+</div>
