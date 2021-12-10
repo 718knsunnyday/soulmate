@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     patch 'customers/withdraw/:id' => 'customers#withdraw', as: :withdraw
     patch 'farms/update/:id' => 'farms#update', as: :farm_update
     resources :farms, except: [:update] do
-      resource :favorites, only: [:create, :destroy]
+      resource :favorites, only:[:create, :destroy]
     end
   end
 end

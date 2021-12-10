@@ -3,9 +3,9 @@ class Farm < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
 
-  # def favorited_by?(public)
-    # favorites.where(public_id: current_public.id).exists?
-  # end
+   def favorited_by?(farm)
+     favorites.where(farm_id: farm.id).exists?
+   end
 
   def full_address
     '〒' + post_code + ' ' + prefecture + ' ' + city + ' ' + house_number
