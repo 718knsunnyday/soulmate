@@ -27,7 +27,9 @@ class Public::CustomersController < ApplicationController
   def thanks
   end
 
-  
+  def bookmark
+    @bookmark = Bookmark.where(public_id: current_public.id)
+  end
 
   private
     def public_params
