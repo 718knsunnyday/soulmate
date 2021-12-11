@@ -1,54 +1,85 @@
 <div class="container">
-  <h2>新規会員登録</h2>
+  <div class="row mt-5 mb-2">
+      <h3>新規会員登録</h3>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "farmer/shared/error_messages", resource: resource %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "farmer/shared/error_messages", resource: resource %>
+  </div>
+    <form>
+      <div class="row mb-2 justify-content-center">
+        <div class="col-3">
+          <div class="form-outline">
+            <%= f.label :名前 %>
+            <%= f.text_field :last_name, placeholder: '姓', class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="form-outline">
+          　<%= f.text_field :first_name, placeholder: '名', class: "form-control" %>
+          </div>
+        </div>
+      </div>
 
-       <table class="mx-auto">
-        <tbody>
-          <tr>
-            <td><%= f.label :名前 %></td>
-        　　<td>姓</td>
-        　　<td><%= f.text_field :last_name %></td>
-        　　<td>名</td>
-        　　<td><%= f.text_field :first_name %></td>
-          </tr>
-          <tr>
-            <td><%= f.label :フリガナ %></td>
-            <td>セイ</td>
-            <td><%= f.text_field :last_name_kana %></td>
-            <td>メイ</td>
-            <td><%= f.text_field :first_name_kana %></td>
-          </tr>
-          <tr>
-            <td><%= f.label :メールアドレス %></td>
-            <td></td>
-            <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
-          </tr>
-          <tr>
-            <td><%= f.label :パスワード %>
-                <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> 文字以上)</em>
-                <% end %><br />
-            </td>
-            <td></td>
-            <td><%= f.password_field :password, autocomplete: "new-password" %></td>
-          </tr>
-          <tr>
-            <td><%= f.label :パスワード確認 %></td>
-            <td></td>
-            <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td> <%= f.submit "新規登録する" %></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="row mb-2 justify-content-center">
+        <div class="col-3">
+          <div class="form-outline">
+            <%= f.label :フリガナ %>
+            <%= f.text_field :last_name_kana, placeholder: 'セイ', class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="form-outline">
+          　<%= f.text_field :first_name_kana, placeholder: 'メイ', class: "form-control" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="col-6">
+          <div class="form-outline">
+            <%= f.label :メールアドレス %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %></td>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-2 justify-content-center">
+        <div class="col-6">
+          <div class="form-outline">
+            <%= f.label :パスワード %>
+            <% if @minimum_password_length %>
+              (<%= @minimum_password_length %> 文字以上)
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3 justify-content-center">
+        <div class="col-6">
+          <div class="form-outline">
+            <%= f.label :パスワード確認 %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3 justify-content-center">
+        <div class="col-6">
+          <div class="form-outline">
+            <%= f.submit "新規登録する", class: "btn btn-block text-light mb-4 btn-color" %>
+          </div>
+        </div>
+      </div>
+    </form>
     <% end %>
 
     <h4>既に登録済みの方</h4>
-      <%= render "farmer/shared/links" %>
-
+      <div class="row mb-3 justify-content-center">
+        <div class="col-6">
+          <div class="form-outline">
+            <%= link_to "ログイン", new_farmer_session_path, class: "btn btn-block text-light mb-4 btn-color" %>
+          </div>
+        </div>
+      </div>
 </div>

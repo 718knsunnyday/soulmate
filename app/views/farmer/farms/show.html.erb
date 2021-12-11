@@ -53,13 +53,15 @@
     </table>
   </div>
 
+<div class="favorite-btn">
   <div id="favorite_<%= @farm.id %>">
     <span>応援ボタン</span>
     <div class="thumbs-up"><%= render 'farmer/favorites/favorite', farm: @farm %></div>
   </div>
+</div>
 
   <div id="bookmark_<%= @farm.id %>">
-    <span>Bookmarkする</span>
+    <span>Bookmark</span>
     <div class="bookmark-save"><%= render 'farmer/bookmarks/bookmark', farm: @farm %></div>
   </div>
 
