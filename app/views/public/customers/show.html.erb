@@ -1,32 +1,56 @@
-<h4>マイページ</h4>
 
-<%= link_to "Bookmark一覧", public_bookmark_path %>
 
-<table>
-  <tbody>
-    <tr>
-      <td>名前</td>
-      <td>姓</td>
-      <td><%= @customer.last_name %></td>
-      <td>名</td>
-      <td><%= @customer.first_name %></td>
-    </tr>
-    <tr>
-      <td>フリガナ</td>
-      <td>セイ</td>
-      <td><%= @customer.last_name_kana %></td>
-      <td>メイ</td>
-      <td><%= @customer.first_name_kana %></td>
-    </tr>
-    <tr>
-      <td>メールアドレス</td>
-      <td></td>
-      <td><%= @customer.email %></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td><%= link_to "編集する", edit_customer_path(@customer) %></td>
-    </tr>
-  </tbody>
-</table>
+
+
+
+<div class="container">
+  <div class="row mt-5 mb-2">
+      <h3>マイページ</h3>
+  </div>
+
+    <div>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-6">
+            <div class="form-outline">
+              <p>名前</p>
+              <%= @customer.last_name %> <%= @customer.first_name %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-2 justify-content-center">
+          <div class="col-6">
+            <div class="form-outline">
+              <p>フリガナ</p>
+              <%= @customer.last_name_kana %> <%= @customer.first_name_kana %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3 justify-content-center">
+          <div class="col-6 mb-3">
+            <div class="form-outline">
+              <p>メールアドレス</p>
+              <%= @customer.email %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3 justify-content-center">
+          <div class="col-6 mb-3">
+            <div class="form-outline">
+              <%= link_to "編集する", edit_customer_path(@customer), class: "btn btn-block text-light mb-2 btn-color" %>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row mb-3 justify-content-center">
+          <div class="col-6 mb-3">
+            <div class="form-outline">
+              <%= link_to "Bookmark一覧", public_bookmark_path, class: "btn btn-block text-light mb-4 btn-color" %>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
