@@ -70,3 +70,7 @@ gem "enum_help"
 gem 'rails-i18n'
 gem 'kaminari'
 gem 'font-awesome-sass'
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
