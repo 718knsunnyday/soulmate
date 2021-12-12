@@ -16,10 +16,9 @@
 
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 
-$(document).on('turbolinks:load',function () {
+$(document).ready(function() {
   $("#top-images").skippr({
     transition : 'fade',
     speed : 1000,
