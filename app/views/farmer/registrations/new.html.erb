@@ -1,78 +1,79 @@
 <div class="container">
   <div class="row mt-5 mb-2">
       <h3>新規会員登録</h3>
-
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "farmer/shared/error_messages", resource: resource %>
   </div>
-    <form>
-      <div class="row mb-2 justify-content-center">
-        <div class="col-3">
-          <div class="form-outline">
-            <%= f.label :名前 %>
-            <%= f.text_field :last_name, placeholder: '姓', class: "form-control" %>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="form-outline">
-          　<%= f.text_field :first_name, placeholder: '名', class: "form-control" %>
-          </div>
-        </div>
-      </div>
 
-      <div class="row mb-2 justify-content-center">
-        <div class="col-3">
-          <div class="form-outline">
-            <%= f.label :フリガナ %>
-            <%= f.text_field :last_name_kana, placeholder: 'セイ', class: "form-control" %>
+    <div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "farmer/shared/error_messages", resource: resource %>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-3">
+            <div class="form-outline">
+              <%= f.label :名前 %>
+              <%= f.text_field :last_name, placeholder: '姓', class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-outline">
+            　<%= f.text_field :first_name, placeholder: '名', class: "form-control" %>
+            </div>
           </div>
         </div>
-        <div class="col-3">
-          <div class="form-outline">
-          　<%= f.text_field :first_name_kana, placeholder: 'メイ', class: "form-control" %>
-          </div>
-        </div>
-      </div>
 
-      <div class="row mb-2 justify-content-center">
-        <div class="col-6">
-          <div class="form-outline">
-            <%= f.label :メールアドレス %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %></td>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-3">
+            <div class="form-outline">
+              <%= f.label :フリガナ %>
+              <%= f.text_field :last_name_kana, placeholder: 'セイ', class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-outline">
+            　<%= f.text_field :first_name_kana, placeholder: 'メイ', class: "form-control" %>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="row mb-2 justify-content-center">
-        <div class="col-6">
-          <div class="form-outline">
-            <%= f.label :パスワード %>
-            <% if @minimum_password_length %>
-              (<%= @minimum_password_length %> 文字以上)
-            <% end %><br />
-            <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-6">
+            <div class="form-outline">
+              <%= f.label :メールアドレス %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %></td>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="row mb-3 justify-content-center">
-        <div class="col-6">
-          <div class="form-outline">
-            <%= f.label :パスワード確認 %>
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-6">
+            <div class="form-outline">
+              <%= f.label :パスワード %>
+              <% if @minimum_password_length %>
+                (<%= @minimum_password_length %> 文字以上)
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="row mb-3 justify-content-center">
-        <div class="col-6">
-          <div class="form-outline">
-            <%= f.submit "新規登録する", class: "btn btn-block text-light mb-4 btn-color" %>
+        <div class="row mb-3 justify-content-center">
+          <div class="col-6">
+            <div class="form-outline">
+              <%= f.label :パスワード確認 %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+            </div>
           </div>
         </div>
-      </div>
-    </form>
-    <% end %>
+
+        <div class="row mb-3 justify-content-center">
+          <div class="col-6">
+            <div class="form-outline">
+              <%= f.submit "新規登録する", class: "btn btn-block text-light mb-4 btn-color" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
 
     <h4>既に登録済みの方</h4>
       <div class="row mb-3 justify-content-center">
