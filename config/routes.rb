@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root 'homes#top'
     get 'about' => 'homes#about'
+    get 'customers/search' => 'homes#search', as: :search
     get 'customers/thanks' => 'customers#thanks', as: :public_thanks
     resources :customers, only: [:show, :edit]
     patch 'customers/update/:id' => 'customers#update', as: :public_update

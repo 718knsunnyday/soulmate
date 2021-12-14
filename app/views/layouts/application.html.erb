@@ -32,10 +32,12 @@
                   <li class="nav-item"><%= link_to "農家一覧", farmer_farms_path, class: "nav-link text-light" %></li>
                 <% end %>
               </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">search</button>
-            </form>
+            <div class="search-form">
+              <%= form_tag search_path, method: :get do %>
+                <%= text_field_tag :search %>
+                <%= submit_tag '検索', class: "btn btn-outline-success" %>
+              <% end %>
+            </div>
           </div>
         </div>
       </nav>

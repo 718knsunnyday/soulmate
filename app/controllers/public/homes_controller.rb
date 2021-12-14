@@ -5,4 +5,9 @@ class Public::HomesController < ApplicationController
   
   def about
   end
+  
+  def search
+    @farms = Farm.search(params[:search])
+  end
+  
 end

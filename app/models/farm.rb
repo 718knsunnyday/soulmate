@@ -2,6 +2,10 @@ class Farm < ApplicationRecord
   attachment :image
   has_many :favorites, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
+  
+  def self.search(search)
+    Farm.where(['name LIKE ?', "%#{search}%"])
+  end
 
   def favorited_by?(farm)
     favorites.where(farm_id: farm.id).exists?
