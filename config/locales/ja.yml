@@ -6,3 +6,40 @@ ja:
       previous: <i class="fas fa-angle-left"></i>
       next: <i class="fas fa-angle-right"></i>
       truncate: "..."
+
+  activerecord:
+    models:
+      farm: 農場
+      farmer: 農家
+      public: ユーザー
+    attributes:
+      farm:
+        name: 農場名
+        manager: 経営者
+        post code: 郵便番号
+        refecture: 都道府県
+        city: 市区町村
+        house number: 電話番号
+        variety: 栽培品目
+        breed: 栽培品目例
+        purchasing_method: 購入方法
+        contact: コンタクト
+        description: 説明
+        image: 画像
+      farmer:
+        first_name: 名
+        last_name: 姓
+        first_name_kana: メイ
+        last_name_kana: セイ
+        email: メールアドレス
+        password: パスワード
+      public:
+        first_name: 名
+        last_name: 姓
+        first_name_kana: メイ
+        last_name_kana: セイ
+        email: メールアドレス
+        password: パスワード
+  errors:
+    messages:
+      not_saved: 保存できませんでした。

@@ -26,7 +26,7 @@ header{
   background-color: #7e9a9a;
 }
 
-// 新規登録・ログインアイコンの
+// 新規登録・ログインアイコンの色
 .fa-green{
   color: #7e9a9a;
 }
@@ -34,3 +34,9 @@ header{
 .btn-color{
   background-color: #7e9a9a;
 }
+
+// エラーメッセージ（農場新規登録・新規登録・ログイン）
+.error-message{
+  color: #e65c5a;
+}
+

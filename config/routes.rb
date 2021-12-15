@@ -30,10 +30,11 @@ Rails.application.routes.draw do
     get 'customers/unsubscribe/:id' => 'customers#unsubscribe'
     patch 'customers/withdraw/:id' => 'customers#withdraw', as: :withdraw
     patch 'farms/update/:id' => 'farms#update', as: :farm_update
+    get 'farms/prefecture' => 'farms#prefecture', as: :prefecture
+    get 'farms/prefecture/result/:prefecture' => 'farms#result_prefecture', as: :result
     resources :farms, except: [:update] do
       resource :favorites, only:[:create, :destroy]
       resource :bookmarks, only:[:create, :destroy]
     end
-    get 'farms/prefecture/result/:id' => 'farms#result_prefecture', as: :result
   end
 end

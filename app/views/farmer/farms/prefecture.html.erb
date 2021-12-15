@@ -1,1 +1,116 @@
-<%= link_to '大阪府', farmer_farms_prefecture_result_path(prefecture: "大阪") %>
+<div class="container">
+  <div class="row mt-5 mb-2">
+      <h3>地域別検索</h3>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-3 ml-5 pl-5">
+      <p>北海道</p>
+    </div>
+    <div class="col-8">
+      <p><%= link_to '北海道', farmer_result_path('北海道'), class: "link-color" %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 ml-5 pl-5">
+      <p>東北</p>
+    </div>
+    <div class="col-8">
+      <p class="link-color">
+        <%= link_to '青森県', farmer_result_path('青森県'), class: "link-color" %>
+        <%= link_to '岩手県', farmer_result_path('岩手県'), class: "ml-3 link-color" %>
+        <%= link_to '秋田県', farmer_result_path('秋田県'), class: "ml-3 link-color" %>
+        <%= link_to '山形県', farmer_result_path('山形県'), class: "ml-3 link-color" %>
+        <%= link_to '宮城県', farmer_result_path('宮城県'), class: "ml-3 link-color" %>
+        <%= link_to '福島県', farmer_result_path('福島県'), class: "ml-3 link-color" %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 ml-5 pl-5">
+      <p>関東</p>
+    </div>
+    <div class="col-8">
+      <p>
+        <%= link_to '栃木県', farmer_result_path('栃木県'), class: "link-color" %>
+        <%= link_to '群馬県', farmer_result_path('群馬県'), class: "ml-3 link-color" %>
+        <%= link_to '茨城県', farmer_result_path('茨城県'), class: "ml-3 link-color" %>
+        <%= link_to '千葉県', farmer_result_path('千葉県'), class: "ml-3 link-color" %>
+        <%= link_to '埼玉県', farmer_result_path('埼玉県'), class: "ml-3 link-color" %>
+        <%= link_to '東京都', farmer_result_path('東京都'), class: "ml-3 link-color" %>
+        <%= link_to '神奈川県', farmer_result_path('神奈川県'), class: "ml-3 link-color" %>
+      <p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 ml-5 pl-5">
+      <p>中部</p>
+    </div>
+    <div class="col-8">
+      <p>
+        <%= link_to '新潟県', farmer_result_path('新潟県'), class: "link-color" %>
+        <%= link_to '富山県', farmer_result_path('富山県'), class: "ml-3 link-color" %>
+        <%= link_to '岐阜県', farmer_result_path('岐阜県'), class: "ml-3 link-color" %>
+        <%= link_to '石川県', farmer_result_path('石川県'), class: "ml-3 link-color" %>
+        <%= link_to '福井県', farmer_result_path('福井県'), class: "ml-3 link-color" %>
+        <%= link_to '長野県', farmer_result_path('長野県'), class: "ml-3 link-color" %>
+        <%= link_to '岐阜県', farmer_result_path('岐阜県'), class: "ml-3 link-color" %>
+        <%= link_to '山梨県', farmer_result_path('山梨県'), class: "ml-3 link-color" %>
+        <%= link_to '静岡県', farmer_result_path('静岡県'), class: "ml-3 link-color" %>
+        <%= link_to '愛知県', farmer_result_path('愛知県'), class: "ml-3 link-color" %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 ml-5 pl-5">
+      <p>近畿</p>
+    </div>
+    <div class="col-8">
+      <p>
+        <%= link_to '滋賀県', farmer_result_path('滋賀県'), class: "link-color" %>
+        <%= link_to '三重県', farmer_result_path('三重県'), class: "ml-3 link-color" %>
+        <%= link_to '奈良県', farmer_result_path('奈良県'), class: "ml-3 link-color" %>
+        <%= link_to '京都府', farmer_result_path('京都府'), class: "ml-3 link-color" %>
+        <%= link_to '大阪府', farmer_result_path('大阪府'), class: "ml-3 link-color" %>
+        <%= link_to '和歌山県', farmer_result_path('和歌山県'), class: "ml-3 link-color" %>
+        <%= link_to '兵庫県', farmer_result_path('兵庫県'), class: "ml-3 link-color" %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 ml-5 pl-5">
+      <p>中国</p>
+    </div>
+    <div class="col-8">
+      <p>
+        <%= link_to '鳥取県', farmer_result_path('鳥取県'), class: "link-color" %>
+        <%= link_to '島根県', farmer_result_path('島根県'), class: "ml-3 link-color" %>
+        <%= link_to '岡山県', farmer_result_path('岡山県'), class: "ml-3 link-color" %>
+        <%= link_to '広島県', farmer_result_path('広島県'), class: "ml-3 link-color" %>
+        <%= link_to '山口県', farmer_result_path('山口県'), class: "ml-3 link-color" %>
+        <%= link_to '香川県', farmer_result_path('香川県'), class: "ml-3 link-color" %>
+        <%= link_to '徳島県', farmer_result_path('徳島県'), class: "ml-3 link-color" %>
+        <%= link_to '愛媛県', farmer_result_path('愛媛県'), class: "ml-3 link-color" %>
+        <%= link_to '高知県', farmer_result_path('高知県'), class: "ml-3 link-color" %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 ml-5 pl-5">
+      <p>九州</p>
+    </div>
+    <div class="col-8">
+      <p>
+        <%= link_to '福岡県', farmer_result_path('福岡県'), class: "link-color" %>
+        <%= link_to '大分県', farmer_result_path('大分県'), class: "ml-3 link-color" %>
+        <%= link_to '宮崎県', farmer_result_path('宮崎県'), class: "ml-3 link-color" %>
+        <%= link_to '佐賀県', farmer_result_path('佐賀県'), class: "ml-3 link-color" %>
+        <%= link_to '長崎県', farmer_result_path('長崎県'), class: "ml-3 link-color" %>
+        <%= link_to '熊本県', farmer_result_path('熊本県'), class: "ml-3 link-color" %>
+        <%= link_to '鹿児島県', farmer_result_path('鹿児島県'), class: "ml-3 link-color" %>
+        <%= link_to '沖縄県', farmer_result_path('沖縄県'), class: "ml-3 link-color" %>
+      </p>
+    </div>
+  </div>
+</div>
+

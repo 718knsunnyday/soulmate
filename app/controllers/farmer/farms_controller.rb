@@ -7,9 +7,12 @@ class Farmer::FarmsController < ApplicationController
   end
 
   def create
-    farm = Farm.new(farm_params)
-    farm.save
-    redirect_to farmer_farm_path(farm)
+    @farm = Farm.new(farm_params)
+    if @farm.save
+      redirect_to farmer_farm_path(farm)
+    else
+      render :new
+    end
   end
 
   def show
@@ -36,11 +39,11 @@ class Farmer::FarmsController < ApplicationController
     redirect_to new_farmer_farm_path
   end
 
-  #def prefecture
-  #end
+  def prefecture
+  end
 
   def result_prefecture
-    @farms = Farm.where(prefecture: "大阪")
+    @farms = Farm.where(prefecture: params[:prefecture])
   end
 
   # def variety_string
