@@ -1,5 +1,7 @@
 <div class="container">
-  <h3 class="mt-5">農場について</h3>
+  <div class="row mt-5 mb-2">
+      <h3>農場について</h3>
+  </div>
 
   <div class="farm-image mt-5">
     <%= attachment_image_tag @farm, :image, size: "640x427", class: "d-block mx-auto" %>
@@ -31,7 +33,7 @@
         </tr>
         <tr>
           <th>購入方法</th>
-          <td>><%= @farm.purchasing_method %></td>
+          <td><%= @farm.purchasing_method %></td>
         </tr>
         <tr>
           <th>コンタクト</th>
@@ -44,7 +46,7 @@
     <h4 class="text-center">農場について</h4>
     <table class="border table-borderless mx-auto">
       <tr>
-        <th>農場説明:</th>
+        <th>農場説明</th>
         <td></td>
       </tr>
       <tr>
@@ -52,21 +54,44 @@
       </tr>
     </table>
   </div>
-
-<div class="favorite-btn">
-  <div id="favorite_<%= @farm.id %>">
-    <span>応援ボタン</span>
-    <div class="thumbs-up"><%= render 'farmer/favorites/favorite', farm: @farm %></div>
+  
+  <div class="row mb-2 justify-content-center">
+    <div class="col-6">
+      <div class="form-outline">
+        <% if public_signed_in? %>
+          <div class="favorite-btn">
+            <div id="favorite_<%= @farm.id %>">
+              <span>応援ボタン</span>
+              <div class="thumbs-up"><%= render 'farmer/favorites/favorite', farm: @farm %></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
-
-  <div id="bookmark_<%= @farm.id %>">
-    <span>Bookmark</span>
-    <div class="bookmark-save"><%= render 'farmer/bookmarks/bookmark', farm: @farm %></div>
+  
+  <div class="row mb-2 justify-content-center">
+    <div class="col-6">
+      <div class="form-outline">
+        <% if public_signed_in? %>
+          <div id="bookmark_<%= @farm.id %>">
+            <span>Bookmark</span>
+            <div class="bookmark-save"><%= render 'farmer/bookmarks/bookmark', farm: @farm %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 
-  <% if @farm == current_farmer %>
-    <%= link_to "登録農場情報の編集", edit_farmer_farm_path(@farm) %>
-  <% end %>
-  <%= link_to '大阪府', farmer_result_path %>
+  <div class="row mb-2 justify-content-center">
+    <div class="col-6">
+      <div class="form-outline">
+        <% if farmer_signed_in? %>
+          <% if @farm.id == current_farmer.id %>
+            <%= link_to "登録農場情報の編集", edit_farmer_farm_path(@farm), class: "btn btn-block text-light mb-4 btn-color" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

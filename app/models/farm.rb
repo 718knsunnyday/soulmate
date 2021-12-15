@@ -6,9 +6,9 @@ class Farm < ApplicationRecord
   def self.search(search)
     Farm.where(['name LIKE ? OR prefecture LIKE ? OR city LIKE? OR variety LIKE? OR breed LIKE?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
   end
-
-  def favorited_by?(farm)
-    favorites.where(farm_id: farm.id).exists?
+  
+  def favorited_by?(current_public)
+    favorites.where(public_id: current_public.id).exists?
   end
 
   def bookmarked_by?(farm)

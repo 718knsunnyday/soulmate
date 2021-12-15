@@ -1,73 +1,91 @@
 <div class="container">
-  <h2>新規農場登録</h2>
-  
-  <%= form_with model: @farm, url: farmer_farms_path, local: true do |f| %>
-  
-    <div class="form-group">
-      <%= f.label :画像 %>
-      <%= f.attachment_field :image %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :名前 %>
-      <%= f.text_field :name %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :経営者 %>
-      <%= f.text_field :manager %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :郵便番号 %>
-      <%= f.text_field :post_code %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :都道府県 %>
-      <%= f.text_field :prefecture %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :市区町村 %>
-      <%= f.text_field :city %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :番地・建物名 %>
-      <%= f.text_field :house_number %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :栽培品目 %>
-      <% ["いも類", "穀類", "鱗茎類", "豆類種実", "豆類未成熟", "うり類", "なす科果菜類", "葉菜類", "茎野菜類", "食用花類", "きのこ類", "穀類", "かんきつ類", "仁果類", "核果類", "ベリー類等の小粒果実類"].each do |variety| %>
-      <%= f.check_box :variety, {multiple: true}, variety, nil %>
-      <%= variety %>
+  <div class="row mt-5 mb-2">
+      <h3>新規農場登録</h3>
+  </div>
+   
+      <%= form_with model: @farm, url: farmer_farms_path, local: true do |f| %>
+        <div class="row mb-2 justify-content-center">
+          <table>
+            <tr>
+              <td><%= f.label :画像 %></td>
+              <td><%= f.attachment_field :image %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :名前 %></td>
+              <td><%= f.text_field :name, class: "form-control" %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :経営者 %></td>
+              <td><%= f.text_field :manager, class: "form-control" %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :郵便番号 %></td>
+              <td><%= f.text_field :post_code, class: "form-control" %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :都道府県 %></td>
+              <td><%= f.text_field :prefecture, class: "form-control" %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :市区町村 %></td>
+              <td><%= f.text_field :city, class: "form-control" %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :番地・建物名 %></td>
+              <td><%= f.text_field :house_number, class: "form-control" %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :栽培品目 %></td>
+              <td><% ["いも類", "穀類", "鱗茎類", "豆類種実", "豆類未成熟"].each do |variety| %>
+                  <%= f.check_box :variety, {multiple: true}, variety, nil %>
+                  <%= variety %>
+                  <% end %>
+              </td>
+            <tr>
+              <td></td>
+              <td>
+                <% ["うり類","なす科果菜類", "葉菜類", "茎野菜類"].each do |variety| %>
+                  <%= f.check_box :variety, {multiple: true}, variety, nil %>
+                  <%= variety %>
+                  <% end %>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <% ["食用花類", "きのこ類", "穀類", "その他"].each do |variety| %>
+                  <%= f.check_box :variety, {multiple: true}, variety, nil %>
+                  <%= variety %>
+                  <% end %>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <% ["かんきつ類", "仁果類", "核果類", "ベリー類等の小粒果実類"].each do |variety| %>
+                  <%= f.check_box :variety, {multiple: true}, variety, nil %>
+                  <%= variety %>
+                  <% end %>
+              </td>
+            </tr>
+            </tr>
+            <tr>
+              <td><%= f.label :栽培品例 %></td>
+              <td><%= f.text_field :breed, class: "form-control" %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :コンタクト %></td>
+              <td><%= f.text_field :contact, class: "form-control"%></td>
+            </tr>
+            <tr>
+              <td><%= f.label :農場説明 %></td>
+              <td> <%= f.text_area :description, class: "form-control" %></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><%= f.submit "新規農場を登録する", class: "btn btn-block text-light mb-4 btn-color" %></td>
+            </tr>
+          </table>
       <% end %>
     </div>
-  
-    <div class="form-group">
-      <%= f.label :栽培品例 %>
-      <%= f.text_field :breed %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :購入方法 %>
-      <%= f.text_field :purchasing_method %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :コンタクト %>
-      <%= f.text_field :contact%>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :農場説明 %>
-      <%= f.text_area :description %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.submit "新規農場を登録する" %>
-  
-  <% end %>
 </div>

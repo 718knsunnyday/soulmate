@@ -1,9 +1,9 @@
-<% if farm.favorited_by?(farm) %>
-  <%= link_to farmer_farm_favorites_path(farm), method: :DELETE, remote: true, class: "fas fa-thumbs-up" do %>
-    <%= farm.favorites.count %>
+  <% if farm.favorited_by?(current_public) %>
+    <%= link_to farmer_farm_favorites_path(farm), method: :DELETE, remote: true, class: "fas fa-thumbs-up" do %>
+      <%= farm.favorites.count %>
+    <% end %>
+  <% else %>
+    <%= link_to farmer_farm_favorites_path(farm), method: :POST, remote: true, class: "far fa-thumbs-up" do %>
+      <%= farm.favorites.count %>
+     <% end %>
   <% end %>
-<% else %>
-  <%= link_to farmer_farm_favorites_path(farm), method: :POST, remote: true, class: "far fa-thumbs-up" do %>
-    <%= farm.favorites.count %>
-   <% end %>
-<% end %>
