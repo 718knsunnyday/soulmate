@@ -1,35 +1,51 @@
+  <div class="container">
+  <div class="row mt-5 mb-2">
+      <h3><%= @customer.last_name %>さんマイページ</h3>
+  </div>
 
-<h2>マイページ</h2>
+    <div>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-6">
+            <div class="form-outline">
+              <p>名前:
+              <%= @customer.last_name %> <%= @customer.first_name %></p>
+            </div>
+          </div>
+        </div>
 
-<table class="mx-auto">
-    <tbody>
-      <tr>
-        <td>名前</td>
-    　　<td>姓</td>
-    　　<td><%= @customer.last_name %></td>
-    　　<td>名</td>
-    　　<td><%= @customer.first_name %></td>
-      </tr>
-      <tr>
-        <td>フリガナ</td>
-        <td>セイ</td>
-        <td><%= @customer.last_name_kana %></td>
-        <td>メイ</td>
-        <td><%= @customer.first_name_kana %></td>
-      </tr>
-      <tr>
-        <td>メールアドレス</td>
-        <td></td>
-        <td><%= @customer.email %></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td><%= link_to "編集", edit_farmer_customer_path(@customer) %></td>
-      </tr>
-    </tbody>
-    
-      <p class="text-center"><%= link_to "新規農場登録", new_farmer_farm_path %></p>
-    
-  </table>
-  
+        <div class="row mb-2 justify-content-center">
+          <div class="col-6">
+            <div class="form-outline">
+              <p>フリガナ:
+              <%= @customer.last_name_kana %> <%= @customer.first_name_kana %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3 justify-content-center">
+          <div class="col-6 mb-3">
+            <div class="form-outline">
+              <p>メールアドレス:
+              <%= @customer.email %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3 justify-content-center">
+          <div class="col-6 mb-3">
+            <div class="form-outline">
+              <%= link_to "編集する", edit_farmer_customer_path(@customer), class: "btn btn-block text-light mb-2 btn-color" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3 justify-content-center">
+          <div class="col-6 mb-3">
+            <div class="form-outline">
+              <%= link_to "新規農場登録", new_farmer_farm_path, class: "btn btn-block text-light mb-2 btn-color" %>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+

@@ -36,6 +36,13 @@ class Farmer::FarmsController < ApplicationController
     redirect_to new_farmer_farm_path
   end
 
+  #def prefecture
+  #end
+
+  def result_prefecture
+    @farms = Farm.where(prefecture: "大阪")
+  end
+
   # def variety_string
     # params[:farm][:variety] = params[:farm][:variety].join(",")
   # end

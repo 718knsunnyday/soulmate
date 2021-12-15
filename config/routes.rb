@@ -34,5 +34,6 @@ Rails.application.routes.draw do
       resource :favorites, only:[:create, :destroy]
       resource :bookmarks, only:[:create, :destroy]
     end
+    get 'farms/prefecture/result/:id' => 'farms#result_prefecture', as: :result
   end
 end
