@@ -58,7 +58,7 @@
   <div class="row mb-2 justify-content-center">
     <div class="col-6">
       <div class="form-outline">
-        
+        <% if public_signed_in? %>
           
           <div class="favorite-btn">
             <div id="favorite_<%= @farm.id %>">
@@ -66,7 +66,7 @@
               <div class="thumbs-up"><%= render 'farmer/favorites/favorite', farm: @farm %></div>
             </div>
           </div>
-        
+        <% end %>
       </div>
     </div>
   </div>
@@ -75,10 +75,12 @@
     <div class="col-6">
       <div class="form-outline">
         <% if public_signed_in? %>
+          
           <div id="bookmark_<%= @farm.id %>">
             <span>Bookmark</span>
             <div class="bookmark-save"><%= render 'farmer/bookmarks/bookmark', farm: @farm %></div>
           </div>
+          
         <% end %>
       </div>
     </div>

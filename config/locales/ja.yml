@@ -43,3 +43,6 @@ ja:
   errors:
     messages:
       not_saved: 保存できませんでした。
+  devise:
+    sessions:
+        signed_out: ログインして下さい
