@@ -58,14 +58,15 @@
   <div class="row mb-2 justify-content-center">
     <div class="col-6">
       <div class="form-outline">
-        <% if public_signed_in? %>
+        
+          
           <div class="favorite-btn">
             <div id="favorite_<%= @farm.id %>">
               <span>応援ボタン</span>
               <div class="thumbs-up"><%= render 'farmer/favorites/favorite', farm: @farm %></div>
             </div>
           </div>
-        <% end %>
+        
       </div>
     </div>
   </div>
