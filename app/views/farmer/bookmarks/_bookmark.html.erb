@@ -1,9 +1,9 @@
 <% if farm.bookmarked_by?(farm) %>
-  <%= link_to farmer_farm_bookmarks_path(farm), method: :DELETE, remote: true, class: "fas fa-bookmark" do %>
+  <%= link_to farmer_farm_bookmarks_path(farm), method: :DELETE, remote: true, class: "fas fa-bookmark bookmark-color" do %>
   <span>保存中</span>
   <% end %>
 <% else %>
-  <%= link_to farmer_farm_bookmarks_path(farm), method: :POST, remote: true, class: "far fa-bookmark" do %>
+  <%= link_to farmer_farm_bookmarks_path(farm), method: :POST, remote: true, class: "far fa-bookmark bookmark-color" do %>
   <span>保存する</span>
   <% end %>
 <% end %>
