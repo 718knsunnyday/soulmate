@@ -1,4 +1,4 @@
-<% if farm.bookmarked_by?(farm) %>
+<% if farm.bookmarked_by?(current_public) %>
   <%= link_to farmer_farm_bookmarks_path(farm), method: :DELETE, remote: true, class: "fas fa-bookmark bookmark-color" do %>
   <span>保存中</span>
   <% end %>

@@ -24,8 +24,8 @@ class Farm < ApplicationRecord
     favorites.where(public_id: current_public.id).exists?
   end
 
-  def bookmarked_by?(farm)
-    bookmarks.where(farm_id: farm.id).exists?
+  def bookmarked_by?(current_public)
+    bookmarks.where(public_id: current_public.id).exists?
   end
 
   def full_address
