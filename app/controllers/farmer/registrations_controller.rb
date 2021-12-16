@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Farmer::RegistrationsController < Devise::RegistrationsController
-   before_action :configure_sign_up_params, only: [:create, :new]
+  before_action :configure_sign_up_params, only: [:create, :new]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -70,5 +70,4 @@ class Farmer::RegistrationsController < Devise::RegistrationsController
   def after_update_path_for(resource)
     farmer_customers_path(current_farmer)
   end
-
 end

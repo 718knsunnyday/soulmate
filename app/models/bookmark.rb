@@ -1,5 +1,4 @@
 class Bookmark < ApplicationRecord
- 
   validates :public_id, uniqueness: { scope: :farm_id }
 
   belongs_to :farm

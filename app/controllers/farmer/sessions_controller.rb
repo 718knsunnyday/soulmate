@@ -35,13 +35,14 @@ class Farmer::SessionsController < Devise::SessionsController
   end
 
   protected
-    def reject_farmer
-      @customer = Farmer.find_by(email: params[:farmer][:email])
-      if @customer
-        if @customer.valid_password?(params[:farmer][:password]) && !@customer.is_valid
-          flash[:notice] = "退会済みです。新しくご登録してご利用ください"
-          redirect_to new_farmer_registration_path
-        end
+
+  def reject_farmer
+    @customer = Farmer.find_by(email: params[:farmer][:email])
+    if @customer
+      if @customer.valid_password?(params[:farmer][:password]) && !@customer.is_valid
+        flash[:notice] = "退会済みです。新しくご登録してご利用ください"
+        redirect_to new_farmer_registration_path
       end
     end
+  end
 end

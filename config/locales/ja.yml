@@ -45,4 +45,7 @@ ja:
       not_saved: 保存できませんでした。
   devise:
     sessions:
-        signed_out: ログインして下さい
+      signed_out: ログインして下さい。
+        
+    registrations:
+      signed_up:　新規登録して下さい。

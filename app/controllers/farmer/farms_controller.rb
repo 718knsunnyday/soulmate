@@ -1,6 +1,5 @@
 class Farmer::FarmsController < ApplicationController
-
-# before_action :variety_string, only: [:create, :update]
+  # before_action :variety_string, only: [:create, :update]
 
   def new
     @farm = Farm.new
@@ -46,13 +45,14 @@ class Farmer::FarmsController < ApplicationController
     @farms = Farm.where(prefecture: params[:prefecture])
   end
 
-  # def variety_string
-    # params[:farm][:variety] = params[:farm][:variety].join(",")
-  # end
+# def variety_string
+  # params[:farm][:variety] = params[:farm][:variety].join(",")
+# end
 
   private
-    def farm_params
-      params.require(:farm).permit(:name, :manager, :post_code, :prefecture, :city, :house_number, :breed, :purchasing_method, :contact, :description, :image, variety: [])
-    end
 
+  def farm_params
+    params.require(:farm).permit(:name, :manager, :post_code, :prefecture, :city, :house_number,
+                                :breed, :purchasing_method, :contact, :description, :image, variety: [])
+  end
 end

@@ -1,5 +1,4 @@
 class Public::HomesController < ApplicationController
-
   def top
   end
 
@@ -9,5 +8,4 @@ class Public::HomesController < ApplicationController
   def search
     @farms = Farm.search(params[:search])
   end
-
 end

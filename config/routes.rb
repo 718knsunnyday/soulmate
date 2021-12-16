@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :publics, controllers: {
     registrations: "public/registrations",
     sessions: "public/sessions",
@@ -33,8 +32,8 @@ Rails.application.routes.draw do
     get 'farms/prefecture' => 'farms#prefecture', as: :prefecture
     get 'farms/prefecture/result/:prefecture' => 'farms#result_prefecture', as: :result
     resources :farms, except: [:update] do
-      resource :favorites, only:[:create, :destroy]
-      resource :bookmarks, only:[:create, :destroy]
+      resource :favorites, only: [:create, :destroy]
+      resource :bookmarks, only: [:create, :destroy]
     end
   end
 end

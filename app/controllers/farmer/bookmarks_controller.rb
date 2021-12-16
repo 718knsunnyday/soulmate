@@ -1,6 +1,6 @@
 class Farmer::BookmarksController < ApplicationController
-  #before_action :authenticate_public!
-  #before_action :authenticate_farmer!
+  before_action :authenticate_public!
+  before_action :authenticate_farmer!
 
   def create
     @farm = Farm.find(params[:farm_id])

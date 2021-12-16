@@ -4,7 +4,7 @@ class Public::CustomersController < ApplicationController
   end
 
   def edit
-     @customer = current_public
+    @customer = current_public
   end
 
   def update
@@ -32,7 +32,8 @@ class Public::CustomersController < ApplicationController
   end
 
   private
-    def public_params
-      params.require(:public).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :email)
-    end
+
+  def public_params
+    params.require(:public).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :email)
+  end
 end

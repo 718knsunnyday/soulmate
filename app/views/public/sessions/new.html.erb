@@ -5,6 +5,7 @@
     <div>
       <%= flash[:notice] %>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render "public/shared/error_messages", resource: resource %>
         <div class="row mb-2 justify-content-center">
           <div class="col-6">
             <div class="form-outline">
