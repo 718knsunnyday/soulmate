@@ -23,6 +23,10 @@ class Farm < ApplicationRecord
   def favorited_by?(current_public)
     favorites.where(public_id: current_public.id).exists?
   end
+  
+  def favorited_by?(current_farmer)
+    favorites.where(farm_id: current_farmer.id).exists?
+  end
 
   def bookmarked_by?(current_public)
     bookmarks.where(public_id: current_public.id).exists?

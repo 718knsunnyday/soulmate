@@ -44,11 +44,18 @@ class Farmer::FarmsController < ApplicationController
 
   def prefecture
   end
-
+  
   def result_prefecture
     @farms = Farm.where(prefecture: params[:prefecture])
   end
-
+  
+  def variety
+  end
+  
+  def result_variety
+    @farms = Farm.where(variety: params[:variety])
+  end
+  
   # def variety_string
   # params[:farm][:variety] = params[:farm][:variety].join(",")
   # end

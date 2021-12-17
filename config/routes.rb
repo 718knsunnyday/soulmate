@@ -31,7 +31,9 @@ Rails.application.routes.draw do
     patch 'farms/update/:id' => 'farms#update', as: :farm_update
     get 'farms/ranking' => 'farms#ranking', as: :farm_ranking
     get 'farms/prefecture' => 'farms#prefecture', as: :prefecture
-    get 'farms/prefecture/result/:prefecture' => 'farms#result_prefecture', as: :result
+    get 'farms/prefecture/result/:prefecture' => 'farms#result_prefecture', as: :result_prefecture
+    get 'farms/variety' => 'farms#variety', as: :variety
+    get 'farms/variety/result/:variety' => 'farms#result_variety', as: :result_variety
     resources :farms, except: [:update] do
       resource :favorites, only: [:create, :destroy]
       resource :bookmarks, only: [:create, :destroy]

@@ -13,6 +13,12 @@
           <span>農場住所：<%= farm.full_address %></span><br>
           <span>栽培品目：<%= farm.variety %></span><br>
           <span>栽培品目例：<%= farm.breed %></span>
+          <% if public_signed_in? or farmer_signed_in? %>
+            <div id="favorite_<%= farm.id %>">
+              <span class="inline-block">応援ボタン</span>
+                <span class="thumbs-up"><%= render 'farmer/favorites/favorite', farm: farm %></span>
+            </div>
+          <% end %>
         </div>
     </div>
   <% end %>

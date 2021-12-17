@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row mt-5 mb-2">
+      <h3>品種別検索</h3>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-3 ml-5 pl-5">
+      <p>野菜類</p>
+    </div>
+    <div class="col-8">
+      <p><%= link_to 'いも類', farmer_result_variety_path('いも類'), class: "link-color" %>
+        <%= link_to '根菜類', farmer_result_variety_path('根菜類'), class: "ml-3 link-color" %>
+        <%= link_to '鱗茎類', farmer_result_variety_path('鱗茎類'), class: "ml-3 link-color" %>
+        <%= link_to '豆類（種実）', farmer_result_variety_path('豆類（種実）'), class: "ml-3 link-color" %>
+        <%= link_to '豆類（未成熟）', farmer_result_variety_path('豆類（未成熟）'), class: "ml-3 link-color" %>
+        <%= link_to 'うり類', farmer_result_variety_path('うり類'), class: "ml-3 link-color" %>
+        <%= link_to 'なす科果菜', farmer_result_variety_path('なす科果菜'), class: "ml-3 link-color" %>
+        <%= link_to 'あぶらな科野菜', farmer_result_variety_path('あぶらな科野菜'), class: "ml-3 link-color" %>
+        <%= link_to '葉菜類', farmer_result_variety_path('葉菜類'), class: "ml-3 link-color" %>
+        <%= link_to '茎野菜類', farmer_result_variety_path('茎野菜類'), class: "ml-3 link-color" %>
+        <%= link_to '食用花類', farmer_result_variety_path('食用花類'), class: "ml-3 link-color" %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 ml-5 pl-5">
+      <p>きのこ類</p>
+    </div>
+    <div class="col-8">
+      <p class="link-color">
+        <%= link_to 'きのこ類', farmer_result_variety_path('きのこ類'), class: "link-color" %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 ml-5 pl-5">
+      <p>穀類</p>
+    </div>
+    <div class="col-8">
+      <p>
+        <%= link_to '穀類', farmer_result_variety_path('穀類'), class: "link-color" %>
+      <p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 ml-5 pl-5">
+      <p>果樹類</p>
+    </div>
+    <div class="col-8">
+      <p>
+        <%= link_to 'かんきつ類', farmer_result_variety_path('かんきつ類'), class: "link-color" %>
+        <%= link_to '仁果類', farmer_result_variety_path('仁果類'), class: "ml-3 link-color" %>
+        <%= link_to '核果類"', farmer_result_variety_path('核果類"'), class: "ml-3 link-color" %>
+        <%= link_to 'ベリー類等の小粒果実類', farmer_result_variety_path('ベリー類等の小粒果実類'), class: "ml-3 link-color" %>
+      </p>
+    </div>
+  </div>
+</div>

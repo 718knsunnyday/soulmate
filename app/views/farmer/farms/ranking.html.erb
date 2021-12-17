@@ -3,23 +3,6 @@
     <h2>人気農家ランキング</h2>
     <p class="mt-3">（応援ボタン数が多い順）</p>
   </div>
-  <% @favorite_ranks.each do |favorite_rank| %>
-    <div class="row">
-
-        <div class="col-4 mb-5 mt-5">
-          <%= attachment_image_tag favorite_rank, :image, size: '300x250', format: 'jpeg' %>
-        </div>
-        <div class="col-8 border mb-5 mt-5 pt-5">
-          <span>農場名：
-            <%= link_to farmer_farm_path(favorite_rank.id), class: "link-color" do %>
-              <%= favorite_rank.name %>
-            <% end %>
-          </span><br>
-          <span>農場住所：<%= favorite_rank.full_address %></span><br>
-          <span>栽培品目：<%= favorite_rank.variety %></span><br>
-          <span>栽培品目例：<%= favorite_rank.breed %></span>
-        </div>
-    </div>
-  <% end %>
+    <%= render 'farmer/farms/index', farms: @favorite_ranks %>
 </div>
 
