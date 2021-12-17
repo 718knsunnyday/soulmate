@@ -3,82 +3,80 @@
       <h3>農場について</h3>
   </div>
 
-  <div class="farm-image mt-5">
-    <%= attachment_image_tag @farm, :image, size: "640x427", class: "d-block mx-auto" %>
-  </div>
-
-  <div class="farm-info mt-5">
-    <h4 class="text-center">農家さん</h4>
-
-      <table class="border table-borderless mx-auto">
-        <tr>
-          <th>農場名</th>
-          <td><%= @farm.name %></td>
-        </tr>
-        <tr>
-          <th>経営者</th>
-          <td><%= @farm.manager %></td>
-        </tr>
-        <tr>
-          <th>住所</th>
-          <td><%= @farm.full_address %></td>
-        </tr>
-        <tr>
-          <th>栽培品目</th>
-          <td><%= @farm.variety %></td>
-        </tr>
-        <tr>
-          <th>栽培品目例</th>
-          <td><%= @farm.breed %></td>
-        </tr>
-        <tr>
-          <th>購入方法</th>
-          <td><%= @farm.purchasing_method %></td>
-        </tr>
-        <tr>
-          <th>コンタクト</th>
-          <td><%= @farm.contact %></td>
-        </tr>
-      </table>
-  </div>
-
-  <div class="farm-description mt-5">
-    <h4 class="text-center">農場について</h4>
-    <table class="border table-borderless mx-auto">
-      <tr>
-        <th>農場説明</th>
-        <td></td>
-      </tr>
-      <tr>
-        <td><%= @farm.description %></td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="row mb-2 justify-content-center">
-    <div class="col-6">
-      <div class="form-outline">
-        <% if public_signed_in? %>
-          <div class="favorite-btn">
-            <div id="favorite_<%= @farm.id %>">
-              <span>応援ボタン</span>
-              <div class="thumbs-up"><%= render 'farmer/favorites/favorite', farm: @farm %></div>
-            </div>
+  <div class="row mt-4">
+    <div class="col-5 pt-4">
+      <%= attachment_image_tag @farm, :image, size: "400x300", class: "d-block mx-auto" %>
+  
+   
+      <% if public_signed_in? %>
+        <div class="favorite-btn mt-4 pl-4">
+          <div id="favorite_<%= @farm.id %>">
+            <span>応援ボタン</span>
+            <span class="thumbs-up"><%= render 'farmer/favorites/favorite', farm: @farm %></span>
           </div>
-        <% end %>
+        </div>
+      <% end %>
+      
+      <% if public_signed_in? %>
+      <div class="favorite-btn mt-3 pl-4">
+        <div id="bookmark_<%= @farm.id %>">
+          <span>ブックマーク</span>
+          <span class="bookmark-save"><%= render 'farmer/bookmarks/bookmark', farm: @farm %></span>
+        </div>
+      </div>
+      <% end %>
+    
+
+    </div>
+    <div class="col-7 farm-index pt-4">
+      <h5>農家情報</h5>
+      <div class="row mt-3">
+        <div class="col-3">
+          <p>農家名</p>
+          <p>経営者</p>
+          <p>住所</p>
+          <p>栽培品目</p>
+          <p>栽培品目例</p>
+          <p>購入方法</p>
+          <p>コンタクト</p>
+        </div>
+        <div class="col-9">
+          <p><%= @farm.name %></p>
+          <p><%= @farm.manager %></p>
+          <p><%= @farm.full_address %></p>
+          <p><%= @farm.variety %></p>
+          <p><%= @farm.breed %></p>
+          <p><%= @farm.purchasing_method %></p>
+          <p><%= @farm.contact %></p>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="row mb-2 justify-content-center">
-    <div class="col-6">
-      <div class="form-outline">
-        <% if public_signed_in? %>
-          <div id="bookmark_<%= @farm.id %>">
-            <span>Bookmark</span>
-            <div class="bookmark-save"><%= render 'farmer/bookmarks/bookmark', farm: @farm %></div>
-          </div>
-        <% end %>
+  <div class="row mt-5 ">
+    <div class="col-5"></div>
+    <div class="col-7 farm-index pt-4">
+      <h5>農家について</h5>
+      <div class="row mt-3">
+        <div class="col-3">
+          <p>農場説明</p>
+        </div>
+        <div class="col-9">
+          <%= @farm.description %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-5"></div>
+    <div class="col-7 farm-index pt-4">
+      <h5>コメント</h5>
+      <div class="row mt-3">
+        <div class="col-3">
+          <p>農場説明</p>
+        </div>
+        <div class="col-9">
+          <%= @farm.description %>
+        </div>
       </div>
     </div>
   </div>

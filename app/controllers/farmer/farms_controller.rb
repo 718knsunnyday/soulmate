@@ -7,11 +7,8 @@ class Farmer::FarmsController < ApplicationController
 
   def create
     @farm = Farm.new(farm_params)
-    if @farm.save
-      redirect_to farmer_farm_path(@farm)
-    else
-      render :new
-    end
+  　@farm.save
+    redirect_to farmer_farm_path(@farm)
   end
 
   def show
@@ -21,11 +18,11 @@ class Farmer::FarmsController < ApplicationController
   def index
     @farms = Farm.all.order(params[:sort]).page(params[:page]).per(5)
   end
-  
+
   def ranking
     @favorite_ranks = Farm.find(Favorite.group(:farm_id).order('count(farm_id) desc').limit(10).pluck(:farm_id))
   end
-  
+
   def edit
     @farm = Farm.find(params[:id])
   end
@@ -44,18 +41,18 @@ class Farmer::FarmsController < ApplicationController
 
   def prefecture
   end
-  
+
   def result_prefecture
     @farms = Farm.where(prefecture: params[:prefecture])
   end
-  
+
   def variety
   end
-  
+
   def result_variety
     @farms = Farm.where(variety: params[:variety])
   end
-  
+
   # def variety_string
   # params[:farm][:variety] = params[:farm][:variety].join(",")
   # end
@@ -63,7 +60,6 @@ class Farmer::FarmsController < ApplicationController
   private
 
   def farm_params
-    params.require(:farm).permit(:name, :manager, :post_code, :prefecture, :city, :house_number,
-                                :breed, :purchasing_method, :contact, :description, :image, variety: [])
+    params.require(:farm).permit(:name, :manager, :post_code, :prefecture, :city, :house_number, :breed, :purchasing_method, :contact, :description, :image_, variety: [])
   end
 end
