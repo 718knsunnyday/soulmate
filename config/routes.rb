@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :publics, controllers: {
     registrations: "public/registrations",
     sessions: "public/sessions",
-    passwords: "public/passwords"
+    passwords: "public/passwords",
   }
 
   scope module: :public do
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   devise_for :farmers, controllers: {
     registrations: "farmer/registrations",
     sessions: "farmer/sessions",
-    passwords: "farmer/passwords"
+    passwords: "farmer/passwords",
   }
 
   namespace :farmer do
@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     get 'customers/unsubscribe/:id' => 'customers#unsubscribe'
     patch 'customers/withdraw/:id' => 'customers#withdraw', as: :withdraw
     patch 'farms/update/:id' => 'farms#update', as: :farm_update
+    get 'farms/ranking' => 'farms#ranking', as: :farm_ranking
     get 'farms/prefecture' => 'farms#prefecture', as: :prefecture
     get 'farms/prefecture/result/:prefecture' => 'farms#result_prefecture', as: :result
     resources :farms, except: [:update] do

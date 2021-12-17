@@ -8,7 +8,7 @@ class Farmer::FarmsController < ApplicationController
   def create
     @farm = Farm.new(farm_params)
     if @farm.save
-      redirect_to farmer_farm_path(farm)
+      redirect_to farmer_farm_path(@farm)
     else
       render :new
     end
@@ -19,9 +19,13 @@ class Farmer::FarmsController < ApplicationController
   end
 
   def index
-    @farms = Farm.all.order(created_at: :desc).page(params[:page]).per(5)
+    @farms = Farm.all.order(params[:sort]).page(params[:page]).per(5)
   end
-
+  
+  def ranking
+    @favorite_ranks = Farm.find(Favorite.group(:farm_id).order('count(farm_id) desc').limit(10).pluck(:farm_id))
+  end
+  
   def edit
     @farm = Farm.find(params[:id])
   end
@@ -45,9 +49,9 @@ class Farmer::FarmsController < ApplicationController
     @farms = Farm.where(prefecture: params[:prefecture])
   end
 
-# def variety_string
+  # def variety_string
   # params[:farm][:variety] = params[:farm][:variety].join(",")
-# end
+  # end
 
   private
 

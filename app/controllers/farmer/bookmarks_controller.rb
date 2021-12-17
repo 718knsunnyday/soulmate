@@ -1,7 +1,4 @@
 class Farmer::BookmarksController < ApplicationController
-  before_action :authenticate_public!
-  before_action :authenticate_farmer!
-
   def create
     @farm = Farm.find(params[:farm_id])
     bookmark = @farm.bookmarks.new(public_id: current_public.id)

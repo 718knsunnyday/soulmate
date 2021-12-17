@@ -14,7 +14,7 @@ class Farm < ApplicationRecord
   validates :purchasing_method, presence: true
   validates :contact, presence: true
   validates :description, presence: true
-  validates :image_id, presence: true
+  validates :description, length: { in: 1..500}
 
   def self.search(search)
     Farm.where(['name LIKE ? OR prefecture LIKE ? OR city LIKE? OR variety LIKE? OR breed LIKE?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])

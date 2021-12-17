@@ -25,7 +25,7 @@ ja:
         purchasing_method: 購入方法
         contact: コンタクト
         description: 説明
-        image: 画像
+        image_id: 画像
       farmer:
         first_name: 名
         last_name: 姓
@@ -46,6 +46,6 @@ ja:
   devise:
     sessions:
       signed_out: ログインして下さい。
-        
+
     registrations:
       signed_up:　新規登録して下さい。
