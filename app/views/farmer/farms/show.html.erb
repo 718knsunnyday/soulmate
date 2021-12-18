@@ -6,8 +6,8 @@
   <div class="row mt-4">
     <div class="col-5 pt-4">
       <%= attachment_image_tag @farm, :image, size: "400x300", class: "d-block mx-auto" %>
-  
-   
+
+
       <% if public_signed_in? %>
         <div class="favorite-btn mt-4 pl-4">
           <div id="favorite_<%= @farm.id %>">
@@ -16,7 +16,7 @@
           </div>
         </div>
       <% end %>
-      
+
       <% if public_signed_in? %>
       <div class="favorite-btn mt-3 pl-4">
         <div id="bookmark_<%= @farm.id %>">
@@ -25,7 +25,7 @@
         </div>
       </div>
       <% end %>
-    
+
 
     </div>
     <div class="col-7 farm-index pt-4">
@@ -44,7 +44,11 @@
           <p><%= @farm.name %></p>
           <p><%= @farm.manager %></p>
           <p><%= @farm.full_address %></p>
-          <p><%= @farm.variety %></p>
+          <p>
+            <% @varieties.each do |variety| %>
+              <%= variety %>,
+            <% end %>
+          </p>
           <p><%= @farm.breed %></p>
           <p><%= @farm.purchasing_method %></p>
           <p><%= @farm.contact %></p>
@@ -67,25 +71,43 @@
     </div>
   </div>
   <div class="row mt-5">
-    <div class="col-5"></div>
-    <div class="col-7 farm-index pt-4">
-      <h5>コメント</h5>
-      <div class="row mt-3">
-        <div class="col-3">
-          <p>農場説明</p>
-        </div>
-        <div class="col-9">
-          <%= @farm.description %>
-        </div>
+    <% if public_signed_in? %>
+      <div class="col-5"></div>
+      <div class="col-7 farm-index pt-4">
+        <h5>コメント</h5>
+        <% @farm.post_comments.each do |post_comment| %>
+          <div class="row mt-3">
+            <div class="col-3">
+              <p><%= post_comment.public.last_name %>さん</p>
+              <p><%= post_comment.created_at.strftime('%Y/%m/%d') %></p>
+            </div>
+            <div class="col-9">
+              <%= post_comment.comment %>
+              <% if post_comment.public_id = current_public.id %>
+                <p><%= link_to "削除", farmer_farm_post_comment_path(post_comment.farm_id, post_comment.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-5"></div>
+      <div class="col-7 farm-index pt-4">
+
+        <%= form_with model:[@farm, @post_comment], url: farmer_farm_post_comments_path(@farm), local: true do |f| %>
+          <%= f.text_area :comment, cols: '60', rows: '3', placeholder: "コメント記入" %>
+          <%= f.submit "送信", class: "btn btn-block text-light mb-4 btn-color" %>
+      <% end %>
+    <% end %>
     </div>
   </div>
 
   <div class="row mb-2 justify-content-center">
-    <div class="col-6">
+    <div class="col-3">
       <div class="form-outline">
         <% if farmer_signed_in? %>
-          <% if @farm.id == current_farmer.id %>
+          <% if @farm.farmer_id == current_farmer.id %>
             <%= link_to "登録農場情報の編集", edit_farmer_farm_path(@farm), class: "btn btn-block text-light mb-4 btn-color" %>
           <% end %>
         <% end %>

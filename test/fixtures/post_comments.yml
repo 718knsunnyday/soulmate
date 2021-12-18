@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comment: MyText
+  public_id: 1
+  farm_id: 1
+
+two:
+  comment: MyText
+  public_id: 1
+  farm_id: 1

@@ -1,6 +1,7 @@
 class CreateFarms < ActiveRecord::Migration[5.2]
   def change
     create_table :farms do |t|
+      t.integer :farmer_id, null: false
       t.string :name, null: false
       t.string :manager, null: false
       t.string :post_code, null: false

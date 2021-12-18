@@ -1,9 +1,9 @@
 class Farm < ApplicationRecord
-  attachment :image
-
   belongs_to :farmer
+  attachment :image
   has_many :favorites, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
+  has_many :post_comments, dependent: :destroy
 
   validates :name, presence: true
   validates :manager, presence: true

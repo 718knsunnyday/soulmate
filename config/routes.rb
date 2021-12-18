@@ -37,6 +37,7 @@ Rails.application.routes.draw do
     resources :farms, except: [:update] do
       resource :favorites, only: [:create, :destroy]
       resource :bookmarks, only: [:create, :destroy]
+      resources :post_comments, only: [:create, :destroy]
     end
   end
 end

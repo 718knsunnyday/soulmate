@@ -7,12 +7,16 @@ class Farmer::FarmsController < ApplicationController
 
   def create
     @farm = Farm.new(farm_params)
-  　@farm.save
+    @farm.farmer_id = current_farmer.id
+    @farm.variety = params[:farm][:variety]
+    @farm.save
     redirect_to farmer_farm_path(@farm)
   end
 
   def show
     @farm = Farm.find(params[:id])
+    @post_comment = PostComment.new
+    @varieties = eval(@farm.variety)
   end
 
   def index
@@ -60,6 +64,6 @@ class Farmer::FarmsController < ApplicationController
   private
 
   def farm_params
-    params.require(:farm).permit(:name, :manager, :post_code, :prefecture, :city, :house_number, :breed, :purchasing_method, :contact, :description, :image_, variety: [])
+    params.require(:farm).permit(:name, :manager, :post_code, :prefecture, :city, :house_number, :breed, :purchasing_method, :contact, :description, :image, variety: [])
   end
 end
