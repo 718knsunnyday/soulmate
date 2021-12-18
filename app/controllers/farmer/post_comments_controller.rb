@@ -5,7 +5,7 @@ class Farmer::PostCommentsController < ApplicationController
     @post_comment.public_id = current_public.id
     @post_comment.farm_id = @farm.id
     @post_comment.save
-    redirect_to farmer_farm_path(@post_comment)
+    redirect_to farmer_farm_path(@farm)
   end
 
   def destroy

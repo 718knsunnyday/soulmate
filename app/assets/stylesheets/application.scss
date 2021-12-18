@@ -32,6 +32,7 @@ header{
   color: #7e9a9a;
 }
 
+// ボタンの色
 .btn-color{
   background-color: #7e9a9a;
 }
@@ -55,4 +56,9 @@ header{
 .link-color:hover{
   color: #919996;
   text-decoration: none;
+}
+
+// コメント削除ボタン
+.btn-destroy{
+  background-color: #e65c5a;
 }
