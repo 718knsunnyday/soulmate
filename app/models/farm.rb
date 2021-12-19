@@ -21,7 +21,7 @@ class Farm < ApplicationRecord
 
   def self.search(search)
     Farm.joins(:cultivated_items).where('farms.name LIKE ? OR prefecture LIKE ? OR city LIKE ? OR breed LIKE ? OR cultivated_items.name LIKE ?',
-        "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+                                        "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
   end
 
   def favorited_by?(current_public)
