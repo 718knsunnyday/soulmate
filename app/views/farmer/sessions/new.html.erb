@@ -2,9 +2,12 @@
   <div class="row mt-5 mb-2">
       <h3>農家さんログイン</h3>
   </div>
+  
+   
     <div>
       <%= flash[:notice] %>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render "farmer/shared/error_messages", resource: resource %>
         <div class="row mb-2 justify-content-center">
           <div class="col-6">
             <div class="form-outline">
@@ -34,7 +37,7 @@
           </div>
         </div>
       <% end %>
-      <%= render "farmer/shared/error_messages" %>
+       
     </div>
 
     <h4>登録をしていない方</h4>

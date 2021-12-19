@@ -10,13 +10,21 @@
         </div>
         <div class="col-8 border mb-5 mt-5 pt-5">
           <span>農場名：
-            <%= link_to farmer_farm_path(bookmark.farm) do %>
+            <%= link_to farmer_farm_path(bookmark.farm), class: "link-color" do %>
               <%= bookmark.farm.name %>
             <% end %>
           </span><br>
-          <span>農場住所：<%= bookmark.farm.full_address %></span><br>
-          <span>栽培品目：<%= bookmark.farm.variety %></span><br>
-          <span>栽培品目例：<%= bookmark.farm.breed %></span>
+          <span>
+            農場住所：<%= bookmark.farm.full_address %>
+          </span><br>
+          <span>
+            栽培品目：<% bookmark.farm.cultivated_items.pluck(:name).each do |item| %>
+            <%= item %>&nbsp;
+            <% end %>
+          </span><br>
+          <span>
+            栽培品目例：<%= bookmark.farm.breed %>
+          </span>
         </div>
     </div>
   <% end %>

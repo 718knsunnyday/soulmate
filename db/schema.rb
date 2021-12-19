@@ -10,11 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_18_012720) do
+ActiveRecord::Schema.define(version: 2021_12_19_070406) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "public_id"
     t.integer "farm_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cultivated_items", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,12 +50,18 @@ ActiveRecord::Schema.define(version: 2021_12_18_012720) do
     t.string "prefecture", null: false
     t.string "city", null: false
     t.string "house_number", null: false
-    t.string "variety", null: false
     t.string "breed", null: false
     t.string "purchasing_method", null: false
     t.string "contact", null: false
     t.text "description", null: false
     t.string "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "farms_cultivated_items", force: :cascade do |t|
+    t.integer "cultivated_item_id"
+    t.integer "farm_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

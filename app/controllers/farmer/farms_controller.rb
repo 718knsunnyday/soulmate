@@ -1,6 +1,4 @@
 class Farmer::FarmsController < ApplicationController
-  # before_action :variety_string, only: [:create, :update]
-
   def new
     @farm = Farm.new
   end
@@ -8,7 +6,6 @@ class Farmer::FarmsController < ApplicationController
   def create
     @farm = Farm.new(farm_params)
     @farm.farmer_id = current_farmer.id
-    @farm.variety = params[:farm][:variety]
     @farm.save
     redirect_to farmer_farm_path(@farm)
   end
@@ -16,7 +13,6 @@ class Farmer::FarmsController < ApplicationController
   def show
     @farm = Farm.find(params[:id])
     @post_comment = PostComment.new
-    @varieties = eval(@farm.variety)
   end
 
   def index
@@ -54,16 +50,14 @@ class Farmer::FarmsController < ApplicationController
   end
 
   def result_variety
-    @farms = Farm.where(variety: params[:variety])
-  end
+    @farms = Farm.joins(:cultivated_items).where(cultivated_items: {name: params[:variety]})
 
-  # def variety_string
-  # params[:farm][:variety] = params[:farm][:variety].join(",")
-  # end
+  end
 
   private
 
   def farm_params
-    params.require(:farm).permit(:name, :manager, :post_code, :prefecture, :city, :house_number, :breed, :purchasing_method, :contact, :description, :image, variety: [])
+    params.require(:farm).permit(:name, :manager, :post_code, :prefecture, :city, :house_number, :breed,
+                                 :purchasing_method, :contact, :description, :image, cultivated_item_ids:[])
   end
 end

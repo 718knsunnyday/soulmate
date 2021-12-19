@@ -35,51 +35,12 @@
               <td><%= f.text_field :house_number, class: "form-control" %></td>
             </tr>
             <tr>
-              <td><%= f.label :栽培品目 %></td>
-              <td><% ["いも類", "穀類", "鱗茎類", "豆類種実", "豆類未成熟"].each do |variety| %>
-                  <%= f.check_box :variety, {multiple: true}, variety, nil %>
-                  <%= variety %>
-                  <% end %>
-              </td>
-            <tr>
               <td></td>
               <td>
-                <% ["うり類","なす科果菜類", "葉菜類", "茎野菜類"].each do |variety| %>
-                  <%= f.check_box :variety, {multiple: true}, variety, nil %>
-                  <%= variety %>
-                  <% end %>
+                <%= f.collection_check_boxes(:cultivated_item_ids, CultivatedItem.all, :id, :name) do |b| %>
+                  <%= b.label { b.check_box + b.text } %>
+                <% end %>
               </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
-                <% ["食用花類", "きのこ類", "穀類", "その他"].each do |variety| %>
-                  <%= f.check_box :variety, {multiple: true}, variety, nil %>
-                  <%= variety %>
-                  <% end %>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
-                <% ["かんきつ類", "仁果類", "核果類", "ベリー類等の小粒果実類"].each do |variety| %>
-                  <%= f.check_box :variety, {multiple: true}, variety, nil %>
-                  <%= variety %>
-                  <% end %>
-              </td>
-            </tr>
-            </tr>
-            <tr>
-              <td><%= f.label :栽培品例 %></td>
-              <td><%= f.text_field :breed, class: "form-control" %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :コンタクト %></td>
-              <td><%= f.text_field :contact, class: "form-control"%></td>
-            </tr>
-            <tr>
-              <td><%= f.label :農場説明 %></td>
-              <td> <%= f.text_area :description, class: "form-control" %></td>
             </tr>
             <tr>
               <td></td>

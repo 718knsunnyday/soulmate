@@ -45,8 +45,8 @@
           <p><%= @farm.manager %></p>
           <p><%= @farm.full_address %></p>
           <p>
-            <% @varieties.each do |variety| %>
-              <%= variety %>,
+            <% @farm.cultivated_items.pluck(:name).each do |item| %>
+              <%= item %>&nbsp;
             <% end %>
           </p>
           <p><%= @farm.breed %></p>

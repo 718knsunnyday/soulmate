@@ -19,7 +19,10 @@
             <% end %>
           </p>
           <p><%= farm.full_address %></p>
-          <p><%= farm.variety %></p>
+          <p><% farm.cultivated_items.pluck(:name).each do |item| %>
+            <%= item %>&nbsp;
+          <% end %>
+          </p>
           <p><%= farm.breed %></p>
           <p>
             <% if public_signed_in? %>
