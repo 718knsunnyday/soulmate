@@ -47,8 +47,10 @@ ja:
     sessions:
       farmer:
         signed_out: ログインして下さい。
+        signed_in: ログインできました。
       public:
         signed_out: ログインして下さい。
+        signed_in: ログインできました。
     registrations:
         farmer:
           signed_up:　新規登録して下さい。
@@ -59,3 +61,4 @@ ja:
         invalid: ログインできませんでした。メールアドレスもしくは、パスワードが間違っています。
       public: 
         invalid: ログインできませんでした。メールアドレスもしくは、パスワードが間違っています。
+        

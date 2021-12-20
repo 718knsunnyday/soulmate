@@ -14,7 +14,7 @@ class Farmer::PostCommentsController < ApplicationController
   def destroy
     @farm = Farm.find(params[:farm_id])
     @post_comment = PostComment.find_by(id: [params[:id]]).destroy
-    flash.now[:alert] = '投稿を削除しました。'
+      flash.now[:alert] = '投稿を削除しました。'
     render :destroy
   end
 

@@ -1,52 +1,36 @@
+<p class="notice text-center"><%= notice %></p>
 
 <div class="container">
   <div class="row mt-5 mb-2">
       <h3>マイページ</h3>
   </div>
-
-    <div>
-        <div class="row mb-2 justify-content-center">
-          <div class="col-6">
-            <div class="form-outline">
-              <p>名前:
-              <%= @customer.last_name %> <%= @customer.first_name %></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mb-2 justify-content-center">
-          <div class="col-6">
-            <div class="form-outline">
-              <p>フリガナ:
-              <%= @customer.last_name_kana %> <%= @customer.first_name_kana %></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mb-3 justify-content-center">
-          <div class="col-6 mb-3">
-            <div class="form-outline">
-              <p>メールアドレス:
-              <%= @customer.email %></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mb-3 justify-content-center">
-          <div class="col-6 mb-3">
-            <div class="form-outline">
-              <%= link_to "編集する", edit_customer_path(@customer), class: "btn btn-block text-light mb-2 btn-color" %>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mb-3 justify-content-center">
-          <div class="col-6 mb-3">
-            <div class="form-outline">
-              <%= link_to "Bookmark一覧", public_bookmark_path, class: "btn btn-block text-light mb-4 btn-color" %>
-            </div>
-          </div>
-        </div>
+    <div class="row mb-2 justify-content-center">
+      <div class="col-3">
+          <p>名前 :</p>
+          <p>フリガナ :</p>
+          <p>メールアドレス :</p>
+      </div>
+      <div class="col-3">
+        <p>
+          <%= @customer.last_name %> <%= @customer.first_name %>
+        </p>
+        <p>
+          <%= @customer.last_name_kana %> <%= @customer.first_name_kana %>
+        </p>
+        <p>
+          <%= @customer.email %>
+        </p>
+      </div>
+    </div>
+    <div class="row mb-3 justify-content-center">
+      <div class="col-6">
+        <%= link_to "編集する", edit_customer_path(@customer), class: "btn btn-block text-light mb-2 btn-color" %>
+      </div>
+    </div>
+    <div class="row mb-3 justify-content-center">
+      <div class="col-6">
+        <%= link_to "Bookmark一覧", public_bookmark_path, class: "btn btn-block text-light mb-4 btn-color" %>
+      </div>
     </div>
 </div>
 
