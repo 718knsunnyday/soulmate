@@ -1,11 +1,11 @@
   <div class="container">
-  <div class="row mt-5 mb-2">
+  <div class="row mt-5">
       <h3><%= @customer.last_name %>さんマイページ</h3>
   </div>
 
     <div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-6">
+          <div class="col-lg-3 col-md-7 sm-4">
             <div class="form-outline">
               <p>名前:
               <%= @customer.last_name %> <%= @customer.first_name %></p>
@@ -14,7 +14,7 @@
         </div>
 
         <div class="row mb-2 justify-content-center">
-          <div class="col-6">
+          <div class="col-lg-3 col-md-7 sm-4">
             <div class="form-outline">
               <p>フリガナ:
               <%= @customer.last_name_kana %> <%= @customer.first_name_kana %></p>
@@ -23,7 +23,7 @@
         </div>
 
         <div class="row mb-3 justify-content-center">
-          <div class="col-6 mb-3">
+          <div class="col-lg-3 col-md-7 sm-4">
             <div class="form-outline">
               <p>メールアドレス:
               <%= @customer.email %></p>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="row mb-3 justify-content-center">
-          <div class="col-6 mb-3">
+          <div class="col-lg-3 col-md-7 sm-4">
             <div class="form-outline">
               <%= link_to "編集する", edit_farmer_customer_path(@customer), class: "btn btn-block text-light mb-2 btn-color" %>
             </div>
@@ -40,7 +40,7 @@
         </div>
 
         <div class="row mb-3 justify-content-center">
-          <div class="col-6 mb-3">
+          <div class="col-lg-3 col-md-7 sm-4">
             <div class="form-outline">
               <%= link_to "新規農場登録", new_farmer_farm_path, class: "btn btn-block text-light mb-2 btn-color" %>
             </div>
