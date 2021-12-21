@@ -1,8 +1,7 @@
 <div class="container">
-  <div class="row mt-5 mb-2">
+  <div class="row">
       <h3>新規農場登録</h3>
   </div>
-
   <div class="row mb-2 justify-content-center">
     <% if @farm.errors.any? %>
       <% @farm.errors.full_messages.each do |message| %>
@@ -12,7 +11,6 @@
       <% end %>
     <% end %>
   </div>
-
       <%= form_with model: @farm, url: farmer_farms_path, local: true do |f| %>
         <div class="row mb-2 justify-content-center">
           <table>

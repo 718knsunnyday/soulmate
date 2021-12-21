@@ -59,6 +59,9 @@ ja:
     failure:
       farmer:
         invalid: ログインできませんでした。メールアドレスもしくは、パスワードが間違っています。
+        already_authenticated: 既にログインしてます。
+        not_found_in_database: 登録情報がありません。
       public: 
         invalid: ログインできませんでした。メールアドレスもしくは、パスワードが間違っています。
-        
+        already_authenticated: 既にログインしてます。
+        not_found_in_database: 登録情報がありません。

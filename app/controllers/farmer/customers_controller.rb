@@ -9,8 +9,12 @@ class Farmer::CustomersController < ApplicationController
 
   def update
     @customer = current_farmer
-    @customer.update(farmer_params)
-    redirect_to farmer_customer_path(@customer)
+    if @customer.update(farmer_params)
+      redirect_to farmer_customer_path(@customer), notice: "マイページを更新しました。"
+    else
+      flash.now[:alert] = "更新に失敗しました。"
+      render :edit
+    end
   end
 
   def unsubscribe

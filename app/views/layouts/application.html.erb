@@ -49,9 +49,13 @@
     </header>
 
     <main>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
+      <% if current_page?(root_path) %>
+        <%= yield %>
+      <% else %>
+        <p class="notice mt-5"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      <% end %>
     </main>
     <footer class="py-3">
       <div class="container text-center ">

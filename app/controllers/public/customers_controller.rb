@@ -8,9 +8,13 @@ class Public::CustomersController < ApplicationController
   end
 
   def update
-    customer = current_public
-    customer.update(public_params)
-    redirect_to customer_path(customer)
+    @customer = current_public
+    if @customer.update(public_params)
+      redirect_to customer_path(@customer), notice: "マイページを更新しました。"
+    else
+      flash.now[:alert] = "更新に失敗しました。"
+      render :edit
+    end
   end
 
   def unsubscribe
