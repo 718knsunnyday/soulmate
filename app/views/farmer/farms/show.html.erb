@@ -7,7 +7,6 @@
     <div class="col-5 pt-4">
       <%= attachment_image_tag @farm, :image, size: "400x300", class: "d-block mx-auto" %>
 
-
       <% if public_signed_in? %>
         <div class="favorite-btn mt-4 pl-4">
           <div id="favorite_<%= @farm.id %>">
@@ -77,34 +76,32 @@
             <div id="comment">
               <%= render 'farmer/post_comments/post_comment', farm: @farm %>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-2">
               <div class="col-3"></div>
               <div class="col-9">
                 <div id="post_comment">
                   <% render 'farmer/farms/error_message' %>
                   <%= form_with model:[@farm, @post_comment], url: farmer_farm_post_comments_path(@farm), remote: true do |f| %>
                     <%= f.text_area :comment, rows: '3', placeholder: "コメント記入", class: "form-control" %>
-                    <%= f.submit "送信", class: "btn btn-block text-light mb-4 bt-3 btn-color" %>
+                    <div class="row">
+                      <div class="col-3">
+                        <%= f.submit "送信", class: "btn btn-block btn-sm text-light mb-4 bt-3 mt-3 btn-color" %>
+                      </div>
+                    </div>
                   <% end %>
                 </div>
               </div>
             </div>
         </div>
-      </div>
+    </div>
   <% end %>
-
-
-
-
-  <div class="row mb-2 justify-content-center">
-    <div class="col-3">
-      <div class="form-outline">
-        <% if farmer_signed_in? %>
-          <% if @farm.farmer_id == current_farmer.id %>
-            <%= link_to "登録農場情報の編集", edit_farmer_farm_path(@farm), class: "btn btn-block text-light mb-4 btn-color" %>
-          <% end %>
+  <div class="row mb-2 mt-5 justify-content-center">
+    <div class="col-4">
+      <% if farmer_signed_in? %>
+        <% if @farm.farmer_id == current_farmer.id %>
+          <%= link_to "登録農場情報の編集", edit_farmer_farm_path(@farm), class: "btn btn-block text-light mb-4 btn-color" %>
         <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

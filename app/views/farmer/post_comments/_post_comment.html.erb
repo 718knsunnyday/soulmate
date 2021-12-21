@@ -7,9 +7,9 @@
   <div class="col-9">
     <%= post_comment.comment %>
     <div class="row display justify-center">
-      <div class="col-4">
+      <div class="col-3">
         <% if post_comment.public_id = current_public.id %>
-          <p ><%= link_to "コメント削除", farmer_farm_post_comment_path(post_comment.farm_id, post_comment.id), method: :delete, remote: true,"data-confirm" => "本当に削除しますか？", class: "btn btn-block btn-sm text-light btn-destroy" %></p>
+          <p ><%= link_to "削除", farmer_farm_post_comment_path(post_comment.farm_id, post_comment.id), method: :delete, remote: true,"data-confirm" => "本当に削除しますか？", class: "btn btn-block btn-sm text-light btn-destroy" %></p>
         <% end %>
       </div>
     </div>
