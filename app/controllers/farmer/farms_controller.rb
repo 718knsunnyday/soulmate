@@ -6,8 +6,12 @@ class Farmer::FarmsController < ApplicationController
   def create
     @farm = Farm.new(farm_params)
     @farm.farmer_id = current_farmer.id
-    @farm.save
-    redirect_to farmer_farm_path(@farm)
+    if @farm.save
+      redirect_to farmer_farm_path(@farm), notice: "登録できました。"
+    else
+      flash.now[:alert] = "登録できませんでした"
+      render :new
+    end
   end
 
   def show
@@ -29,8 +33,12 @@ class Farmer::FarmsController < ApplicationController
 
   def update
     @farm = Farm.find(params[:id])
-    @farm.update(farm_params)
-    redirect_to farmer_farm_path(@farm.id)
+    if @farm.update(farm_params)
+      redirect_to farmer_farm_path(@farm.id), notice: "更新しました。"
+    else
+      flash.now[:alert] = "更新できませんでした。"
+      render :edit
+    end
   end
 
   def destroy

@@ -2,74 +2,119 @@
   <div class="row">
       <h3>新規農場登録</h3>
   </div>
-  <div class="row mb-2 justify-content-center">
-    <% if @farm.errors.any? %>
-      <% @farm.errors.full_messages.each do |message| %>
-        <ul>
-          <li class="error-message"><%= message %></li>
-        </ul>
-      <% end %>
-    <% end %>
-  </div>
-      <%= form_with model: @farm, url: farmer_farms_path, local: true do |f| %>
-        <div class="row mb-2 justify-content-center">
-          <table>
-            <tr>
-              <td><%= f.label :画像 %></td>
-              <td><%= f.attachment_field :image %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :農場名 %></td>
-              <td><%= f.text_field :name, class: "form-control" %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :経営者 %></td>
-              <td><%= f.text_field :manager, class: "form-control" %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :郵便番号 %></td>
-              <td><%= f.text_field :post_code, class: "form-control" %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :都道府県 %></td>
-              <td><%= f.text_field :prefecture, class: "form-control" %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :市区町村 %></td>
-              <td><%= f.text_field :city, class: "form-control" %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :番地・建物名 %></td>
-              <td><%= f.text_field :house_number, class: "form-control" %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :栽培品目 %></td>
-              <td>
-                <%= f.collection_check_boxes(:cultivated_item_ids, CultivatedItem.all, :id, :name) do |b| %>
-                  <%= b.label { b.check_box + b.text } %>
-                <% end %>
-              </td>
-            </tr>
-              <td><%= f.label :栽培品例 %></td>
-              <td><%= f.text_field :breed, class: "form-control" %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :購入方法 %></td>
-              <td><%= f.text_field :purchasing_method, class: "form-control" %></td>
-            </tr>
-            <tr>
-              <td><%= f.label :コンタクト %></td>
-              <td><%= f.text_field :contact, class: "form-control"%></td>
-            </tr>
-            <tr>
-              <td><%= f.label :農場説明 %></td>
-              <td><%= f.text_area :description, rows: '7', placeholder: "500文字まで記入可", class: "form-control" %></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><%= f.submit "新規農場を登録する", class: "btn btn-block text-light mb-4 btn-color" %></td>
-            </tr>
-          </table>
+    <div class="row mb-2 justify-content-center">
+      <% if @farm.errors.any? %>
+        <% @farm.errors.full_messages.each do |message| %>
+          <ul>
+            <li class="error-message"><%= message %></li>
+          </ul>
+        <% end %>
       <% end %>
     </div>
+      <%= form_with model: @farm, url: farmer_farms_path, local: true do |f| %>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-2">
+            <p><%= f.label :画像 %></p>
+          </div>
+          <div class="col-4">
+            <p><%= f.attachment_field :image %></p>
+          </div>
+        </div>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-2">
+            <p><%= f.label :農場名 %></p>
+          </div>
+          <div class="col-4">
+            <p><%= f.text_field :name, class: "form-control" %></p>
+          </div>
+        </div>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-2">
+            <p><%= f.label :経営者 %></p>
+          </div>
+          <div class="col-4">
+            <p><%= f.text_field :manager, class: "form-control" %></p>
+          </div>
+        </div>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-2">
+            <p><%= f.label :郵便番号 %></p>
+          </div>
+          <div class="col-4">
+            <p><%= f.text_field :post_code, class: "form-control" %></p>
+          </div>
+        </div>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-2">
+            <p><%= f.label :都道府県 %></p>
+          </div>
+          <div class="col-4">
+            <p><%= f.text_field :prefecture, class: "form-control" %></p>
+          </div>
+        </div>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-2">
+            <p><%= f.label :市区町村 %></p>
+          </div>
+          <div class="col-4">
+            <p><%= f.text_field :city, class: "form-control" %></p>
+          </div>
+        </div>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-2">
+            <p><%= f.label :番地・建物名 %></p>
+          </div>
+          <div class="col-4">
+            <p><%= f.text_field :house_number, class: "form-control" %></p>
+          </div>
+        </div>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-2">
+            <p><%= f.label :栽培品目 %></p>
+          </div>
+          <div class="col-4">
+            <p><%= f.collection_check_boxes(:cultivated_item_ids, CultivatedItem.all, :id, :name) do |b| %>
+                <%= b.label { b.check_box + b.text } %>
+               <% end %></p>
+          </div>
+        </div>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-2">
+            <p><%= f.label :栽培品例 %></p>
+          </div>
+          <div class="col-4">
+            <p><%= f.text_field :breed, class: "form-control" %></p>
+          </div>
+        </div>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-2">
+            <p><%= f.label :購入方法 %></p>
+          </div>
+          <div class="col-4">
+            <p><%= f.text_field :purchasing_method, class: "form-control" %></p>
+          </div>
+        </div>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-2">
+            <p><%= f.label :コンタクト %></p>
+          </div>
+          <div class="col-4">
+            <p><%= f.text_field :contact, class: "form-control"%></p>
+          </div>
+        </div>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-2">
+            <p><%= f.label :農場説明 %></p>
+          </div>
+          <div class="col-4">
+            <p><%= f.text_area :description, rows: '7', placeholder: "500文字まで記入可", class: "form-control" %></p>
+          </div>
+        </div>
+        <div class="row mb-2 justify-content-center">
+          <div class="col-2"></div>
+          <div class="col-4">
+            <p><%= f.submit "新規農場を登録する", class: "btn btn-block text-light mb-4 btn-color" %></p>
+          </div>
+        </div>
+      <% end %>
 </div>
