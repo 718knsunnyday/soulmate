@@ -27,13 +27,6 @@ RSpec.describe public, 'publicモデルのテスト', type: :model do
       @public.email = ''
       expect(@public.valid?).to eq(false)
     end
-  end
-
-  before do
-    @public = create(:public)
-  end
-
-  describe '保存されているかの確認' do
     it '姓名、フリガナ、メールアドレス、パスワードが保存されていること' do
       expect(@public.valid?).to eq(true)
     end

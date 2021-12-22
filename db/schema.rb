@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_19_070406) do
+ActiveRecord::Schema.define(version: 2021_12_22_111859) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "public_id"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2021_12_19_070406) do
     t.integer "farm_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "rate"
   end
 
   create_table "publics", force: :cascade do |t|
