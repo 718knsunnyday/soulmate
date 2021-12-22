@@ -1,12 +1,12 @@
 FactoryBot.define do
-  factory_bot :public do
-    last_name {"山田"}
-    first_name {"太郎"}
-    last_name_kana {"ヤマダ"}
-    first_name_kana {"タロウ"}
-    email {"yamadataro@sample.com"}
-    password {"yamadataro"}
-    password_confirmation {"yamadataro"}
-    end
+  factory :public do
+    last_name { Faker::Lorem.characters(number: 10)}
+    first_name { Faker::Lorem.characters(number: 10) }
+    last_name_kana { Faker::Lorem.characters(number: 10) }
+    first_name_kana { Faker::Lorem.characters(number: 10) }
+    email { Faker::Internet.email }
+    password { 'password' }
+    password_confirmation { 'password'}
+  end
 end
 
