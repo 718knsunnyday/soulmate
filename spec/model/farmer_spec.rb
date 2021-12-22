@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Farmer, 'Farmerモデルのテスト', type: :modele do
+RSpec.describe Farmer, 'Farmerモデルのテスト', type: :model do
   before do
     @farmer = build(:farmer)
   end
@@ -26,6 +26,17 @@ RSpec.describe Farmer, 'Farmerモデルのテスト', type: :modele do
     it 'メールアドレスが空欄ではないこと' do
       @farmer.email = ''
       expect(@farmer.valid?).to eq(false)
+    end
+  end
+  
+  before do 
+    @farmer = create(:farmer)
+  end
+  
+  describe '保存されているかの確認' do
+    
+    it '姓名、フリガナ、メールアドレス、パスワードが保存されていること' do
+      expect(@farmer.valid?).to eq(true)
     end
   end
 end

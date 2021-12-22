@@ -18,6 +18,7 @@ class Farm < ApplicationRecord
   validates :contact, presence: true
   validates :description, presence: true
   validates :description, length: { in: 1..500}
+  validates :image, presence: true
 
   def self.search(search)
     Farm.joins(:cultivated_items).where('farms.name LIKE ? OR prefecture LIKE ? OR city LIKE ? OR breed LIKE ? OR cultivated_items.name LIKE ?',
