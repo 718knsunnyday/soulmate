@@ -46,30 +46,31 @@ describe '画面テスト' do
     end
   end
 
-  describe 'ユーザーテスト' do
+  describe 'ユーザー新規登録後のテスト' do
+      let(:public_user) { build(:public) }
       before do
         visit new_public_registration_path
-      end
-      it 'ユーザー新規登録成功時のテスト' do
-        fill_in 'public[last_name]', with: @public.last_name
-        fill_in 'public[first_name]', with: @public.first_name
-        fill_in 'public[last_name_kana]', with: @public.last_name_kana
-        fill_in 'public[first_name_kana]', with: @public.first_name_kana
-        fill_in 'public[email]', with: @public.email
-        fill_in 'public[password]', with: @public.password
-        fill_in 'public[password_confirmation]', with: @public.password
+        fill_in 'public[last_name]', with: public_user.last_name
+        fill_in 'public[first_name]', with: public_user.first_name
+        fill_in 'public[last_name_kana]', with: public_user.last_name_kana
+        fill_in 'public[first_name_kana]', with: public_user.first_name_kana
+        fill_in 'public[email]', with: public_user.email
+        fill_in 'public[password]', with: public_user.password
+        fill_in 'public[password_confirmation]', with: public_user.password
         click_button '新規登録する'
-        expect(page).to have_current_path customer_path(@public)
       end
-      before do
-        visit new_public_session_path
+      it 'ユーザー新規登録成功後マイページ表示' do
+        expect(page).to have_content public_user.last_name
       end
-      it 'ユーザーログインのテスト' do
-        fill_in 'public[email]', with: @public.email
-        fill_in 'public[password]', with: @public.password
-        click_button 'ログイン'
-        expect(page).to have_current_path customer_path(@public)
-      end
+      # before do
+      #   visit new_public_session_path
+      # end
+      # it 'ユーザーログインのテスト' do
+      #   fill_in 'public[email]', with: @public.email
+      #   fill_in 'public[password]', with: @public.password
+      #   click_button 'ログイン'
+      #   expect(page).to have_current_path customer_path(@public)
+      # end
   end
 
   describe 'ユーザーマイページ' do

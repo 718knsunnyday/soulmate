@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe Farm, 'Farmモデルのテスト', type: :model do
     before do
       @farm = create(:farm)
+      @cultivated_item = create(:cultivated_item)
+      @farms_cultivated_item = create(:farms_cultivated_item, farm: @farm, cultivated_item: @cultivated_item)
     end
 
     describe 'バリデーションのテスト' do
@@ -76,7 +78,8 @@ RSpec.describe Farm, 'Farmモデルのテスト', type: :model do
 
     describe '検索' do
       it '検索したワードと部分一致した時' do
-        expect(Farm.where(prefecture: "大阪府")).to include(@farm.prefecture)
+        byebug
+        expect(Farm.search("大阪府").map(&:prefecture)).to include('大阪府')
       end
     end
 
