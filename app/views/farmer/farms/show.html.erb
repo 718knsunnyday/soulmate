@@ -86,6 +86,7 @@
                     <div class="form-group" id="star">
                       <%= f.label :評価 %>
                       <%= f.hidden_field :rate %>
+                    </div>
                     <script>
                       $('#star').raty({
                         size : 36,
@@ -96,7 +97,6 @@
                         half: true,
                       });
                     </script>
-                    </div>
                     <div class="row">
                       <div class="col-3">
                         <%= f.submit "送信", class: "btn btn-block btn-sm text-light mb-4 bt-3 mt-3 btn-color" %>
