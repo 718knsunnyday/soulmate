@@ -5,13 +5,12 @@
     <small><%= post_comment.created_at.strftime('%Y/%m/%d') %></small></p>
   </div>
   <div class="col-9">
-    <%= post_comment.comment %>
-  <div id='farm-review_<%= farm.id %>'></div>
+    <div><%= post_comment.comment %></div>
+  <div id='farm-review_<%= post_comment.id %>'></div>
   <script>
-    $('#star-rate-<%= farm.id %>').empty();
-      $('#farm-review_<%= farm.id %>').raty({
+      $('#farm-review_<%= post_comment.id %>').raty({
         size: 20,
-        starOff:  '<%= asset_path('star-off.png') %>',
+        starOff: '<%= asset_path('star-off.png') %>',
         starOn : '<%= asset_path('star-on.png') %>',
         starHalf: '<%= asset_path('star-half.png') %>',
         half: true,
@@ -22,7 +21,7 @@
     <div class="row display justify-center">
       <div class="col-3">
         <% if post_comment.public_id = current_public.id %>
-          <p ><%= link_to "削除", farmer_farm_post_comment_path(post_comment.farm_id, post_comment.id), method: :delete, remote: true,"data-confirm" => "本当に削除しますか？", class: "btn btn-block btn-sm text-light btn-destroy" %></p>
+          <p ><%= link_to "削除", farmer_farm_post_comment_path(post_comment.farm_id, post_comment.id), method: :delete, remote: true,"data-confirm" => "本当に削除しますか？", class: "btn btn-block btn-sm text-light btn-destroy mt-2" %></p>
         <% end %>
       </div>
     </div>

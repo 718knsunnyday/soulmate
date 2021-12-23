@@ -82,9 +82,9 @@
                 <div id="post_comment">
                   <% render 'farmer/farms/error_message' %>
                   <%= form_with model:[@farm, @post_comment], url: farmer_farm_post_comments_path(@farm), remote: true do |f| %>
-                    <%= f.text_area :comment, rows: '3', placeholder: "コメント記入", class: "form-control" %>
+                    <%= f.text_area :comment, rows: '3', placeholder: "コメント記入", class: "form-control mb-2" %>
                     <div class="form-group" id="star">
-                      <%= f.label :評価 %>
+                      <%= f.label :オススメ度 %>&nbsp
                       <%= f.hidden_field :rate %>
                     </div>
                     <script>
