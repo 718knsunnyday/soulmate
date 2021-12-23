@@ -83,6 +83,20 @@
                   <% render 'farmer/farms/error_message' %>
                   <%= form_with model:[@farm, @post_comment], url: farmer_farm_post_comments_path(@farm), remote: true do |f| %>
                     <%= f.text_area :comment, rows: '3', placeholder: "コメント記入", class: "form-control" %>
+                    <div class="form-group" id="star">
+                      <%= f.label :評価 %>
+                      <%= f.hidden_field :rate %>
+                    <script>
+                      $('#star').raty({
+                        size : 36,
+                        starOff: '<%= asset_path('star-off.png') %>',
+                        starOn: '<%= asset_path('star-on.png') %>',
+                        starHalf: '<%= asset_path('star-half.png') %>',
+                        scoreName: 'post_comment[rate]',
+                        half: true,
+                      });
+                    </script>
+                    </div>
                     <div class="row">
                       <div class="col-3">
                         <%= f.submit "送信", class: "btn btn-block btn-sm text-light mb-4 bt-3 mt-3 btn-color" %>

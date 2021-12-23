@@ -6,6 +6,18 @@
   </div>
   <div class="col-9">
     <%= post_comment.comment %>
+  <div id="book-review_<%= farm.id %>"></div>
+  <script>
+     $('#book-review_<%= farm.id %>').raty({
+        size: 20,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= post_comment.rate %>,
+       });
+   </script>
     <div class="row display justify-center">
       <div class="col-3">
         <% if post_comment.public_id = current_public.id %>
