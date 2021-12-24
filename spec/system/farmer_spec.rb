@@ -28,6 +28,9 @@ describe '農家のテスト' do
         expect(page).to have_button, '新規農場登録'
       end
     end
+  end
+  
+  describe '農家のテスト' do
     context 'ログイン成功後、農場新規登録のテスト' do
       let(:farmer) { create(:farmer) }
       let(:farm) { build(:farm) }

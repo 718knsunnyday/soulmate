@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'ユーザーのテスト' do
-    context 'ユーザー新規登録後、マイページのテスト' do 
+    context 'ユーザー新規登録後、マイページのテスト' do
     let(:public_user) { build(:public) }
     before do
       visit new_public_registration_path
@@ -29,8 +29,13 @@ describe 'ユーザーのテスト' do
       end
     end
     context '農場の詳細ページのテスト' do
+      let(:public_user) {create(:public)}
       let(:farm) {create(:farm)}
       before do
+        visit new_public_session_path
+        fill_in 'public[email]', with: public_user.email
+        fill_in 'public[password]', with: public_user.password
+        click_button 'ログイン'
         visit farmer_farm_path(farm)
       end
       it '応援する文字が表示されているか' do
