@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :farm do
-    #association :public
     name { Faker::Lorem.characters(number: 10)}
     manager { Faker::Lorem.characters(number: 10)}
     post_code { Faker::Lorem.characters(number: 7)}
