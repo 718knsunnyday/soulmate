@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe 'ユーザーのテスト' do
+    context 'ユーザー新規登録後、マイページのテスト' do 
     let(:public_user) { build(:public) }
     before do
       visit new_public_registration_path
@@ -13,7 +14,6 @@ describe 'ユーザーのテスト' do
       fill_in 'public[password_confirmation]', with: public_user.password
       click_button '新規登録する'
     end
-    context 'マイページのテスト' do 
       it 'ユーザー新規登録成功後登録した内容を表示' do
         expect(page).to have_content public_user.last_name
         expect(page).to have_content public_user.first_name
