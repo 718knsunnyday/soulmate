@@ -78,7 +78,6 @@ RSpec.describe Farm, 'Farmモデルのテスト', type: :model do
 
     describe '検索' do
       it '検索したワードと部分一致した時' do
-        byebug
         expect(Farm.search("大阪府").map(&:prefecture)).to include('大阪府')
       end
     end
