@@ -52,16 +52,16 @@ ja:
         signed_out: ログインして下さい。
         signed_in: ログインできました。
     registrations:
-        farmer:
-          signed_up:　新規登録して下さい。
-        public:
-          signed_up:　新規登録して下さい。
+      farmer:
+        signed_up: 新規登録しました。
+      public:
+        signed_up: 新規登録しました。
     failure:
       farmer:
         invalid: ログインできませんでした。メールアドレスもしくは、パスワードが間違っています。
         already_authenticated: 既にログインしてます。
         not_found_in_database: 登録情報がありません。
-      public: 
+      public:
         invalid: ログインできませんでした。メールアドレスもしくは、パスワードが間違っています。
         already_authenticated: 既にログインしてます。
         not_found_in_database: 登録情報がありません。

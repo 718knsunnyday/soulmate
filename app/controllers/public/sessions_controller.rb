@@ -39,6 +39,7 @@ class Public::SessionsController < Devise::SessionsController
     @customer = Public.find_by(email: params[:public][:email])
     if @customer
       if @customer.valid_password?(params[:public][:password]) && !@customer.is_valid
+        
         redirect_to new_public_registration_path
       end
     end

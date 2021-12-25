@@ -44,7 +44,7 @@ class Farmer::FarmsController < ApplicationController
   def destroy
     farm = Farm.find(params[:id])
     farm.destroy
-    redirect_to new_farmer_farm_path
+    redirect_to farmer_farms_path
   end
 
   def prefecture
