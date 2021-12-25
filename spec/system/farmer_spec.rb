@@ -32,8 +32,10 @@ describe '農家のテスト' do
   
   describe '農家のテスト' do
     context 'ログイン成功後、農場新規登録のテスト' do
-      let(:farmer) { create(:farmer) }
-      let(:farm) { build(:farm) }
+      let(:farmer) { create(:farmer)}
+      let(:farm) { build(:farm)}
+      let(:cultivated_item) {build(:cultivated_item)}
+      let(:farms_cultivated_item) {build(:farms_cultivated_item)}
       before do
         visit new_farmer_session_path
         fill_in 'farmer[email]', with: farmer.email

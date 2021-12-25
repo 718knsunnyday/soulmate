@@ -15,7 +15,7 @@ Public.create!(
   password: "yamadahanako",
   is_valid: "true",
   )
-  
+
 Farmer.create!(
   last_name: "斉藤",
   first_name: "太郎",
