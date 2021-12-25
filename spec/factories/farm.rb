@@ -10,7 +10,7 @@ FactoryBot.define do
     purchasing_method { Faker::Lorem.characters(number: 20)}
     contact { Faker::Lorem.characters(number: 20)}
     description { Faker::Lorem.characters(number: 50)}
-    image_id { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.jpg'))}
+    image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/test.jpg'))}
     farmer
   end
 end
