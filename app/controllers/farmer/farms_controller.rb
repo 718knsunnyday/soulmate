@@ -69,3 +69,11 @@ class Farmer::FarmsController < ApplicationController
                                  :purchasing_method, :contact, :description, :image, cultivated_item_ids:[])
   end
 end
+
+#ng
+# "image"=>#<ActionDispatch::Http::UploadedFile:0x00007ff56528d950 @tempfile=#<Tempfile:/tmp/RackMultipart20211225-2594-83849t.jpg>,
+# @original_filename="carrots-g3567d767e_640.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"farm[image]\";
+# filename=\"carrots-g3567d767e_640.jpg\"\r\nContent-Type: image/jpeg\r\n">
+
+# "image"=>"{\"size\":116025,\"content_type\":\"image/jpeg\",\"filename\":\"Chocolate-Dulce-de-Leche-Cake.jpeg\",
+# \"id\":\"d857073d09a17442bf829f9f10ee2486e88b0d4a8c86309c2764fbf90b3e\"}"

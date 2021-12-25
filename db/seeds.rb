@@ -16,15 +16,29 @@ Public.create!(
   is_valid: "true",
   )
 
-Farmer.create!(
+farmer = Farmer.create!(
   last_name: "斉藤",
   first_name: "太郎",
   last_name_kana: "ノウカ",
   first_name_kana: "タロウ",
-  email: "sitotaro@sample.com",
+  email: "saitotaro@sample.com",
   password: "saitotaro",
   is_valid: "true",
   )
+
+Farm.create!([
+  {farmer_id: farmer.id, name: "ブルーベリー農場", manager: "斉藤太郎",
+  post_code: "1234567", prefecture: "長野県", city: "須坂市", house_number: "１",
+  breed: "ブルーベリー", purchasing_method: "農場で購入可能", contact: "公式URL",
+  description: "太陽の光を存分に浴びた、甘いブルーベリーを生産してます。ブルーベリーを一緒に収穫してみませんか。ぜひ遊びに来てください！",
+  image: File.open("#{Rails.root}/app/assets/images/berry.jpg")},
+
+  {farmer_id: farmer.id, name: "シャインマスカット農場", manager: "農家太郎",
+  post_code: "1234567", prefecture: "岡山県", city: "岡山市岡山町", house_number: "２",
+  breed: "シャインマスカット", purchasing_method: "ネットで購入可能　ふるさと納税対象", contact: "公式URL",
+  description: "皮まで食べることができ甘いのが特徴のシャインマスカットを生産してます。9月が旬なので、ぜひ9月に買いに農場まで来てください！",
+  image: File.open("#{Rails.root}/app/assets/images/muscat.jpg")}
+  ])
 
 CultivatedItem.create!([
   {name: "いも類"},
@@ -45,3 +59,9 @@ CultivatedItem.create!([
   {name: "核果類"},
   {name: "ベリー類等の小粒果実類"},
   ])
+
+Farm.all.ids.each do | farm_id |
+  CultivatedItem.all.ids.last(1).each do |cultivated_item_id|
+    FarmsCultivatedItem.create!(cultivated_item_id: cultivated_item_id, farm_id: farm_id)
+  end
+end
