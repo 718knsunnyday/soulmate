@@ -31,7 +31,7 @@ describe '農家のテスト' do
     let(:farm) {create(:farm)}
     let(:cultivated_item) {create(:cultivated_item)}
     let(:farms_cultivated_item) {create(:farms_cultivated_item, farm: farm, cultivated_item: cultivated_item)}
-    
+
     context '新規農場登録画面のテスト' do
     before do
     visit new_farmer_farm_path
@@ -42,10 +42,20 @@ describe '農家のテスト' do
       it '農場説明フォームが表示されているか' do
         expect(page).to have_field 'farm[description]'
       end
-      # it '投稿登録後、農場詳細画面が表示されているか' do
-      #   click_button '新規農場を登録する'
-      #   expect(current_path).to eq '/farmer/farms/' + Farm.last.id
-      # end
+      it '投稿登録後、農場詳細画面が表示されているか' do
+        fill_in 'farm[name]', with: farm.name
+        fill_in 'farm[manager]', with: farm.manager
+        fill_in 'farm[post_code]', with: farm.post_code
+        fill_in 'farm[prefecture]', with: farm.prefecture
+        fill_in 'farm[city]', with: farm.city
+        fill_in 'farm[house_number]', with: farm.house_number
+        fill_in 'farm[breed]', with: farm.breed
+        fill_in 'farm[purchasing_method]', with: farm.purchasing_method
+        fill_in 'farm[contact]', with: farm.contact
+        fill_in 'farm[description]', with: farm.description
+        click_button '新規農場を登録する'
+        expect(page).to have_current_path farmer_farm_path(Farm.last)
+      end
     end
     context '農場詳細画面のテスト' do
       before do
@@ -60,9 +70,6 @@ describe '農家のテスト' do
       it '登録した農場説明が表示されているか' do
         expect(page).to have_content farm.description
       end
-      # it '「登録農場情報の編集」のボタンが表示されているか' do
-      #   expect(page).to have_content "登録農場情報の編集"
-      # end
     end
     context '農場一覧画面のテスト' do
       before do

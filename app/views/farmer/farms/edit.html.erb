@@ -13,112 +13,112 @@
     </div>
       <%= form_with model: @farm, url: farmer_farm_update_path, local: true do |f| %>
         <div class="row mb-2 justify-content-center">
-          <div class="col-2">
+          <div class="col-md-2">
             <p><%= f.label :画像 %></p>
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             <p><%= f.attachment_field :image %></p>
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-2">
+          <div class="col-md-2">
             <p><%= f.label :農場名 %></p>
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             <p><%= f.text_field :name, class: "form-control" %></p>
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-2">
+          <div class="col-md-2">
             <p><%= f.label :経営者 %></p>
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             <p><%= f.text_field :manager, class: "form-control" %></p>
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-2">
+          <div class="col-md-2">
             <p><%= f.label :郵便番号 %></p>
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             <p><%= f.text_field :post_code, class: "form-control" %></p>
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-2">
+          <div class="col-md-2">
             <p><%= f.label :都道府県 %></p>
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             <p><%= f.text_field :prefecture, class: "form-control" %></p>
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-2">
+          <div class="col-md-2">
             <p><%= f.label :市区町村 %></p>
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             <p><%= f.text_field :city, class: "form-control" %></p>
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-2">
+          <div class="col-md-2">
             <p><%= f.label :番地・建物名 %></p>
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             <p><%= f.text_field :house_number, class: "form-control" %></p>
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-2">
+          <div class="col-md-2">
             <p><%= f.label :栽培品目 %></p>
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             <p><%= f.collection_check_boxes(:cultivated_item_ids, CultivatedItem.all, :id, :name) do |b| %>
                 <%= b.label { b.check_box + b.text } %>
                <% end %></p>
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-2">
+          <div class="col-md-2">
             <p><%= f.label :栽培品例 %></p>
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             <p><%= f.text_field :breed, class: "form-control" %></p>
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-2">
+          <div class="col-md-2">
             <p><%= f.label :購入方法 %></p>
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             <p><%= f.text_field :purchasing_method, class: "form-control" %></p>
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-2">
+          <div class="col-md-2">
             <p><%= f.label :コンタクト %></p>
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             <p><%= f.text_field :contact, class: "form-control"%></p>
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-2">
+          <div class="col-md-2">
             <p><%= f.label :農場説明 %></p>
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             <p><%= f.text_area :description, rows: '7', placeholder: "500文字まで記入可", class: "form-control" %></p>
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-2"></div>
-          <div class="col-4">
+          <div class="col-md-2"></div>
+          <div class="col-md-4">
             <p><%= f.submit "農場情報を更新する", class: "btn btn-block text-light mb-4 btn-color" %></p>
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-2"></div>
-          <div class="col-4">
+          <div class="col-md-2"></div>
+          <div class="col-md-4">
             <p><%= link_to "農場情報を削除する", farmer_farm_path(@farm), method: :delete, "data-confirm" => "本当に削除しますか。", class: "btn btn-block text-light mb-4 btn-destroy" %></p>
           </div>
         </div>

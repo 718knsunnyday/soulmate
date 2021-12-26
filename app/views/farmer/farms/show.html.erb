@@ -4,8 +4,8 @@
   </div>
 
   <div class="row mt-4">
-    <div class="col-md-5 col-sm-12 pt-4">
-      <%= attachment_image_tag @farm, :image, size: "400x300", class: "d-block mx-auto" %>
+    <div class="col-sm-12 col-md-5 pt-4">
+      <%= attachment_image_tag @farm, :image, class: "d-block mx-auto w-100 mb-3" %>
 
       <% if public_signed_in? %>
         <div class="favorite-btn mt-4 pl-4">
@@ -26,7 +26,7 @@
       <% end %>
     </div>
 
-    <div class="col-md-7 col-sm-12 farm-index pt-4">
+    <div class="col-sm-12 col-md-7 farm-index pt-4">
       <h5>農家情報</h5>
       <div class="row mt-3">
         <div class="col-3">
@@ -55,8 +55,8 @@
     </div>
   </div>
   <div class="row mt-5">
-    <div class="col-5"></div>
-    <div class="col-7 farm-index pt-4">
+    <div class="col-md-5"></div>
+    <div class="col-md-7 farm-index pt-4">
       <h5>農家について</h5>
       <div class="row mt-3">
         <div class="col-3">
@@ -70,8 +70,8 @@
   </div>
   <% if public_signed_in? %>
     <div class="row mt-5 ">
-      <div class="col-5"></div>
-        <div class="col-7 farm-index pt-4">
+      <div class="col-md-5"></div>
+        <div class="col-md-7 farm-index pt-4">
           <h5>コメント</h5>
             <div id="comment">
               <%= render 'farmer/post_comments/post_comment', farm: @farm %>
@@ -110,7 +110,7 @@
     </div>
   <% end %>
   <div class="row mb-2 mt-5 justify-content-center">
-    <div class="col-4">
+    <div class="col-md-4">
       <% if farmer_signed_in? %>
         <% if @farm.farmer_id == current_farmer.id %>
           <%= link_to "登録農場情報の編集", edit_farmer_farm_path(@farm), class: "btn btn-block text-light mb-4 btn-color" %>

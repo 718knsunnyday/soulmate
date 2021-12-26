@@ -8,16 +8,16 @@
 
 <div class="container">
     <div class="row mb-3 mt-5">
-      <h4 class="ml-5"><strong>農家を探している方</strong></h4>
+      <h4 class="ml-2"><strong>農家を探している方</strong></h4>
     </div>
     <div class="row mb-3 justify-content-center">
-        <div class="col-2">
+        <div class="col-md-2 col-sm-12">
           <%= link_to new_public_registration_path do %>
             <i class="fas fa-user-plus fa-5x fa-green"></i><br>
           <% end %>
           <%= link_to "新規会員登録", new_public_registration_path, class: "link-color" %>
         </div>
-        <div class="col-2 ml-5">
+        <div class="col-md-2 col-sm-12">
           <%= link_to new_public_session_path do %>
             <i class="fas fa-sign-in-alt fa-5x fa-green"></i><br>
           <% end %>
@@ -26,17 +26,17 @@
     </div>
 
     <div class="row mb-3 mt-5">
-      <h4 class="ml-5"><strong>農家さん</strong></h4>
+      <h4 class="ml-2"><strong>農家さん</strong></h4>
     </div>
 
     <div class="row mb-3 justify-content-center">
-        <div class="col-2 mb-5">
+        <div class="col-md-2 col-sm-12 mb-5">
           <%= link_to new_farmer_registration_path do %>
               <i class="fas fa-user-plus fa-5x fa-green"></i><br>
             <% end %>
           <%= link_to "新規会員登録", new_farmer_registration_path, class: "link-color" %>
         </div>
-        <div class="col-2 ml-5 mb-5">
+        <div class="col-md-2 col-sm-12 mb-5">
           <%= link_to new_farmer_session_path do %>
             <i class="fas fa-sign-in-alt fa-5x fa-green"></i><br>
           <% end %>

@@ -30,12 +30,6 @@ describe 'ユーザーのテスト' do
       expect(page).to have_button, 'Bookmark一覧'
     end
   end
-  context 'マイページ編集テスト' do
-    before do
-      visit edit_farmer_customer_path
-    end
-    it '登録した'
-  end
   context '農場詳細画面(ユーザーのみが表示される機能)のテスト' do
     before do
       visit farmer_farm_path(farm)

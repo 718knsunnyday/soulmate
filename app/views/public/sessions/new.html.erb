@@ -5,7 +5,7 @@
     <div>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="row mb-2 justify-content-center">
-          <div class="col-6">
+          <div class="col-md-6">
             <div class="form-outline">
               <%= f.label :メールアドレス%>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
@@ -13,7 +13,7 @@
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-6">
+          <div class="col-md-6">
             <div class="form-outline">
               <%= f.label :パスワード %>
               <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="row mb-3 justify-content-center">
-          <div class="col-6 mb-3">
+          <div class="col-md-6 mb-3">
             <div class="form-outline">
               <%= f.submit "ログイン", class: "btn btn-block text-light mb-4 btn-color" %>
             </div>
@@ -34,10 +34,9 @@
         <% end %>
     </div>
 
-
     <h4>登録をしていない方</h4>
       <div class="row mb-3 justify-content-center">
-        <div class="col-6 mt-4">
+        <div class="col-md-6 mt-4">
           <div class="form-outline">
               <%= link_to "新規登録", new_public_registration_path, class: "btn btn-block text-light mb-4 btn-color" %><br />
           </div>

@@ -5,13 +5,13 @@
     <div>
       <%= form_with model: @customer, url: public_update_path(@customer), local: true do |f| %>
         <div class="row mb-2 justify-content-center">
-          <div class="col-3">
+          <div class="col-md-3">
             <div class="form-outline">
               <%= f.label :姓 %>
               <%= f.text_field :last_name, placeholder: '姓', class: "form-control" %>
             </div>
           </div>
-          <div class="col-3">
+          <div class="col-md-3">
             <div class="form-outline">
               <%= f.label :名 %>
             　<%= f.text_field :first_name, placeholder: '名', class: "form-control" %>
@@ -19,13 +19,13 @@
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-3">
+          <div class="col-md-3">
             <div class="form-outline">
               <%= f.label :セイ %>
               <%= f.text_field :last_name_kana, placeholder: 'セイ', class: "form-control" %>
             </div>
           </div>
-          <div class="col-3">
+          <div class="col-md-3">
             <div class="form-outline">
               <%= f.label :メイ %>
             　<%= f.text_field :first_name_kana, placeholder: 'メイ', class: "form-control" %>
@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="row mb-2 justify-content-center">
-          <div class="col-6">
+          <div class="col-md-6">
             <div class="form-outline">
               <%= f.label :メールアドレス %>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mb-4" %></td>
@@ -41,14 +41,14 @@
           </div>
         </div>
         <div class="row mb-3 justify-content-center">
-          <div class="col-6">
+          <div class="col-md-6">
             <div class="form-outline">
               <%= f.submit "更新する", class: "btn btn-block text-light mb-4 btn-color" %>
             </div>
           </div>
         </div>
         <div class="row mb-3 justify-content-center">
-          <div class="col-6">
+          <div class="col-md-6">
             <div class="form-outline">
               <%= link_to "退会する", public_unsubscribe_path(@customer), class: "btn btn-block text-light mb-4 btn-color" %>
             </div>

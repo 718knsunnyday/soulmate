@@ -4,7 +4,7 @@ class Farmer::PostCommentsController < ApplicationController
     @post_comment = PostComment.new(post_comment_params)
     @post_comment.public_id = current_public.id
     @post_comment.farm_id = @farm.id
-    if @post_comment.save!
+    if @post_comment.save
       flash.now[:notice] = 'コメントを投稿しました。'
     else
       render :show

@@ -50,8 +50,8 @@ describe 'トップページのテスト' do
         expect(page).to have_link "", href: destroy_public_session_path
       end
     end
-    
-    context 'ヘッダーのテスト（農家ログイン後）の' do
+
+    context 'ヘッダーのテスト（農家ログイン後）の表示' do
       let(:farmer) { create(:farmer) }
       before do
         visit new_farmer_session_path
@@ -64,6 +64,48 @@ describe 'トップページのテスト' do
       end
       it 'ログアウトのリンクがあるか' do
         expect(page).to have_link "", href: destroy_farmer_session_path
+      end
+    end
+  end
+
+  # describe 'ユーザー新規登録・ログインのテスト' do
+  #   let!(:public_user) { build(:public) }
+  #   before do
+  #     new_public_registration_path
+  #     fill_in 'public[last_name]', with: public_user.last_name
+  #     fill_in 'public[first_name]', with: public_user.first_name
+  #     fill_in 'public[last_name_kana]', with: public_user.last_name_kana
+  #     fill_in 'public[first_name_kana]', with: public_user.first_name_kana_name
+  #     fill_in 'public[email]', with: public_user.email
+  #     fill_in 'public[password]', with: public_user.password
+  #     fill_in 'public[password_confirmation]', with: public_user.password_confirmation
+  #     click_button '新規登録する'
+  #   end
+  #   it '新規登録成功後のマイページへ' do
+  #     expect(page).to have_current_path customer_path(Public.last)
+  #   end
+  # end
+  
+  describe 'ユーザーのテスト' do
+    context 'ユーザー新規登録後、マイページのテスト' do
+    let(:public_user) { build(:public) }
+    before do
+      visit new_public_registration_path
+      fill_in 'public[last_name]', with: public_user.last_name
+      fill_in 'public[first_name]', with: public_user.first_name
+      fill_in 'public[last_name_kana]', with: public_user.last_name_kana
+      fill_in 'public[first_name_kana]', with: public_user.first_name_kana
+      fill_in 'public[email]', with: public_user.email
+      fill_in 'public[password]', with: public_user.password
+      fill_in 'public[password_confirmation]', with: public_user.password
+      click_button '新規登録する'
+    end
+      it 'ユーザー新規登録成功後登録した内容を表示' do
+        expect(page).to have_content public_user.last_name
+        expect(page).to have_content public_user.first_name
+        expect(page).to have_content public_user.last_name_kana
+        expect(page).to have_content public_user.first_name_kana
+        expect(page).to have_content public_user.email
       end
     end
   end

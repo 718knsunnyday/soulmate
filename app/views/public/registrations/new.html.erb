@@ -8,13 +8,13 @@
       <%= render "public/shared/error_messages", resource: resource %>
 
       <div class="row mb-2 justify-content-center">
-        <div class="col-3">
+        <div class="col-md-3">
           <div class="form-outline">
             <%= f.label :姓 %>
             <%= f.text_field :last_name, class: "form-control" %>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-md-3">
           <div class="form-outline">
             <%= f.label :名 %>
           　<%= f.text_field :first_name, class: "form-control" %>
@@ -23,13 +23,13 @@
       </div>
 
       <div class="row mb-2 justify-content-center">
-        <div class="col-3">
+        <div class="col-md-3">
           <div class="form-outline">
             <%= f.label :セイ %>
             <%= f.text_field :last_name_kana, class: "form-control" %>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-md-3">
           <div class="form-outline">
             <%= f.label :メイ %>
           　<%= f.text_field :first_name_kana, class: "form-control" %>
@@ -38,7 +38,7 @@
       </div>
 
       <div class="row mb-2 justify-content-center">
-        <div class="col-6">
+        <div class="col-md-6">
           <div class="form-outline">
             <%= f.label :メールアドレス %>
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %></td>
@@ -47,7 +47,7 @@
       </div>
 
       <div class="row mb-2 justify-content-center">
-        <div class="col-6">
+        <div class="col-md-6">
           <div class="form-outline">
             <%= f.label :パスワード %>
             <% if @minimum_password_length %>
@@ -59,7 +59,7 @@
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <div class="col-6">
+        <div class="col-md-6">
           <div class="form-outline">
             <%= f.label :パスワード確認 %>
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
@@ -68,7 +68,7 @@
       </div>
 
       <div class="row mb-3 justify-content-center">
-        <div class="col-6">
+        <div class="col-md-6">
           <div class="form-outline">
             <%= f.submit "新規登録する", class: "btn btn-block text-light mb-4 btn-color" %>
           </div>
@@ -79,7 +79,7 @@
 
 
     <h4>既に登録済みの方</h4>
-      <div class="row mb-3 justify-content-center">
+      <div class="row mb-md-3 justify-content-center">
         <div class="col-6">
           <div class="form-outline">
             <%= link_to "Log in", new_farmer_session_path, class: "btn btn-block text-light mb-4 btn-color" %>
