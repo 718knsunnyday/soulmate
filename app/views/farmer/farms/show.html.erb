@@ -4,7 +4,7 @@
   </div>
 
   <div class="row mt-4">
-    <div class="col-5 pt-4">
+    <div class="col-md-5 col-sm-12 pt-4">
       <%= attachment_image_tag @farm, :image, size: "400x300", class: "d-block mx-auto" %>
 
       <% if public_signed_in? %>
@@ -26,7 +26,7 @@
       <% end %>
     </div>
 
-    <div class="col-7 farm-index pt-4">
+    <div class="col-md-7 col-sm-12 farm-index pt-4">
       <h5>農家情報</h5>
       <div class="row mt-3">
         <div class="col-3">

@@ -3,28 +3,33 @@
     <h2>Bookmark一覧</h2>
   </div>
   <% @bookmark.each do |bookmark| %>
-    <div class="row">
-
-        <div class="col-4 mb-5 mt-5">
-          <%= attachment_image_tag bookmark.farm, :image, size: '300x250', format: 'jpeg' %>
+    <div class="row mt-5 mb-3 pt-4 pb-2 farm-index">
+        <div class="col-md-5 col-sm-12">
+          <p class="pl-3"><%= attachment_image_tag bookmark.farm, :image, size: '370x260', format: 'jpeg' %></p>
         </div>
-        <div class="col-8 border mb-5 mt-5 pt-5">
-          <span>農場名：
-            <%= link_to farmer_farm_path(bookmark.farm), class: "link-color" do %>
-              <%= bookmark.farm.name %>
-            <% end %>
-          </span><br>
-          <span>
-            農場住所：<%= bookmark.farm.full_address %>
-          </span><br>
-          <span>
-            栽培品目：<% bookmark.farm.cultivated_items.pluck(:name).each do |item| %>
-            <%= item %>&nbsp;
-            <% end %>
-          </span><br>
-          <span>
-            栽培品目例：<%= bookmark.farm.breed %>
-          </span>
+        <div class="col-md-7 col-sm-12">
+          <div class="row">
+            <div class="col-3">
+              <p>農場名</p>
+              <p>農場住所</p>
+              <p>栽培品目</p>
+              <p>栽培品目例</p>
+            </div>
+            <div class="col-9">
+              <p>
+                <%= link_to farmer_farm_path(bookmark.farm), class: "link-color" do %>
+                  <%= bookmark.farm.name %>
+                <% end %>
+              </p>
+              <p><%= bookmark.farm.full_address %></p>
+              <p>
+                <% bookmark.farm.cultivated_items.pluck(:name).each do |item| %>
+                  <%= item %>&nbsp;
+                <% end %>
+              </p>
+              <p><%= bookmark.farm.breed %></p>
+              </div>
+          </div>
         </div>
     </div>
   <% end %>
