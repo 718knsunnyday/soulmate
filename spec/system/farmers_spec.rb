@@ -89,6 +89,15 @@ describe '農家のテスト' do
       it '登録している農場名が表示されているか' do
         expect(page).to have_content farm.name
       end
+      it '登録している住所が表示されているか' do
+        expect(page).to have_content farm.full_address
+      end
+      it '登録している栽培品目例が表示されているか' do
+        expect(page).to have_content farm.breed
+      end
+      it '農場名が農場詳細リンクになっているか' do
+        expect(page).to have_link "", href: farmer_farm_path(farm)
+      end
     end
   end
 end

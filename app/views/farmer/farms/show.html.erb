@@ -85,7 +85,7 @@
                     <%= f.text_area :comment, rows: '3', placeholder: "コメント記入", class: "form-control mb-2" %>
                     <div class="form-group" id="star">
                       <%= f.label :オススメ度 %>&nbsp
-                      <%= f.hidden_field :rate %>
+                      <%= f.hidden_field :rate, id: "rate_field"%>
                     </div>
                     <script>
                       $('#star').raty({
