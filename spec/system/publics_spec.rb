@@ -4,8 +4,8 @@ describe 'ユーザーのテスト' do
   let(:public_user) { create(:public) }
   let(:farmer) { create(:farmer) }
   let(:farm) { create(:farm, farmer: farmer)}
-  let(:cultivated_item) {create(:cultivated_item)}
   let(:post_comment) { create(:post_comment, farm: farm, public: public_user) }
+  let(:cultivated_item) {create(:cultivated_item)}
   let(:farms_cultivated_item) {create(:farms_cultivated_item, farm: farm, cultivated_item: cultivated_item)}
   before do
     visit new_public_session_path
