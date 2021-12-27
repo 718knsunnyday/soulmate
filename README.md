@@ -45,7 +45,7 @@
 - RSpec
 
 ## 設計書
-[Soulmate_ER図.pdf](https://github.com/718knsunnyday/soulmate/files/7778088/Soulmate_ER.pdf)
+[ER図.pdf](https://github.com/718knsunnyday/soulmate/files/7778093/ER.pdf)
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1jAfugwf4qJJhx0DWvlW3QlcHrq4qZRZ73mTnktzYRXM/edit#gid=0
