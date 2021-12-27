@@ -15,7 +15,6 @@ class Farm < ApplicationRecord
   validates :house_number, presence: true
   validates :breed, presence: true
   validates :purchasing_method, presence: true
-  validates :contact, presence: true
   validates :description, presence: true
   validates :description, length: { in: 1..500}
   validates :image_id, presence: true, on: :update

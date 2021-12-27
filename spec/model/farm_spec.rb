@@ -40,10 +40,7 @@ RSpec.describe Farm, 'Farmモデルのテスト', type: :model do
         @farm.purchasing_method = ''
         expect(@farm.valid?).to eq(false)
       end
-      it 'コンタクトが空欄でないこと' do
-        @farm.contact = ''
-        expect(@farm.valid?).to eq(false)
-      end
+      
       it '説明が空欄でないこと' do
         @farm.description = ''
         expect(@farm.valid?).to eq(false)
