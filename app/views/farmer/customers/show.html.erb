@@ -4,18 +4,30 @@
     </div>
 
     <div class="row mb-2 justify-content-center">
-      <div class="col-md-3">
-          <p>名前 :</p>
-          <p>フリガナ :</p>
-          <p>メールアドレス :</p>
+      <div class="col-md-2">
+        <p>名前 : </p>
       </div>
-      <div class="col-md-3">
-        <p>
-          <%= @customer.last_name %> <%= @customer.first_name %>
-        </p>
+      <div class="col-md-2">
+          <p>
+            <%= @customer.last_name %> <%= @customer.first_name %>
+          </p>
+      </div>
+    </div>
+    <div class="row mb-2 justify-content-center">
+      <div class="col-md-2">
+        <p>フリガナ :</p>
+      </div>
+      <div class="col-md-2">
         <p>
           <%= @customer.last_name_kana %> <%= @customer.first_name_kana %>
         </p>
+      </div>
+    </div>
+    <div class="row mb-2 justify-content-center">
+      <div class="col-md-2">
+        <p>メールアドレス :</p>
+      </div>
+      <div class="col-md-2">
         <p>
           <%= @customer.email %>
         </p>
