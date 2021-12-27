@@ -68,7 +68,7 @@ describe 'トップページのテスト' do
     end
   end
 
-  describe 'ユーザー新規登録・ログインのテスト' do
+  describe 'ユーザー新規登録テスト' do
     let(:public_user) { build(:public) }
     before do
       visit new_public_registration_path
@@ -82,6 +82,50 @@ describe 'トップページのテスト' do
       click_button '新規登録する'
     end
     it '新規登録成功後のマイページへ' do
-      expect(page).to have_current_path customer_path(Public.last)
+      expect(page).to have_current_path customer_path(Public.last.id)
+    end
+  end
+  
+  describe 'ユーザーログインのテスト' do
+    let(:public_user) { create(:public) }
+    before do
+    visit new_public_session_path
+    fill_in 'public[email]', with: public_user.email
+    fill_in 'public[password]', with: public_user.password
+    click_button 'ログイン'
+    end
+    it 'ログイン後マイページへ' do
+      expect(page).to have_current_path customer_path(public_user)
+    end
+  end
+  
+  describe '農家新規登録テスト' do
+    let(:farmer) { build(:farmer) }
+    before do
+      visit new_farmer_registration_path
+      fill_in 'farmer[last_name]', with: farmer.last_name
+      fill_in 'farmer[first_name]', with: farmer.first_name
+      fill_in 'farmer[last_name_kana]', with: farmer.last_name_kana
+      fill_in 'farmer[first_name_kana]', with: farmer.first_name_kana
+      fill_in 'farmer[email]', with: farmer.email
+      fill_in 'farmer[password]', with: farmer.password
+      fill_in 'farmer[password_confirmation]', with: farmer.password_confirmation
+      click_button '新規登録する'
+    end
+    it '新規登録成功後のマイページへ' do
+      expect(page).to have_current_path farmer_customer_path(Farmer.last.id)
+    end
+  end
+  
+  describe '農家ログインのテスト' do
+    let(:farmer) { create(:farmer) }
+    before do
+    visit new_farmer_session_path
+    fill_in 'farmer[email]', with: farmer.email
+    fill_in 'farmer[password]', with: farmer.password
+    click_button 'ログイン'
+    end
+    it 'ログイン後マイページへ' do
+      expect(page).to have_current_path farmer_customer_path(farmer)
     end
   end
