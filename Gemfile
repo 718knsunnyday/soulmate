@@ -80,3 +80,5 @@ end
 group :development, :test do
   gem 'rubocop-airbnb'
 end
+gem 'faker'
+gem 'gimei'

@@ -25,19 +25,33 @@ farmer = Farmer.create!(
   password: "saitotaro",
   is_valid: "true",
   )
+  
+  # require 'faker'
+  
+  # 5.times do |n|
+  #   farmer = Farmer.create!(
+  #     email: Faker::Internet.email,
+  #     last_name: Gimei.last.kanji,
+  #     first_name: Gimei.first.kanji,
+  #     last_name_kana: Gimei.first.katakana,
+  #     first_name_kana: Gimei.last.katakana,
+  #     password: "1111111",
+  #     password_confirmation: "1111111"
+  #   )
+  # end
 
 Farm.create!([
-  {farmer_id: farmer.id, name: "ブルーベリー農場", manager: "斉藤太郎",
+  {farmer_id: 1, name: "ブルーベリー農場", manager: "斉藤太郎",
   post_code: "1234567", prefecture: "長野県", city: "須坂市", house_number: "１",
-  breed: "ブルーベリー", purchasing_method: "農場で購入可能", contact: "公式URL",
+  breed: "ブルーベリー", purchasing_method: "農場で購入可能", contact: "http://18.180.206.15/",
   description: "太陽の光を存分に浴びた、甘いブルーベリーを生産してます。ブルーベリーを一緒に収穫してみませんか。ぜひ遊びに来てください！",
   image: File.open("#{Rails.root}/app/assets/images/berry.jpg")},
 
-  {farmer_id: farmer.id, name: "シャインマスカット農場", manager: "農家太郎",
+  {farmer_id: 1, name: "シャインマスカット農場", manager: "農家太郎",
   post_code: "1234567", prefecture: "岡山県", city: "岡山市岡山町", house_number: "２",
-  breed: "シャインマスカット", purchasing_method: "ネットで購入可能　ふるさと納税対象", contact: "公式URL",
+  breed: "シャインマスカット", purchasing_method: "ネットで購入可能　ふるさと納税対象", contact: "http://18.180.206.15/",
   description: "皮まで食べることができ甘いのが特徴のシャインマスカットを生産してます。9月が旬なので、ぜひ9月に買いに農場まで来てください！",
-  image: File.open("#{Rails.root}/app/assets/images/muscat.jpg")}
+  image: File.open("#{Rails.root}/app/assets/images/muscat.jpg")},
   ])
 
 CultivatedItem.create!([
