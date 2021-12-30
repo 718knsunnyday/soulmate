@@ -129,3 +129,5 @@ describe 'トップページのテスト' do
       expect(page).to have_current_path farmer_customer_path(farmer)
     end
   end
+  
+  

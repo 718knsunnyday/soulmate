@@ -49,7 +49,7 @@ Farm.create!([
 
   {farmer_id: 1, name: "シャインマスカット農場", manager: "農家太郎",
   post_code: "1234567", prefecture: "岡山県", city: "岡山市岡山町", house_number: "２",
-  breed: "シャインマスカット", purchasing_method: "ネットで購入可能　ふるさと納税対象", contact: "http://18.180.206.15/",
+  breed: "シャインマスカット", purchasing_method: "ネットで購入可能", contact: "http://18.180.206.15/",
   description: "皮まで食べることができ甘いのが特徴のシャインマスカットを生産してます。9月が旬なので、ぜひ9月に買いに農場まで来てください！",
   image: File.open("#{Rails.root}/app/assets/images/muscat.jpg")},
   ])
