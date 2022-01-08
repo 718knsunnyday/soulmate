@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   namespace :farmer do
     get 'customers/thanks' => 'customers#thanks'
-    resources :customers, only: [:show, :edit, :update]
+    resources :customers, only: [:show, :index, :edit, :update]
     get 'customers/unsubscribe/:id' => 'customers#unsubscribe'
     patch 'customers/withdraw/:id' => 'customers#withdraw', as: :withdraw
     patch 'farms/update/:id' => 'farms#update', as: :farm_update

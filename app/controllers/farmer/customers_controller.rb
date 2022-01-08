@@ -1,7 +1,10 @@
 class Farmer::CustomersController < ApplicationController
   def show
     @customer = current_farmer
-    @farm = Farm.find(params[:id])
+  end
+
+  def index
+    @farms = Farm.where(farmer_id: current_farmer.id)
   end
 
   def edit
