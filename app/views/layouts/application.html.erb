@@ -3,7 +3,6 @@
   <head>
     <title>Soulmate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,58 +10,61 @@
   </head>
 
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-          <a class="navbar-brand text-light" href="/">ソウルメイト</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav ml-auto">
-                <% if public_signed_in? %>
-                  <li class="nav-item"><%= link_to "マイページ", customer_path(current_public), class: "nav-link text-light" %></li>
-                  <li class="nav-item"><%= link_to "地域別検索", farmer_prefecture_path, class: "nav-link text-light" %></li>
-                  <li class="nav-item"><%= link_to "品目別検索", farmer_variety_path, class: "nav-link text-light" %></li>
-                  <li class="nav-item"><%= link_to "農家一覧", farmer_farms_path, class: "nav-link text-light" %></li>
-                  <li class="nav-item"><%= link_to "ログアウト", destroy_public_session_path, method: :delete, class: "nav-link text-light" %></li>
-                <% elsif farmer_signed_in? %>
-                  <li class="nav-item"><%= link_to "マイページ", farmer_customer_path(current_farmer), class: "nav-link text-light" %></li>
-                  <li class="nav-item"><%= link_to "地域別検索", farmer_prefecture_path, class: "nav-link text-light" %></li>
-                  <li class="nav-item"><%= link_to "品目別検索", farmer_variety_path, class: "nav-link text-light" %></li>
-                  <li class="nav-item"><%= link_to "農家一覧", farmer_farms_path, class: "nav-link text-light" %></li>
-                  <li class="nav-item"><%= link_to "ログアウト", destroy_farmer_session_path, method: :delete, class: "nav-link text-light" %></li>
-                <% else %>
-                  <li class="nav-item"><%= link_to "サイトについて", about_path, class: "nav-link text-light" %></li>
-                  <li class="nav-item"><%= link_to "地域別検索", farmer_prefecture_path, class: "nav-link text-light" %></li>
-                  <li class="nav-item"><%= link_to "品目別検索", farmer_variety_path, class: "nav-link text-light" %></li>
-                  <li class="nav-item"><%= link_to "農家一覧", farmer_farms_path, class: "nav-link text-light" %></li>
+    <div class = "wrapper">
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <a class="navbar-brand text-light" href="/">ソウルメイト</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                  <% if public_signed_in? %>
+                    <li class="nav-item"><%= link_to "マイページ", customer_path(current_public), class: "nav-link text-light" %></li>
+                    <li class="nav-item"><%= link_to "地域別検索", farmer_prefecture_path, class: "nav-link text-light" %></li>
+                    <li class="nav-item"><%= link_to "品目別検索", farmer_variety_path, class: "nav-link text-light" %></li>
+                    <li class="nav-item"><%= link_to "農家一覧", farmer_farms_path, class: "nav-link text-light" %></li>
+                    <li class="nav-item"><%= link_to "ログアウト", destroy_public_session_path, method: :delete, class: "nav-link text-light" %></li>
+                  <% elsif farmer_signed_in? %>
+                    <li class="nav-item"><%= link_to "マイページ", farmer_customer_path(current_farmer), class: "nav-link text-light" %></li>
+                    <li class="nav-item"><%= link_to "地域別検索", farmer_prefecture_path, class: "nav-link text-light" %></li>
+                    <li class="nav-item"><%= link_to "品目別検索", farmer_variety_path, class: "nav-link text-light" %></li>
+                    <li class="nav-item"><%= link_to "農家一覧", farmer_farms_path, class: "nav-link text-light" %></li>
+                    <li class="nav-item"><%= link_to "ログアウト", destroy_farmer_session_path, method: :delete, class: "nav-link text-light" %></li>
+                  <% else %>
+                    <li class="nav-item"><%= link_to "サイトについて", about_path, class: "nav-link text-light" %></li>
+                    <li class="nav-item"><%= link_to "地域別検索", farmer_prefecture_path, class: "nav-link text-light" %></li>
+                    <li class="nav-item"><%= link_to "品目別検索", farmer_variety_path, class: "nav-link text-light" %></li>
+                    <li class="nav-item"><%= link_to "農家一覧", farmer_farms_path, class: "nav-link text-light" %></li>
+                  <% end %>
+                </ul>
+              <div class="form-inline">
+                <%= form_with url: search_path, method: :get, local: true do |f| %>
+                  <%= f.text_field :search, placeholder: "農家を検索", class: "form-control form-control-sm" %>
+                  <%= f.submit "検索", class: "btn btn-outline-light" %>
                 <% end %>
-              </ul>
-            <div class="form-inline">
-              <%= form_with url: search_path, method: :get, local: true do |f| %>
-                <%= f.text_field :search, placeholder: "農家を検索", class: "form-control form-control-sm" %>
-                <%= f.submit "検索", class: "btn btn-outline-light" %>
-              <% end %>
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
 
-    <main>
-      <% if current_page?(root_path) %>
-        <%= yield %>
-      <% else %>
-        <p class="notice mt-3"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>
-      <% end %>
-    </main>
-    <footer class="py-3">
-      <div class="container text-center">
-        <p>Copyright © Soulmate. All Rights Reserved.</p>
+      <main>
+        <% if current_page?(root_path) %>
+          <%= yield %>
+        <% else %>
+          <p class="notice mt-3"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <%= yield %>
+        <% end %>
+      </main>
       </div>
-    </footer>
+      <footer class="mt-auto py-3">
+        <div class="container text-center">
+          <p>Copyright © Soulmate. All Rights Reserved.</p>
+        </div>
+      </footer>
+    
   </body>
 </html>
