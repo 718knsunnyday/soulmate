@@ -26,13 +26,13 @@
                 <% end %>
               </p>
               <p><%= farm.breed %></p>
+            <% end %>
               <p>
                 <% if public_signed_in? %>
                 <div id="favorite_<%= farm.id %>">
                   <span class="inline-block">応援ボタン</span>
                     <span class="thumbs-up"><%= render 'farmer/favorites/favorite', farm: farm %></span>
                 </div>
-                <% end %>
               </p>
             <% end %>
           </div>
