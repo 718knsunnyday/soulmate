@@ -3,182 +3,76 @@
       <h2>地域別検索</h2>
   </div>
 
-  <div class="row mt-5">
-    <div class="col-md-3 ml-5 pl-5">
-      <p>北海道</p>
-    </div>
-    <div class="col-md-8">
-      <p><%= link_to '北海道', farmer_result_prefecture_path('北海道'), class: "link-color" %></p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3 col-sm-10 ml-5 pl-5">
-      <p>東北</p>
-    </div>
-    <div class="col-md-8">
-      <p class="link-color">
-        <%= link_to '青森県', farmer_result_prefecture_path('青森県'), class: "link-color" %>
-        <%= link_to '岩手県', farmer_result_prefecture_path('岩手県'), class: "ml-3 link-color" %>
-        <%= link_to '秋田県', farmer_result_prefecture_path('秋田県'), class: "ml-3 link-color" %>
-        <%= link_to '山形県', farmer_result_prefecture_path('山形県'), class: "ml-3 link-color" %>
-        <%= link_to '宮城県', farmer_result_prefecture_path('宮城県'), class: "ml-3 link-color" %>
-        <%= link_to '福島県', farmer_result_prefecture_path('福島県'), class: "ml-3 link-color" %>
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3 ml-5 pl-5">
-      <p>関東</p>
-    </div>
-    <div class="col-md-8">
-      <p>
-        <%= link_to '栃木県', farmer_result_prefecture_path('栃木県'), class: "link-color" %>
-        <%= link_to '群馬県', farmer_result_prefecture_path('群馬県'), class: "ml-3 link-color" %>
-        <%= link_to '茨城県', farmer_result_prefecture_path('茨城県'), class: "ml-3 link-color" %>
-        <%= link_to '千葉県', farmer_result_prefecture_path('千葉県'), class: "ml-3 link-color" %>
-        <%= link_to '埼玉県', farmer_result_prefecture_path('埼玉県'), class: "ml-3 link-color" %>
-        <%= link_to '東京都', farmer_result_prefecture_path('東京都'), class: "ml-3 link-color" %>
-        <%= link_to '神奈川県', farmer_result_prefecture_path('神奈川県'), class: "ml-3 link-color" %>
-      <p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3 ml-5 pl-5">
-      <p>中部</p>
-    </div>
-    <div class="col-md-8">
-      <p>
-        <%= link_to '新潟県', farmer_result_prefecture_path('新潟県'), class: "link-color" %>
-        <%= link_to '富山県', farmer_result_prefecture_path('富山県'), class: "ml-3 link-color" %>
-        <%= link_to '岐阜県', farmer_result_prefecture_path('岐阜県'), class: "ml-3 link-color" %>
-        <%= link_to '石川県', farmer_result_prefecture_path('石川県'), class: "ml-3 link-color" %>
-        <%= link_to '福井県', farmer_result_prefecture_path('福井県'), class: "ml-3 link-color" %>
-        <%= link_to '長野県', farmer_result_prefecture_path('長野県'), class: "ml-3 link-color" %>
-        <%= link_to '岐阜県', farmer_result_prefecture_path('岐阜県'), class: "ml-3 link-color" %>
-        <%= link_to '山梨県', farmer_result_prefecture_path('山梨県'), class: "ml-3 link-color" %>
-        <%= link_to '静岡県', farmer_result_prefecture_path('静岡県'), class: "ml-3 link-color" %>
-        <%= link_to '愛知県', farmer_result_prefecture_path('愛知県'), class: "ml-3 link-color" %>
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3 ml-5 pl-5">
-      <p>近畿</p>
-    </div>
-    <div class="col-md-8">
-      <p>
-        <%= link_to '滋賀県', farmer_result_prefecture_path('滋賀県'), class: "link-color" %>
-        <%= link_to '三重県', farmer_result_prefecture_path('三重県'), class: "ml-3 link-color" %>
-        <%= link_to '奈良県', farmer_result_prefecture_path('奈良県'), class: "ml-3 link-color" %>
-        <%= link_to '京都府', farmer_result_prefecture_path('京都府'), class: "ml-3 link-color" %>
-        <%= link_to '大阪府', farmer_result_prefecture_path('大阪府'), class: "ml-3 link-color" %>
-        <%= link_to '和歌山県', farmer_result_prefecture_path('和歌山県'), class: "ml-3 link-color" %>
-        <%= link_to '兵庫県', farmer_result_prefecture_path('兵庫県'), class: "ml-3 link-color" %>
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3 ml-5 pl-5">
-      <p>中国</p>
-    </div>
-    <div class="col-md-8">
-      <p>
-        <%= link_to '鳥取県', farmer_result_prefecture_path('鳥取県'), class: "link-color" %>
-        <%= link_to '島根県', farmer_result_prefecture_path('島根県'), class: "ml-3 link-color" %>
-        <%= link_to '岡山県', farmer_result_prefecture_path('岡山県'), class: "ml-3 link-color" %>
-        <%= link_to '広島県', farmer_result_prefecture_path('広島県'), class: "ml-3 link-color" %>
-        <%= link_to '山口県', farmer_result_prefecture_path('山口県'), class: "ml-3 link-color" %>
-        <%= link_to '香川県', farmer_result_prefecture_path('香川県'), class: "ml-3 link-color" %>
-        <%= link_to '徳島県', farmer_result_prefecture_path('徳島県'), class: "ml-3 link-color" %>
-        <%= link_to '愛媛県', farmer_result_prefecture_path('愛媛県'), class: "ml-3 link-color" %>
-        <%= link_to '高知県', farmer_result_prefecture_path('高知県'), class: "ml-3 link-color" %>
-      </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3 ml-5 pl-5">
-      <p>九州</p>
-    </div>
-    <div class="col-md-8 mb-5">
-      <p>
-        <%= link_to '福岡県', farmer_result_prefecture_path('福岡県'), class: "link-color" %>
-        <%= link_to '大分県', farmer_result_prefecture_path('大分県'), class: "ml-3 link-color" %>
-        <%= link_to '宮崎県', farmer_result_prefecture_path('宮崎県'), class: "ml-3 link-color" %>
-        <%= link_to '佐賀県', farmer_result_prefecture_path('佐賀県'), class: "ml-3 link-color" %>
-        <%= link_to '長崎県', farmer_result_prefecture_path('長崎県'), class: "ml-3 link-color" %>
-        <%= link_to '熊本県', farmer_result_prefecture_path('熊本県'), class: "ml-3 link-color" %>
-        <%= link_to '鹿児島県', farmer_result_prefecture_path('鹿児島県'), class: "ml-3 link-color" %>
-        <%= link_to '沖縄県', farmer_result_prefecture_path('沖縄県'), class: "ml-3 link-color" %>
-        <a class="ml-3 link-color" href="/farmer/farms/prefecture/result/岡山県">岡山県</a>
-      </p>
-    </div>
-  </div>
-  <div class="row">
+ 
+  <div class="row justify-content-center mb-5">
     <div id="jmap"></div>
     <script>
     $(document).ready(function() {
 
     $('#jmap').jmap({
-        height: '700px',
+        height: '750px',
         showInfobox: true,
-        backgroundRadius: '1rem',
-        backgroundPadding: '1rem',
+        backgroundRadius: '20px',
+        backgroundPadding: '0px',
+        dividerWidth: '1px',
         backgroundColor: '#ff000000',
         prefectureClass: 'prefecture',
-        prefectureLineColor: '#ffffff',
-        prefectureLineWidth: 1,
-        prefectureLineHoverColor : '#fff',
-        fontSize: '1.7rem',
-        fontColor: '#000',
+        prefectureLineColor: '#f4f6f44',
+        prefectureLineHoverColor : '#f4f6f44',
+        prefectureLineGap: '1px',
+        fontSize: '20px',
+        fontColor: '#262e2e',
         font: 'sans-serif',
+        skew: '4',
+        
         areas: [
-        {code : 1, name: "北海道", color: "#7e9a9a", hoverColor: "#dfe6e6"},
-        {code : 2, name: "青森", color: "#7e9a9a", hoverColor: "#98b9ff" },
-        {code : 3, name: "岩手", color: "#7e9a9a", hoverColor: "#98b9ff" },
-        {code : 4, name: "宮城", color: "#7e9a9a", hoverColor: "#98b9ff" },
-        {code : 5, name: "秋田", color: "#7e9a9a", hoverColor: "#98b9ff" },
-        {code : 6, name: "山形", color: "#7e9a9a", hoverColor: "#98b9ff" },
-        {code : 7, name: "福島", color: "#7e9a9a", hoverColor: "#98b9ff" },
-        {code : 8, name: "茨城", color: "#7e9a9a", hoverColor: "#b7e5f4" },
-        {code : 9, name: "栃木", color: "#7e9a9a", hoverColor: "#b7e5f4" },
-        {code : 10, name: "群馬", color: "#7e9a9a", hoverColor: "#b7e5f4" },
-        {code : 11, name: "埼玉", color: "#7e9a9a", hoverColor: "#b7e5f4" },
-        {code : 12, name: "千葉", color: "#7e9a9a", hoverColor: "#b7e5f4" },
-        {code : 13, name: "東京", color: "#7e9a9a", hoverColor: "#b7e5f4" },
-        {code : 14, name: "神奈川", color: "#7e9a9a", hoverColor: "#b7e5f4" },
-        {code : 15, name: "新潟", color: "#7e9a9a", hoverColor: "#aceebb" },
-        {code : 16, name: "富山", color: "#7e9a9a", hoverColor: "#aceebb" },
-        {code : 17, name: "石川", color: "#7e9a9a", hoverColor: "#aceebb" },
-        {code : 18, name: "福井", color: "#7e9a9a", hoverColor: "#aceebb" },
-        {code : 19, name: "山梨", color: "#7e9a9a", hoverColor: "#aceebb" },
-        {code : 20, name: "長野", color: "#7e9a9a", hoverColor: "#aceebb" },
-        {code : 21, name: "岐阜", color: "#7e9a9a", hoverColor: "#aceebb" },
-        {code : 22, name: "静岡", color: "#7e9a9a", hoverColor: "#aceebb" },
-        {code : 23, name: "愛知", color: "#7e9a9a", hoverColor: "#aceebb" },
-        {code : 24, name: "三重", color: "#7e9a9a", hoverColor: "#fff19c" },
-        {code : 25, name: "滋賀", color: "#7e9a9a", hoverColor: "#fff19c" },
-        {code : 26, name: "京都", color: "#7e9a9a", hoverColor: "#fff19c" },
-        {code : 27, name: "大阪", color: "#7e9a9a", hoverColor: "#fff19c" },
-        {code : 28, name: "兵庫", color: "#7e9a9a", hoverColor: "#fff19c" },
-        {code : 29, name: "奈良", color: "#7e9a9a", hoverColor: "#fff19c" },
-        {code : 30, name: "和歌山", color: "#7e9a9a", hoverColor: "#fff19c" },
-        {code : 31, name: "鳥取", color: "#7e9a9a", hoverColor: "#ffe0a3" },
-        {code : 32, name: "島根", color: "#7e9a9a", hoverColor: "#ffe0a3" },
-        {code : 33, name: "岡山", color: "#7e9a9a", hoverColor: "#ffe0a3" },
-        {code : 34, name: "広島", color: "#7e9a9a", hoverColor: "#ffe0a3" },
-        {code : 35, name: "山口", color: "#7e9a9a", hoverColor: "#ffe0a3" },
-        {code : 36, name: "徳島", color: "#7e9a9a", hoverColor: "#ffbb9c" },
-        {code : 37, name: "香川", color: "#7e9a9a", hoverColor: "#ffbb9c" },
-        {code : 38, name: "愛媛", color: "#7e9a9a", hoverColor: "#ffbb9c" },
-        {code : 39, name: "高知", color: "#7e9a9a", hoverColor: "#ffbb9c" },
-        {code : 40, name: "福岡", color: "#7e9a9a", hoverColor: "#ffbdbd" },
-        {code : 41, name: "佐賀", color: "#7e9a9a", hoverColor: "#ffbdbd" },
-        {code : 42, name: "長崎", color: "#7e9a9a", hoverColor: "#ffbdbd" },
-        {code : 43, name: "熊本", color: "#7e9a9a", hoverColor: "#ffbdbd" },
-        {code : 44, name: "大分", color: "#7e9a9a", hoverColor: "#ffbdbd" },
-        {code : 45, name: "宮崎", color: "#7e9a9a", hoverColor: "#ffbdbd" },
-        {code : 46, name: "鹿児島", color: "#7e9a9a", hoverColor: "#ffbdbd" },
-        {code : 47, name: "沖縄", color: "#7e9a9a", hoverColor: "#f5c9ff" }
+        {code : 1, name: "北海道", color: "#61a374", hoverColor: "#f4f6f4"},
+        {code : 2, name: "青森", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 3, name: "岩手", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 4, name: "宮城", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 5, name: "秋田", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 6, name: "山形", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 7, name: "福島", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 8, name: "茨城", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 9, name: "栃木", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 10, name: "群馬", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 11, name: "埼玉", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 12, name: "千葉", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 13, name: "東京", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 14, name: "神奈川", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 15, name: "新潟", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 16, name: "富山", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 17, name: "石川", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 18, name: "福井", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 19, name: "山梨", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 20, name: "長野", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 21, name: "岐阜", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 22, name: "静岡", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 23, name: "愛知", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 24, name: "三重", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 25, name: "滋賀", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 26, name: "京都", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 27, name: "大阪", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 28, name: "兵庫", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 29, name: "奈良", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 30, name: "和歌山", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 31, name: "鳥取", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 32, name: "島根", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 33, name: "岡山", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 34, name: "広島", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 35, name: "山口", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 36, name: "徳島", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 37, name: "香川", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 38, name: "愛媛", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 39, name: "高知", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 40, name: "福岡", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 41, name: "佐賀", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 42, name: "長崎", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 43, name: "熊本", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 44, name: "大分", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 45, name: "宮崎", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 46, name: "鹿児島", color: "#61a374", hoverColor: "#f4f6f4" },
+        {code : 47, name: "沖縄", color: "#61a374", hoverColor: "#f4f6f4" }
         ],
         onLoad: function(e, data) {
             $(this).html(data.name);
