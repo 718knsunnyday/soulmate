@@ -27,7 +27,7 @@ Farmer.create!(
   )
 
   
-47.times do |n|
+10.times do |n|
   Farmer.create!(
     email: "sample#{n + 1}@sample.com",
     last_name: "sample#{n + 1}",
@@ -40,43 +40,13 @@ Farmer.create!(
 end
 
 Farm.create!([
-  {farmer_id: 1, name: "sample1", manager: "sample1",
-  post_code: "123-4567", prefecture: "北海道", city: "富良野市", house_number: "1-1",
-  breed: "メロン", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
-  description: "sample",
-  image: File.open("#{Rails.root}/app/assets/images/muscat.jpg")},
-  
-  {farmer_id: 2, name: "sample2", manager: "sample2",
-  post_code: "123-4567", prefecture: "青森県", city: "つがる市", house_number: "1-1",
-  breed: "りんご", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
-  description: "sample",
-  image: File.open("#{Rails.root}/app/assets/images/muscat.jpg")},
-  
-  {farmer_id: 3, name: "sample3", manager: "sample3",
-  post_code: "123-4567", prefecture: "秋田", city: "男鹿市", house_number: "1-1",
-  breed: "米", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
-  description: "sample",
-  image: File.open("#{Rails.root}/app/assets/images/muscat.jpg")},
-  
-  {farmer_id: 4, name: "sample4", manager: "sample4",
-  post_code: "123-4567", prefecture: "岩手県", city: "紫波郡", house_number: "1-1",
-  breed: "ぶどう", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
-  description: "sample",
-  image: File.open("#{Rails.root}/app/assets/images/muscat.jpg")},
-  
-  {farmer_id: 5, name: "sample5", manager: "sample5",
-  post_code: "123-4567", prefecture: "宮城県", city: "栗原市", house_number: "1-1",
-  breed: "さくらんぼ", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
-  description: "sample",
-  image: File.open("#{Rails.root}/app/assets/images/muscat.jpg")},
-  
-  {farmer_id: 6, name: "シャインマスカット農場", manager: "農家太郎",
+  {farmer_id: 1, name: "シャインマスカット農場", manager: "農家太郎",
   post_code: "123-4567", prefecture: "岡山県", city: "岡山市岡山町", house_number: "2",
   breed: "シャインマスカット", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
   description: "皮まで食べることができ甘いのが特徴のシャインマスカットを生産してます。9月が旬なので、ぜひ9月に買いに農場まで来てください！",
   image: File.open("#{Rails.root}/app/assets/images/muscat.jpg")},
   
-  {farmer_id: 7, name: "ブルーベリー農場", manager: "斉藤太郎",
+  {farmer_id: 2, name: "ブルーベリー農場", manager: "斉藤太郎",
   post_code: "123-4567", prefecture: "長野県", city: "須坂市", house_number: "2",
   breed: "ブルーベリー", purchasing_method: "農場で購入可能", contact: "http://meet-up-soulmate.com/",
   description: "太陽の光を存分に浴びた、甘いブルーベリーを生産してます。ブルーベリーを一緒に収穫してみませんか。ぜひ遊びに来てください！",
@@ -85,7 +55,7 @@ Farm.create!([
   
   10.times do |n|
     Farm.create!(
-      farmer_id: 8,name: "sample#{n + 1}", manager: "sample#{n+1}",
+      farmer_id: 3,name: "sample#{n + 1}", manager: "sample#{n+1}",
       post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-3",
       breed: "じゃがいも", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
       description: "sample",
@@ -95,7 +65,7 @@ Farm.create!([
   
   10.times do |n|
     Farm.create!(
-      farmer_id: 9,name: "sample#{n + 1}", manager: "sample#{n+1}",
+      farmer_id: 4,name: "sample#{n + 1}", manager: "sample#{n+1}",
       post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-3",
       breed: "なす", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
       description: "sample",
@@ -105,7 +75,7 @@ Farm.create!([
   
   10.times do |n|
     Farm.create!(
-      farmer_id: 9,name: "sample#{n + 1}", manager: "sample#{n+1}",
+      farmer_id: 5,name: "sample#{n + 1}", manager: "sample#{n+1}",
       post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-3",
       breed: "りんご", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
       description: "sample",
@@ -115,7 +85,7 @@ Farm.create!([
   
   20.times do |n|
     Farm.create!(
-      farmer_id: 10,name: "sample#{n + 1}", manager: "sample#{n+1}",
+      farmer_id: 6,name: "sample#{n + 1}", manager: "sample#{n+1}",
       post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-3",
       breed: "米", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
       description: "sample",
@@ -125,7 +95,7 @@ Farm.create!([
   
   20.times do |n|
     Farm.create!(
-      farmer_id: 10,name: "sample#{n + 1}", manager: "sample#{n+1}",
+      farmer_id: 7,name: "sample#{n + 1}", manager: "sample#{n+1}",
       post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-3",
       breed: "にんじん、ピーマン、米", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
       description: "sample",
@@ -133,6 +103,11 @@ Farm.create!([
     )
   end
   
+  Farm.all.ids.each do | farm_id |
+    CultivatedItem.all.ids.each do |cultivated_item_id|
+      FarmsCultivatedItem.create!(cultivated_item_id: cultivated_item_id, farm_id: farm_id)
+    end
+  end
 
 CultivatedItem.create!([
   {name: "いも類"},
@@ -153,9 +128,3 @@ CultivatedItem.create!([
   {name: "核果類"},
   {name: "ベリー類等の小粒果実類"},
   ])
-
-Farm.all.ids.each do | farm_id |
-  CultivatedItem.all.ids.last(1).each do |cultivated_item_id|
-    FarmsCultivatedItem.create!(cultivated_item_id: cultivated_item_id, farm_id: farm_id)
-  end
-end

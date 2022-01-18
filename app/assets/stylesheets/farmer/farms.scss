@@ -9,14 +9,19 @@
 
 .pagination>li>a {
   border: none;
-  color: black;
+  color: #262e2e;
 }
 
 .pagination>li>a:hover {
- background-color: white;
+background-color: #ebefef;
+border-radius: 15px;
 }
 
 // 農場詳細・一覧の背景画面
 .farm-index{
   background: #f4f6f6;
+}
+
+.pagination>.active>li {
+  border-radius: 15px;     /*角を丸くする*/
 }
