@@ -51,14 +51,14 @@ class Farmer::FarmsController < ApplicationController
   end
 
   def result_prefecture
-    @farms = Farm.where(prefecture: params[:prefecture])
+    @farms = Farm.where(prefecture: params[:prefecture]).order(params[:sort]).page(params[:page]).per(5)
   end
 
   def variety
   end
 
   def result_variety
-    @farms = Farm.joins(:cultivated_items).where(cultivated_items: {name: params[:variety]})
+    @farms = Farm.joins(:cultivated_items).where(cultivated_items: {name: params[:variety]}).order(params[:sort]).page(params[:page]).per(5)
 
   end
 

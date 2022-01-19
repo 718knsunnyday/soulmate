@@ -53,20 +53,20 @@ Farm.create!([
   image: File.open("#{Rails.root}/app/assets/images/berry.jpg")},
   ])
   
-  10.times do |n|
+  20.times do |n|
     Farm.create!(
-      farmer_id: 3,name: "sample#{n + 1}", manager: "sample#{n+1}",
-      post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-3",
+      farmer_id: 3, name: "sample#{n + 1}", manager: "sample#{n+1}",
+      post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "3-3",
       breed: "じゃがいも", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
       description: "sample",
-      image: File.open("#{Rails.root}/app/assets/images/sample.jpg"),
+      image: File.open("#{Rails.root}/app/assets/images/potato.jpg"),
     )
   end
   
   10.times do |n|
     Farm.create!(
       farmer_id: 4,name: "sample#{n + 1}", manager: "sample#{n+1}",
-      post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-3",
+      post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "2-3",
       breed: "なす", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
       description: "sample",
       image: File.open("#{Rails.root}/app/assets/images/eggplant.jpg"),
@@ -76,7 +76,7 @@ Farm.create!([
   10.times do |n|
     Farm.create!(
       farmer_id: 5,name: "sample#{n + 1}", manager: "sample#{n+1}",
-      post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-3",
+      post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-10",
       breed: "りんご", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
       description: "sample",
       image: File.open("#{Rails.root}/app/assets/images/apple.jpg"),
@@ -86,29 +86,43 @@ Farm.create!([
   20.times do |n|
     Farm.create!(
       farmer_id: 6,name: "sample#{n + 1}", manager: "sample#{n+1}",
-      post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-3",
+      post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-9",
       breed: "米", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
       description: "sample",
       image: File.open("#{Rails.root}/app/assets/images/rice.jpg"),
     )
   end
   
-  20.times do |n|
+  10.times do |n|
     Farm.create!(
       farmer_id: 7,name: "sample#{n + 1}", manager: "sample#{n+1}",
-      post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-3",
-      breed: "にんじん、ピーマン、米", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
+      post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-5",
+      breed: "もも", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
       description: "sample",
-      image: File.open("#{Rails.root}/app/assets/images/rice.jpg"),
+      image: File.open("#{Rails.root}/app/assets/images/peach.jpg"),
     )
   end
   
-  Farm.all.ids.each do | farm_id |
-    CultivatedItem.all.ids.each do |cultivated_item_id|
-      FarmsCultivatedItem.create!(cultivated_item_id: cultivated_item_id, farm_id: farm_id)
-    end
-  end
-
+  # Farm.create!([
+  #     {farmer_id: 8,name: "sample#{n + 1}", manager: "sample#{n+1}",
+  #     post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-5",
+  #     breed: "ゆず", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
+  #     description: "sample",
+  #     image: File.open("#{Rails.root}/app/assets/images/yuzu.jpg")},
+      
+  #     {farmer_id: 9,name: "sample#{n + 1}", manager: "sample#{n+1}",
+  #     post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-5",
+  #     breed: "にんじん", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
+  #     description: "sample",
+  #     image: File.open("#{Rails.root}/app/assets/images/carrot.jpg")},
+      
+  #     {farmer_id: 10,name: "sample#{n + 1}", manager: "sample#{n+1}",
+  #     post_code: Faker::Address.postcode, prefecture: Gimei.unique.address.prefecture.kanji, city: Gimei.address.city.kanji, house_number: Gimei.town.kanji + "1-5",
+  #     breed: "玉ねぎ", purchasing_method: "ネットで購入可能", contact: "http://meet-up-soulmate.com/",
+  #     description: "sample",
+  #     image: File.open("#{Rails.root}/app/assets/images/onion.jpg")}
+  #   ])
+    
 CultivatedItem.create!([
   {name: "いも類"},
   {name: "根菜類"},
@@ -128,3 +142,95 @@ CultivatedItem.create!([
   {name: "核果類"},
   {name: "ベリー類等の小粒果実類"},
   ])
+  
+  # Farm.all.ids.each do | farm_id |
+  #   CultivatedItem.all.ids.each do |cultivated_item_id|
+  #     FarmsCultivatedItem.create!(cultivated_item_id: cultivated_item_id, farm_id: farm_id)
+  #   end
+  # end
+  
+  farm = [
+          {:farm_id => 1, :cultivated_item => ["ベリー類等の小粒果実類"]},
+          {:farm_id => 2, :cultivated_item => ["ベリー類等の小粒果実類"]},
+          {:farm_id => 3, :cultivated_item => ["いも類"]},
+          {:farm_id => 4, :cultivated_item => ["いも類"]},
+          {:farm_id => 5, :cultivated_item => ["いも類"]},
+          {:farm_id => 6, :cultivated_item => ["いも類"]},
+          {:farm_id => 7, :cultivated_item => ["いも類"]},
+          {:farm_id => 8, :cultivated_item => ["いも類"]},
+          {:farm_id => 9, :cultivated_item => ["いも類"]},
+          {:farm_id => 10, :cultivated_item => ["いも類"]},
+          {:farm_id => 11, :cultivated_item => ["いも類"]},
+          {:farm_id => 12, :cultivated_item => ["いも類"]},
+          {:farm_id => 13, :cultivated_item => ["いも類"]},
+          {:farm_id => 14, :cultivated_item => ["いも類"]},
+          {:farm_id => 15, :cultivated_item => ["いも類"]},
+          {:farm_id => 16, :cultivated_item => ["いも類"]},
+          {:farm_id => 17, :cultivated_item => ["いも類"]},
+          {:farm_id => 18, :cultivated_item => ["いも類"]},
+          {:farm_id => 19, :cultivated_item => ["いも類"]},
+          {:farm_id => 20, :cultivated_item => ["いも類"]},
+          {:farm_id => 21, :cultivated_item => ["いも類"]},
+          {:farm_id => 22, :cultivated_item => ["いも類"]},
+          {:farm_id => 23, :cultivated_item => ["なす科果菜"]},
+          {:farm_id => 24, :cultivated_item => ["なす科果菜"]},
+          {:farm_id => 25, :cultivated_item => ["なす科果菜"]},
+          {:farm_id => 26, :cultivated_item => ["なす科果菜"]},
+          {:farm_id => 27, :cultivated_item => ["なす科果菜"]},
+          {:farm_id => 28, :cultivated_item => ["なす科果菜"]},
+          {:farm_id => 29, :cultivated_item => ["なす科果菜"]},
+          {:farm_id => 30, :cultivated_item => ["なす科果菜"]},
+          {:farm_id => 31, :cultivated_item => ["なす科果菜"]},
+          {:farm_id => 32, :cultivated_item => ["なす科果菜"]},
+          {:farm_id => 33, :cultivated_item => ["仁果類"]},
+          {:farm_id => 34, :cultivated_item => ["仁果類"]},
+          {:farm_id => 35, :cultivated_item => ["仁果類"]},
+          {:farm_id => 36, :cultivated_item => ["仁果類"]},
+          {:farm_id => 37, :cultivated_item => ["仁果類"]},
+          {:farm_id => 38, :cultivated_item => ["仁果類"]},
+          {:farm_id => 39, :cultivated_item => ["仁果類"]},
+          {:farm_id => 40, :cultivated_item => ["仁果類"]},
+          {:farm_id => 41, :cultivated_item => ["仁果類"]},
+          {:farm_id => 42, :cultivated_item => ["仁果類"]},
+          {:farm_id => 42, :cultivated_item => ["穀類"]},
+          {:farm_id => 43, :cultivated_item => ["穀類"]},
+          {:farm_id => 44, :cultivated_item => ["穀類"]},
+          {:farm_id => 45, :cultivated_item => ["穀類"]},
+          {:farm_id => 46, :cultivated_item => ["穀類"]},
+          {:farm_id => 47, :cultivated_item => ["穀類"]},
+          {:farm_id => 48, :cultivated_item => ["穀類"]},
+          {:farm_id => 49, :cultivated_item => ["穀類"]},
+          {:farm_id => 50, :cultivated_item => ["穀類"]},
+          {:farm_id => 51, :cultivated_item => ["穀類"]},
+          {:farm_id => 52, :cultivated_item => ["穀類"]},
+          {:farm_id => 53, :cultivated_item => ["穀類"]},
+          {:farm_id => 54, :cultivated_item => ["穀類"]},
+          {:farm_id => 55, :cultivated_item => ["穀類"]},
+          {:farm_id => 56, :cultivated_item => ["穀類"]},
+          {:farm_id => 57, :cultivated_item => ["穀類"]},
+          {:farm_id => 58, :cultivated_item => ["穀類"]},
+          {:farm_id => 59, :cultivated_item => ["穀類"]},
+          {:farm_id => 60, :cultivated_item => ["穀類"]},
+          {:farm_id => 61, :cultivated_item => ["穀類"]},
+          {:farm_id => 62, :cultivated_item => ["穀類"]},
+          {:farm_id => 63, :cultivated_item => ["核果類"]},
+          {:farm_id => 64, :cultivated_item => ["核果類"]},
+          {:farm_id => 65, :cultivated_item => ["核果類"]},
+          {:farm_id => 66, :cultivated_item => ["核果類"]},
+          {:farm_id => 67, :cultivated_item => ["核果類"]},
+          {:farm_id => 68, :cultivated_item => ["核果類"]},
+          {:farm_id => 69, :cultivated_item => ["核果類"]},
+          {:farm_id => 70, :cultivated_item => ["核果類"]},
+          {:farm_id => 71, :cultivated_item => ["核果類"]},
+          {:farm_id => 72, :cultivated_item => ["核果類"]},
+          # {:farm_id => 73, :cultivated_item => ["かんきつ類"]},
+          # {:farm_id => 74, :cultivated_item => ["根菜類"]},
+          # {:farm_id => 75, :cultivated_item => ["鱗茎類"]},
+        ]
+  
+  farm.each do |i|
+    i[:cultivated_item].each do |name|                                                                                                                 
+      cultivated_item = CultivatedItem.find_by(name: name) 
+      FarmsCultivatedItem.create!(cultivated_item_id: cultivated_item.id, farm_id: i[:farm_id]) 
+    end  
+  end  
