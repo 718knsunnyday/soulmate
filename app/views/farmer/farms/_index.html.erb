@@ -1,5 +1,4 @@
 <% farms.each do |farm| %>
-
   <div class="row mt-5 mb-3 pt-4 pb-2 farm-index">
     <div class="col-sm-12 col-md-5">
       <p class="pl-3">
@@ -9,35 +8,59 @@
       </p>
     </div>
     <div class="col-sm-12 col-md-7">
-      <div class="row">
-        <div class="col-4">
-          <p>農場名</p>
-          <p>農場住所</p>
-          <p>栽培品目</p>
-          <p>栽培品目例</p>
-        </div>
-        <div class="col-8">
-          <div>
-            <%= link_to farmer_farm_path(farm.id), class: "link-color" do %>
-              <p><%= farm.name %></p>
-              <p><%= farm.full_address %></p>
-              <p><% farm.cultivated_items.pluck(:name).each do |item| %>
-                  <%= item %>&nbsp;
-                <% end %>
-              </p>
-              <p><%= farm.breed %></p>
-            <% end %>
-              <p>
-                <% if public_signed_in? %>
-                <div id="favorite_<%= farm.id %>">
-                  <span class="inline-block">応援ボタン</span>
-                    <span class="thumbs-up"><%= render 'farmer/favorites/favorite', farm: farm %></span>
-                </div>
-              </p>
-            <% end %>
+      <%= link_to farmer_farm_path(farm.id), class: "link-color" do %>
+        <div class="row">
+          <div class="col-4">
+            <p>農場名</p>
+          </div>
+          <div class="col-8">
+            <p><%= farm.name %></p>
           </div>
         </div>
+        
+        <div class="row">
+          <div class="col-4">
+            <p>農場住所</p>
+          </div>
+          <div class="col-8">
+            <p><%= farm.full_address %></p>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-4">
+            <p>栽培品目</p>
+          </div>
+          <div class="col-8">
+            <p><% farm.cultivated_items.pluck(:name).each do |item| %>
+                <%= item %>&nbsp;
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+             <p>栽培品目例</p>
+          </div>
+          <div class="col-8">
+            <p><%= farm.breed %></p>
+          </div>
+        </div>
+      <% end %>
+      
+      <div class="row">
+        <div class="col-4">
+        </div>
+        <div class="col-8">
+          <% if public_signed_in? %>
+            <div id="favorite_<%= farm.id %>">
+              <span class="inline-block">応援ボタン</span>
+                <span class="thumbs-up"><%= render 'farmer/favorites/favorite', farm: farm %></span>
+            </div>
+          <% end %>
+        </div>
       </div>
+      
     </div>
   </div>
-<% end %>
+<% end %>     
