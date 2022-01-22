@@ -23,5 +23,10 @@ border-radius: 15px;
 }
 
 .pagination>.active>li {
-  border-radius: 15px;     /*角を丸くする*/
+  border-radius: 15px;
+}
+
+// 農家一覧画面
+.shadow:hover {
+  box-shadow: 1px 1px 12px rgba(0,0,0,0.55);
 }

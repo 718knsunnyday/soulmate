@@ -3,7 +3,7 @@
     <h2>Bookmark一覧</h2>
   </div>
   <% @bookmark.each do |bookmark| %>
-    <div class="row mt-5 mb-3 pt-4 pb-2 farm-index">
+    <div class="row mt-5 mb-3 pt-4 pb-2 farm-index shadow">
       <div class="col-sm-12 col-md-5 ">
         <p class="pl-3 pr-2">
           <%= link_to farmer_farm_path(bookmark.farm), class: "link-color" do %>
