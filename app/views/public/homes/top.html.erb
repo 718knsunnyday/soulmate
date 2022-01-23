@@ -36,16 +36,14 @@
   </div>
 </div>
 
-
 <div class="container">
   <div class="row mb-3 mt-5">
     <h4><strong>新着農家情報</strong></h4>
   </div>
 
-
   <div class="row justify-content-center">
     <% @farms.each do |farm| %>
-      <div class="col-5 farm-index shadow pt-4 mr-5 mb-3">
+      <div class="col-md-5 col-10 farm-index shadow pt-4 mr-1 ml-1 mb-3">
         <%= link_to farmer_farm_path(farm.id), class: "link-color" do %>
           <%= attachment_image_tag farm, :image,format: 'jpeg', class: "w-100 h-70" %>
           <p>農場名：<%= farm.name %></p>
@@ -60,16 +58,16 @@
 
 <div class="container">
     <div class="row mb-3 mt-5">
-      <h4 class="ml-2"><strong>農家を探している方</strong></h4>
+      <h4><strong>農家を探している方</strong></h4>
     </div>
     <div class="row mb-3 justify-content-center">
-        <div class="col-md-2 col-sm-12">
+        <div class="col-md-2 col-12">
           <%= link_to new_public_registration_path do %>
             <i class="fas fa-user-plus fa-5x fa-green"></i><br>
           <% end %>
           <%= link_to "新規会員登録", new_public_registration_path, class: "link-color" %>
         </div>
-        <div class="col-md-2 col-sm-12">
+        <div class="col-md-2 col-12">
           <%= link_to new_public_session_path do %>
             <i class="fas fa-sign-in-alt fa-5x fa-green"></i><br>
           <% end %>
@@ -78,7 +76,7 @@
     </div>
 
     <div class="row mb-3 mt-5">
-      <h4 class="ml-2"><strong>農家さん</strong></h4>
+      <h4><strong>農家さん</strong></h4>
     </div>
 
     <div class="row mb-3 justify-content-center">

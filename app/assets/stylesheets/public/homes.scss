@@ -20,12 +20,13 @@
   position: relative;
 }
 
+// TOPページ画像の文字
 .top-text{
   position: absolute;
   top: 50%;
   left: 40%;
   margin-top: -60px;
-  margin-left: -100px;
+  margin-left: -110px;
   color: white;
   font-size: 40px;
 }
@@ -33,30 +34,11 @@
 .form-inline{
   position: absolute;
   top: 50%;
-  left: 45%;
+  left: 40%;
 }
 
-.about{
-  height: 650px;
-}
 
-footer{
-  border-top: 2px solid #f3f6f6;
-}
-
-#box{
-  height: 730px;
-}
-.image1 {
-  background-image: image-url('top1.jpg');
-}
-.image2 {
-  background-image: image-url('top2.jpg');
-}
-.image3 {
-  background-image: image-url('top3.jpg');
-}
-
+// aboutページ
 .about{
   height: 650px;
 }
