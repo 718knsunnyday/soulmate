@@ -4,7 +4,7 @@
 
 
 #box{
-  height: 730px;
+  height: 600px;
 }
 .image1 {
   background-image: image-url('top1.jpg');
@@ -14,6 +14,26 @@
 }
 .image3 {
   background-image: image-url('top3.jpg');
+}
+
+.image1{
+  position: relative;
+}
+
+.top-text{
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  margin-top: -60px;
+  margin-left: -110px;
+  color: white;
+  font-size: 40px;
+}
+
+.form-inline{
+  position: absolute;
+  top: 50%;
+  left: 40%;
 }
 
 .about{
