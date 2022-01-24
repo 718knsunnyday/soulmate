@@ -57,6 +57,9 @@
 </div>
 
 <div class="container">
+  <% if public_signed_in? or if farmer_signed_in? %>
+  
+  <% else %>
     <div class="row mb-3 mt-5">
       <h4><strong>農家を探している方</strong></h4>
     </div>
@@ -74,11 +77,9 @@
           <%= link_to "ログイン", new_public_session_path, class: "link-color" %>
         </div>
     </div>
-
     <div class="row mb-3 mt-5">
       <h4><strong>農家さん</strong></h4>
     </div>
-
     <div class="row mb-3 justify-content-center">
         <div class="col-md-2 col-sm-12 mb-5">
           <%= link_to new_farmer_registration_path do %>
@@ -93,4 +94,6 @@
           <%= link_to "ログイン", new_farmer_session_path, class: "link-color" %>
         </div>
     </div>
-</di>
+  <% end %>
+  <% end %>
+</div>
