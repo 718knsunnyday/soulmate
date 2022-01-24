@@ -18,7 +18,6 @@ class Farm < ApplicationRecord
   validates :description, presence: true
   validates :description, length: { in: 1..500}
   validates :image_id, presence: true, on: :update
-
   def self.search(search)
     Farm.joins(:cultivated_items).where('farms.name LIKE ? OR prefecture LIKE ? OR city LIKE ? OR breed LIKE ? OR cultivated_items.name LIKE ?',
                                         "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")

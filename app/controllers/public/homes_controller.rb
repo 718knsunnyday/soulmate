@@ -7,6 +7,6 @@ class Public::HomesController < ApplicationController
   end
 
   def search
-    @farms = Farm.search(params[:search])
+    @farms = Farm.search(params[:search]).order(params[:sort]).page(params[:page]).per(5)
   end
 end
